@@ -166,7 +166,7 @@ List allStructures = [
 
 class World {
   final int time;
-  final Progress progress;
+  final Progress totalProgress;
 
   final List<Structure> structures;
   final Resources inventory;
@@ -177,26 +177,32 @@ class World {
 
   const World({
     required this.time,
-    required this.progress,
+    required this.totalProgress,
     required this.structures,
     required this.inventory,
   });
 
+  Progress get progressPerSecond {
+    // This does not handle the case of insufficient energy.
+    return structures.fold(Progress(),
+        (Progress total, Structure structure) => total + structure.progress);
+  }
+
   const World.empty()
       : time = 0,
-        progress = const Progress(),
+        totalProgress = const Progress(),
         structures = const <Structure>[],
         inventory = const Resources();
 
   World copyWith({
     int? time,
-    Progress? progress,
+    Progress? totalProgress,
     List<Structure>? structures,
     Resources? inventory,
   }) {
     return World(
       time: time ?? this.time,
-      progress: progress ?? this.progress,
+      totalProgress: totalProgress ?? this.totalProgress,
       structures: structures ?? this.structures,
       inventory: inventory ?? this.inventory,
     );
@@ -259,19 +265,37 @@ class PreferBuild extends Actor {
   }
 }
 
+class ExpectedValueMap {
+  double evForAction(Action action) {
+    return 0;
+  }
+}
+
 class ValueActor {
+  List<Action> blockingActions(Build action, World world) {
+    // Diff needs with available resources (including energy)
+    var unmetResources = action.structure.cost - world.inventory;
+    var uniqueResources = unmetResources.sumPostive();
+
+    // Recurse for a buildable energy source.
+    return [];
+  }
+
   @override
   Action chooseAction(Simulation sim) {
     var availableActions = sim.availableActions.toList();
+    var actionToEv = ExpectedValueMap();
 
-
-    for ( var structure in sim.)
-    // Look through all available (not necessarily buildable) structure builds.
     // Calculate the time distance from goal at current pace.
-    // Calculate the EV of a given build (time saved?)
-    // Diff needs with available resources (including energy)
-    // Divide ev between missing ingredients or buildable energy sources.
-    // Recurse for a buildable energy source.
+    double timeToGoal = sim.goal.timeToGoal(sim.world.progressPerSecond);
+    // Look through all available (not necessarily buildable) structure builds.
+    for (var action in sim.unlockedStructureActions) {
+      // Calculate the EV of a given build (time saved?)
+      var ev = computeEvFor(action, sim.world, timeToGoal);
+      var blocking = blockingActions(action);
+      // Divide ev between missing ingredients or buildable energy sources.
+      var evPer = ev / blocking.length;
+    }
     // Setting ev(ingredient) = max(ev(structure) / # missing, ev(ingredient))
     // Sort actions by EV.
     // If equal, pick randomly.
@@ -292,10 +316,25 @@ bool canAfford(Structure structure, double worldEnergy, Resources inventory) {
   return structure.cost <= inventory;
 }
 
+class Goal {
+  final int terraformingIndexGoal;
+
+  Goal(this.terraformingIndexGoal);
+
+  bool wasReached(Progress totalProgress) {
+    return totalProgress.terraformationIndex >= terraformingIndexGoal;
+  }
+
+  double timeToGoal(Progress progressPerSecond) {
+    return double.infinity;
+  }
+}
+
 class Simulation {
   final World world;
+  final Goal goal;
 
-  Simulation(this.world);
+  Simulation(this.world, this.goal);
 
   Iterable<Gather> get gatherActions {
     // These could have time relative to position?
@@ -325,8 +364,6 @@ class Simulation {
     }
   }
 
-
-
   Iterable<Action> get availableActions {
     Iterable<Action> gathers = gatherActions;
     return gathers.followedBy(affordableStructureActions);
@@ -336,9 +373,8 @@ class Simulation {
 World applyAction(Action action, World world) {
   // Progress time.
 
-  var progress = world.structures.fold(Progress(),
-          (Progress total, Structure structure) => total + structure.progress) *
-      action.time.toDouble();
+  var totalProgress =
+      world.totalProgress + world.progressPerSecond * action.time.toDouble();
 
   var time = world.time + action.time;
 
@@ -357,25 +393,23 @@ World applyAction(Action action, World world) {
     inventory: inventory,
     structures: structures,
     time: time,
-    progress: progress,
+    totalProgress: totalProgress,
   );
 }
 
-SimulationResult simulate(
-    World world, Actor actor, bool Function(World world) isComplete) {
-  var sim = Simulation(world);
+SimulationResult simulate(World world, Actor actor, Goal goal) {
+  var sim = Simulation(world, goal);
   var actionLog = <Action>[];
   var previousTime = world.time;
   var lastLogTime = world.time;
   var logFrequency = 10;
 
-  while (!isComplete(world)) {
-    var availableActions = sim.availableActions(world).toList();
-    var action = actor.chooseAction(availableActions);
+  while (goal.wasReached(world.totalProgress)) {
+    var action = actor.chooseAction(sim);
     world = applyAction(action, world);
     assert(previousTime < world.time);
     if (world.time > lastLogTime + logFrequency) {
-      print("${world.time} : TI ${world.progress.terraformationIndex}");
+      print("${world.time} : TI ${world.totalProgress.terraformationIndex}");
       lastLogTime = world.time;
     }
     actionLog.add(action);
