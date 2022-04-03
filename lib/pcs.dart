@@ -89,8 +89,8 @@ class Progress {
   const Progress(
       {this.pressure = 0, this.oxygen = 0, this.heat = 0, this.biomass = 0});
 
-  int get terraformationIndex {
-    return (pressure + oxygen + heat + biomass).truncate();
+  double get terraformationIndex {
+    return pressure + oxygen + heat + biomass;
   }
 
   Progress operator +(Progress other) {
@@ -223,6 +223,11 @@ class Gather extends Action {
 class Build extends Action {
   final Structure structure;
   Build(this.structure) : super(time: 1);
+
+  @override
+  String toString() {
+    return 'Build ${structure.name}';
+  }
 }
 
 abstract class Actor {
@@ -265,40 +270,71 @@ class PreferBuild extends Actor {
   }
 }
 
-class ExpectedValueMap {
-  double evForAction(Action action) {
-    return 0;
-  }
-}
+// class ExpectedValueMap {
+//   double evForAction(Action action) {
+//     return 0;
+//   }
+// }
 
-class ValueActor {
-  List<Action> blockingActions(Build action, World world) {
-    // Diff needs with available resources (including energy)
-    var unmetResources = action.structure.cost - world.inventory;
-    var uniqueResources = unmetResources.sumPostive();
+// class ValueActor {
+//   List<Action> blockingActions(Build action, World world) {
+//     // Diff needs with available resources (including energy)
+//     var unmetResources = action.structure.cost - world.inventory;
+//     var uniqueResources = unmetResources.sumPostive();
 
-    // Recurse for a buildable energy source.
-    return [];
+//     // Recurse for a buildable energy source.
+//     return [];
+//   }
+
+//   @override
+//   Action chooseAction(Simulation sim) {
+//     var actionToEv = ExpectedValueMap();
+
+//     // Calculate the time distance from goal at current pace.
+//     double timeToGoal = sim.goal.timeToGoal(sim.world.progressPerSecond);
+//     // Look through all available (not necessarily buildable) structure builds.
+//     for (var action in sim.unlockedStructureActions) {
+//       // Calculate the EV of a given build (time saved?)
+//       var ev = computeEvFor(action, sim.world, timeToGoal);
+//       var blocking = blockingActions(action);
+//       // Divide ev between missing ingredients or buildable energy sources.
+//       var evPer = ev / blocking.length;
+//     }
+//     // Setting ev(ingredient) = max(ev(structure) / # missing, ev(ingredient))
+//     // Sort actions by EV.
+//     // If equal, pick randomly.
+//   }
+// }
+
+// Picks the best action, ignoring material costs.
+class Sprinter extends Actor {
+  double timeToGoalWith(Simulation sim, Build action) {
+    var structures = List<Structure>.from(sim.world.structures);
+    var newWorld =
+        sim.world.copyWith(structures: structures..add(action.structure));
+    var newProgressPerSecond = newWorld.progressPerSecond;
+    return sim.goal.timeToGoal(newWorld);
+    // var tiPerSecond = newProgressPerSecond.terraformationIndex -
+    //     currentProgressPerSecond.terraformationIndex;
+    // return tiPerSecond / action.time;
   }
 
   @override
   Action chooseAction(Simulation sim) {
-    var availableActions = sim.availableActions.toList();
-    var actionToEv = ExpectedValueMap();
-
     // Calculate the time distance from goal at current pace.
-    double timeToGoal = sim.goal.timeToGoal(sim.world.progressPerSecond);
+    double timeToGoal = sim.goal.timeToGoal(sim.world);
+    Build? bestAction;
+    double bestTimeToGoalDelta = 0;
     // Look through all available (not necessarily buildable) structure builds.
     for (var action in sim.unlockedStructureActions) {
-      // Calculate the EV of a given build (time saved?)
-      var ev = computeEvFor(action, sim.world, timeToGoal);
-      var blocking = blockingActions(action);
-      // Divide ev between missing ingredients or buildable energy sources.
-      var evPer = ev / blocking.length;
+      var newTimeToGoal = timeToGoalWith(sim, action);
+      var timeToGoalDelta = newTimeToGoal - timeToGoal;
+      if (timeToGoalDelta <= bestTimeToGoalDelta) {
+        bestAction = action;
+        bestTimeToGoalDelta = timeToGoalDelta;
+      }
     }
-    // Setting ev(ingredient) = max(ev(structure) / # missing, ev(ingredient))
-    // Sort actions by EV.
-    // If equal, pick randomly.
+    return bestAction!;
   }
 }
 
@@ -325,8 +361,11 @@ class Goal {
     return totalProgress.terraformationIndex >= terraformingIndexGoal;
   }
 
-  double timeToGoal(Progress progressPerSecond) {
-    return double.infinity;
+  // Intentionally can return infinity.
+  double timeToGoal(World world) {
+    double distanceToGoal =
+        terraformingIndexGoal - world.totalProgress.terraformationIndex;
+    return distanceToGoal / world.progressPerSecond.terraformationIndex;
   }
 }
 
@@ -350,9 +389,9 @@ class Simulation {
     ];
   }
 
-  Iterable<Build> get unlockedStructureActions sync* {
+  Iterable<Build> get unlockedStructureActions {
     // All structures are currently unlocked.
-    allStructures.map((structure) => Build(structure));
+    return allStructures.map((structure) => Build(structure));
   }
 
   Iterable<Build> get affordableStructureActions sync* {
@@ -404,7 +443,7 @@ SimulationResult simulate(World world, Actor actor, Goal goal) {
   var lastLogTime = world.time;
   var logFrequency = 10;
 
-  while (goal.wasReached(world.totalProgress)) {
+  while (!goal.wasReached(world.totalProgress)) {
     var action = actor.chooseAction(sim);
     world = applyAction(action, world);
     assert(previousTime < world.time);

@@ -13,7 +13,7 @@ Structure strutureWithName(String name) {
 void main() {
   test('canBuild', () {
     var structure = strutureWithName("Wind Turbine");
-    expect(canBuild(structure, 0, Resources(iron: 1)), isTrue);
+    expect(canAfford(structure, 0, Resources(iron: 1)), isTrue);
   });
 
   test('applyAction', () {
