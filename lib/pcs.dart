@@ -1,78 +1,74 @@
 import "dart:math";
 
-// FIXME: Could this be a fixed size array with enum access?
-class Resources {
-  final int aluminium;
-  final int cobalt;
-  final int ice;
-  final int iridium;
-  final int iron;
-  final int magnesium;
-  final int silicon;
-  final int superAlloy;
-  final int titanium;
+enum Item {
+  iron,
+  iridium,
+  ice,
+  aluminium,
+  cobalt,
+  magnesium,
+  silicon,
+  superAlloy,
+  titanium,
+  plant,
+}
 
-  const Resources(
-      {this.ice = 0,
-      this.iridium = 0,
-      this.iron = 0,
-      this.aluminium = 0,
-      this.cobalt = 0,
-      this.magnesium = 0,
-      this.silicon = 0,
-      this.superAlloy = 0,
-      this.titanium = 0});
+class ItemCounts {
+  final List<int> _counts;
 
-  bool operator <(Resources other) {
-    return aluminium < other.aluminium &&
-        cobalt < other.cobalt &&
-        ice < other.ice &&
-        iridium < other.iridium &&
-        iron < other.iron &&
-        magnesium < other.magnesium &&
-        silicon < other.silicon &&
-        superAlloy < other.superAlloy &&
-        titanium < other.titanium;
+  // FIXME: Make this const
+  ItemCounts() : _counts = List<int>.filled(Item.values.length, 0);
+
+  factory ItemCounts.fromItems(List<Item> items) {
+    var counts = List<int>.filled(Item.values.length, 0, growable: false);
+    for (var item in items) {
+      counts[item.index] += 1;
+    }
+    return ItemCounts._(counts);
   }
 
-  bool operator <=(Resources other) {
-    return aluminium <= other.aluminium &&
-        cobalt <= other.cobalt &&
-        ice <= other.ice &&
-        iridium <= other.iridium &&
-        iron <= other.iron &&
-        magnesium <= other.magnesium &&
-        silicon <= other.silicon &&
-        superAlloy <= other.superAlloy &&
-        titanium <= other.titanium;
+  ItemCounts._(this._counts);
+
+  void adjust(Item item, int delta) {
+    _counts[item.index] += delta;
   }
 
-  Resources operator +(Resources other) {
-    return Resources(
-      ice: ice + other.ice,
-      iridium: iridium + other.iridium,
-      iron: iron + other.iron,
-      aluminium: aluminium + other.aluminium,
-      cobalt: cobalt + other.cobalt,
-      magnesium: magnesium + other.magnesium,
-      silicon: silicon + other.silicon,
-      superAlloy: superAlloy + other.superAlloy,
-      titanium: titanium + other.titanium,
-    );
+  int countOf(Item item) {
+    return _counts[item.index];
   }
 
-  Resources operator -(Resources other) {
-    return Resources(
-      ice: ice - other.ice,
-      iridium: iridium - other.iridium,
-      iron: iron - other.iron,
-      aluminium: aluminium - other.aluminium,
-      cobalt: cobalt - other.cobalt,
-      magnesium: magnesium - other.magnesium,
-      silicon: silicon - other.silicon,
-      superAlloy: superAlloy - other.superAlloy,
-      titanium: titanium - other.titanium,
-    );
+  bool operator <(ItemCounts other) {
+    for (int i = 0; i < Item.values.length; i++) {
+      if (_counts[i] >= other._counts[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  bool operator <=(ItemCounts other) {
+    for (int i = 0; i < Item.values.length; i++) {
+      if (_counts[i] > other._counts[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  ItemCounts operator +(ItemCounts other) {
+    var newCounts = List<int>.from(_counts);
+    for (int i = 0; i < Item.values.length; i++) {
+      newCounts[i] += other._counts[i];
+    }
+    return ItemCounts._(newCounts);
+  }
+
+  ItemCounts operator -(ItemCounts other) {
+    var newCounts = List<int>.from(_counts);
+    for (int i = 0; i < Item.values.length; i++) {
+      newCounts[i] -= other._counts[i];
+    }
+    return ItemCounts._(newCounts);
   }
 }
 
@@ -114,7 +110,7 @@ class Progress {
 
 class Structure {
   final Availablility availablility;
-  final Resources cost;
+  final List<Item> cost;
   final double energy;
   final Progress progress;
   final String name;
@@ -124,7 +120,7 @@ class Structure {
     return true;
   }
 
-  Structure({
+  const Structure({
     required this.availablility,
     required this.cost,
     required this.energy,
@@ -134,42 +130,52 @@ class Structure {
   });
 }
 
-List allStructures = [
+// FIXME: Make this const.
+final allStructures = <Structure>[
   Structure(
     name: "Drill T1",
     availablility: Availablility.always(),
-    cost: Resources(titanium: 1, iron: 1),
+    cost: [Item.titanium, Item.iron],
     energy: -0.5,
     progress: Progress(pressure: 0.2),
   ),
   Structure(
     name: "Wind Turbine",
     availablility: Availablility.always(),
-    cost: Resources(iron: 1),
+    cost: [Item.iron],
     energy: 1.2,
   ),
   Structure(
     name: "Heater T1",
     availablility: Availablility.always(),
-    cost: Resources(iron: 1, iridium: 1, silicon: 1),
+    cost: [Item.iron, Item.iridium, Item.silicon],
     progress: Progress(heat: 0.3),
     energy: -1,
   ),
   Structure(
     name: "Vegetube T1",
     availablility: Availablility.always(),
-    cost: Resources(iron: 1, ice: 1, magnesium: 1),
+    cost: [Item.iron, Item.ice, Item.magnesium, Item.plant],
     progress: Progress(oxygen: 1.5),
     energy: -.35,
   ),
 ];
+
+Structure strutureWithName(String name) {
+  for (var structure in allStructures) {
+    if (structure.name == name) {
+      return structure;
+    }
+  }
+  throw ArgumentError.value(name, "No structure with name");
+}
 
 class World {
   final int time;
   final Progress totalProgress;
 
   final List<Structure> structures;
-  final Resources inventory;
+  final ItemCounts inventory;
 
   double get availableEnergy {
     return structures.fold(0, (total, structure) => total + structure.energy);
@@ -188,17 +194,18 @@ class World {
         (Progress total, Structure structure) => total + structure.progress);
   }
 
-  const World.empty()
+  // FIXME: Make this const
+  World.empty()
       : time = 0,
         totalProgress = const Progress(),
         structures = const <Structure>[],
-        inventory = const Resources();
+        inventory = ItemCounts();
 
   World copyWith({
     int? time,
     Progress? totalProgress,
     List<Structure>? structures,
-    Resources? inventory,
+    ItemCounts? inventory,
   }) {
     return World(
       time: time ?? this.time,
@@ -215,9 +222,14 @@ class Action {
 }
 
 class Gather extends Action {
-  final Resources resource;
+  final Item resource;
 
   const Gather({required this.resource, required int time}) : super(time: time);
+
+  @override
+  String toString() {
+    return 'Gather ${resource.name} (${time}s)';
+  }
 }
 
 class Build extends Action {
@@ -226,7 +238,7 @@ class Build extends Action {
 
   @override
   String toString() {
-    return 'Build ${structure.name}';
+    return 'Build ${structure.name} (${time}s)';
   }
 }
 
@@ -306,14 +318,96 @@ class PreferBuild extends Actor {
 //   }
 // }
 
+// Need a way to evaluate value in terms of destructions.
+// e.g. that a 1 resource is worth N seconds (gather time?)
+// Or that 1 energy is worth N seconds
+//
+// Are higher-level energy sources ever cheaper per second than wind power?
+
+// Once we build a plan for a structure, don't we just execute it?
+// Do we re-plan any time we reach an intermediate goal/unlock?
+
+class Plan {
+  final List<Action> actions;
+
+  Plan(this.actions);
+
+  int get executionTime => actions.fold(0, (total, action) => action.time);
+
+  // Total Resource change?
+}
+
+// Ignore inventory planning for now?
+// Ignore energy surplus planning for now?
+// Build up subplans of all the various things
+// Then replay the subplans with inventory / energy available
+class PlanBuilder {
+  List<Action> actions;
+  Simulation sim;
+
+  PlanBuilder(this.sim) : actions = [];
+
+  void planForEnergy(double neededEnergy) {
+    // FIXME: Don't lookup every time.
+    final energyStructures = <Structure>[strutureWithName("Wind Turbine")];
+    while (neededEnergy > 0) {
+      var structure = energyStructures.first;
+      planForStructure(structure);
+      neededEnergy -= structure.energy;
+    }
+  }
+
+  void planForStructure(Structure structure) {
+    var worldEnergy = 0; // FIXME: ignoring existing energy.
+    for (var item in structure.cost) {
+      planForResource(item);
+    }
+    if (structure.energy < 0 && worldEnergy < structure.energy.abs()) {
+      // structure energy is negative
+      var neededEnergy = worldEnergy + structure.energy;
+      assert(neededEnergy < 0);
+      planForEnergy(neededEnergy);
+    }
+    actions.add(Build(structure));
+  }
+
+  void planForResource(Item item) {
+    actions.add(Gather(resource: item, time: sim.gatherTimeFor(item)));
+  }
+
+  Plan build() {
+    return Plan(actions);
+  }
+}
+
+class PlanIterator {
+  Plan plan;
+  int currentActionIndex;
+
+  PlanIterator(this.plan) : currentActionIndex = -1;
+
+  bool moveNextAction() {
+    currentActionIndex += 1;
+    return currentActionIndex < plan.actions.length;
+  }
+
+  Action get currentAction => plan.actions[currentActionIndex];
+}
+
 // Picks the best action, ignoring material costs.
 class Sprinter extends Actor {
-  double timeToGoalWith(Simulation sim, Build action) {
-    var structures = List<Structure>.from(sim.world.structures);
-    var newWorld =
-        sim.world.copyWith(structures: structures..add(action.structure));
-    var newProgressPerSecond = newWorld.progressPerSecond;
-    return sim.goal.timeToGoal(newWorld);
+  PlanIterator? existingPlan;
+
+  double timeToGoalWithPlan(Simulation sim, Plan plan) {
+    var newStructures = List<Structure>.from(sim.world.structures);
+    for (var action in plan.actions) {
+      if (action is Build) {
+        newStructures.add(action.structure);
+      }
+    }
+    var newWorld = sim.world.copyWith(structures: newStructures);
+    // var newProgressPerSecond = newWorld.progressPerSecond;
+    return plan.executionTime + sim.goal.timeToGoal(newWorld);
     // var tiPerSecond = newProgressPerSecond.terraformationIndex -
     //     currentProgressPerSecond.terraformationIndex;
     // return tiPerSecond / action.time;
@@ -321,20 +415,33 @@ class Sprinter extends Actor {
 
   @override
   Action chooseAction(Simulation sim) {
+    if (existingPlan != null && existingPlan!.moveNextAction()) {
+      return existingPlan!.currentAction;
+    } else {
+      existingPlan = null;
+    }
+
     // Calculate the time distance from goal at current pace.
     double timeToGoal = sim.goal.timeToGoal(sim.world);
-    Build? bestAction;
+    Plan? bestPlan;
     double bestTimeToGoalDelta = 0;
-    // Look through all available (not necessarily buildable) structure builds.
-    for (var action in sim.unlockedStructureActions) {
-      var newTimeToGoal = timeToGoalWith(sim, action);
+    // Generate plans for all available structures.
+    // Pick the plan with the highest EV.
+    for (var plan in sim.possiblePlans) {
+      var newTimeToGoal = timeToGoalWithPlan(sim, plan);
       var timeToGoalDelta = newTimeToGoal - timeToGoal;
       if (timeToGoalDelta <= bestTimeToGoalDelta) {
-        bestAction = action;
+        bestPlan = plan;
         bestTimeToGoalDelta = timeToGoalDelta;
       }
     }
-    return bestAction!;
+    if (bestPlan == null) {
+      throw StateError("No best plan found");
+    }
+
+    existingPlan = PlanIterator(bestPlan);
+    existingPlan!.moveNextAction();
+    return existingPlan!.currentAction;
   }
 }
 
@@ -345,11 +452,11 @@ class SimulationResult {
   SimulationResult(this.world, this.actionLog);
 }
 
-bool canAfford(Structure structure, double worldEnergy, Resources inventory) {
+bool canAfford(Structure structure, double worldEnergy, ItemCounts inventory) {
   if (structure.energy < 0 && worldEnergy < structure.energy.abs()) {
     return false;
   }
-  return structure.cost <= inventory;
+  return ItemCounts.fromItems(structure.cost) <= inventory;
 }
 
 class Goal {
@@ -375,23 +482,46 @@ class Simulation {
 
   Simulation(this.world, this.goal);
 
+  // FIXME: not all items can be gathered?
+  // These could have time relative to position?
+  int gatherTimeFor(Item item) {
+    const int nearby = 5;
+    const int distant = 60;
+    switch (item) {
+      case Item.aluminium:
+        return distant;
+      case Item.cobalt:
+        return nearby;
+      case Item.ice:
+        return nearby;
+      case Item.iridium:
+        return distant;
+      case Item.iron:
+        return nearby;
+      case Item.magnesium:
+        return nearby;
+      case Item.plant:
+        return distant;
+      case Item.silicon:
+        return nearby;
+      case Item.superAlloy:
+        return distant;
+      case Item.titanium:
+        return nearby;
+    }
+  }
+
   Iterable<Gather> get gatherActions {
-    // These could have time relative to position?
-    return const <Gather>[
-      // FIXME: incomplete.
-      Gather(resource: Resources(iron: 1), time: 1),
-      Gather(resource: Resources(titanium: 1), time: 1),
-      Gather(resource: Resources(cobalt: 1), time: 1),
-      Gather(resource: Resources(magnesium: 1), time: 1),
-      Gather(resource: Resources(silicon: 1), time: 1),
-      Gather(resource: Resources(iridium: 1), time: 1),
-      Gather(resource: Resources(ice: 1), time: 1),
-    ];
+    return Item.values.map((i) => Gather(resource: i, time: gatherTimeFor(i)));
+  }
+
+  Iterable<Structure> get unlockedStructures {
+    // All structures are currently unlocked.
+    return allStructures;
   }
 
   Iterable<Build> get unlockedStructureActions {
-    // All structures are currently unlocked.
-    return allStructures.map((structure) => Build(structure));
+    return unlockedStructures.map((structure) => Build(structure));
   }
 
   Iterable<Build> get affordableStructureActions sync* {
@@ -407,6 +537,23 @@ class Simulation {
     Iterable<Action> gathers = gatherActions;
     return gathers.followedBy(affordableStructureActions);
   }
+
+  Plan planForStructure(Structure structure) {
+    var builder = PlanBuilder(this);
+    builder.planForStructure(structure);
+    return builder.build();
+  }
+
+  Iterable<Plan> get possiblePlans sync* {
+    // Gather plans only make sense as sub-plans.
+    // Energy plans only make sense as sub-plans.
+    // Chips and inventory make sense as sub-plans.
+    // Structures (and rockets) are the only top-level plans
+    // (i.e. plans that move towards a goal).
+    for (var structure in unlockedStructures) {
+      yield planForStructure(structure);
+    }
+  }
 }
 
 World applyAction(Action action, World world) {
@@ -421,9 +568,9 @@ World applyAction(Action action, World world) {
   var structures = world.structures;
 
   if (action is Gather) {
-    inventory += action.resource;
+    inventory.adjust(action.resource, 1);
   } else if (action is Build) {
-    inventory -= action.structure.cost;
+    inventory -= ItemCounts.fromItems(action.structure.cost);
     structures = List<Structure>.from(structures)..add(action.structure);
   } else {
     throw ArgumentError.value(action, "Unsuported action");
