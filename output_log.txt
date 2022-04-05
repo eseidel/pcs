@@ -113,940 +113,688 @@ Gather titanium (5s) energy: 0.9
 Gather iron (5s) energy: 0.9
 Build Drill T1 (1s) energy: 0.4
 Gather iron (5s) energy: 0.4
-Build Wind Turbine (1s) energy: 1.6
-Gather titanium (5s) energy: 1.6
-Gather iron (5s) energy: 1.6
-Build Drill T1 (1s) energy: 1.1
-Gather titanium (5s) energy: 1.1
-Gather iron (5s) energy: 1.1
-Build Drill T1 (1s) energy: 0.6
-Gather titanium (5s) energy: 0.6
-Gather iron (5s) energy: 0.6
-Build Drill T1 (1s) energy: 0.1
-Gather iron (5s) energy: 0.1
-Build Wind Turbine (1s) energy: 1.3
-Gather iron (5s) energy: 1.3
-430s : 1307.2ti o2: 0.0ppq heat: 0.0pK pressure: 1307.2nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 2.5
-Gather iron (5s) energy: 2.5
-Build Wind Turbine (1s) energy: 3.7
-Gather iron (5s) energy: 3.7
-Build Wind Turbine (1s) energy: 4.9
-Gather iron (5s) energy: 4.9
-Build Wind Turbine (1s) energy: 6.1
-Gather iron (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Build Drill T2 (1s) energy: 1.1
-Gather iron (5s) energy: 1.1
-Build Wind Turbine (1s) energy: 2.3
-Gather iron (5s) energy: 2.3
-Build Wind Turbine (1s) energy: 3.5
-Gather iron (5s) energy: 3.5
-Build Wind Turbine (1s) energy: 4.7
-Gather iron (5s) energy: 4.7
-Build Wind Turbine (1s) energy: 5.9
+Gather cobalt (5s) energy: 0.4
+Gather cobalt (5s) energy: 0.4
+Gather silicon (5s) energy: 0.4
+Build Solar Panel T1 (1s) energy: 6.9
+Gather titanium (5s) energy: 6.9
+Gather iron (5s) energy: 6.9
+Build Drill T1 (1s) energy: 6.4
+Gather titanium (5s) energy: 6.4
+Gather iron (5s) energy: 6.4
+Build Drill T1 (1s) energy: 5.9
 Gather iron (5s) energy: 5.9
-494s : 1747.5ti o2: 0.0ppq heat: 0.0pK pressure: 1747.5nPa biomass: 0.0
 Gather titanium (5s) energy: 5.9
+433s : 1317.0ti o2: 0.0ppq heat: 0.0pK pressure: 1317.0nPa biomass: 0.0
 Gather titanium (5s) energy: 5.9
 Build Drill T2 (1s) energy: 0.9
 Gather iron (5s) energy: 0.9
-Build Wind Turbine (1s) energy: 2.1
-Gather iron (5s) energy: 2.1
-Build Wind Turbine (1s) energy: 3.3
-Gather iron (5s) energy: 3.3
-Build Wind Turbine (1s) energy: 4.5
-Gather iron (5s) energy: 4.5
-Build Wind Turbine (1s) energy: 5.7
-Gather iron (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Build Drill T2 (1s) energy: 0.7
-Gather iron (5s) energy: 0.7
-Build Wind Turbine (1s) energy: 1.9
-Gather iron (5s) energy: 1.9
-556s : 2317.9ti o2: 0.0ppq heat: 0.0pK pressure: 2317.9nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 3.1
-Gather iron (5s) energy: 3.1
-Build Wind Turbine (1s) energy: 4.3
-Gather iron (5s) energy: 4.3
-Build Wind Turbine (1s) energy: 5.5
-Gather iron (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Build Drill T2 (1s) energy: 0.5
-Gather iron (5s) energy: 0.5
-Build Wind Turbine (1s) energy: 1.7
-Gather iron (5s) energy: 1.7
-Build Wind Turbine (1s) energy: 2.9
-Gather iron (5s) energy: 2.9
-Build Wind Turbine (1s) energy: 4.1
-Gather iron (5s) energy: 4.1
-Build Wind Turbine (1s) energy: 5.3
-Gather iron (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-619s : 3043.0ti o2: 0.0ppq heat: 0.0pK pressure: 3043.0nPa biomass: 0.0
-Gather titanium (5s) energy: 5.3
-Build Drill T2 (1s) energy: 0.3
-Gather iron (5s) energy: 0.3
-Build Wind Turbine (1s) energy: 1.5
-Gather iron (5s) energy: 1.5
-Build Wind Turbine (1s) energy: 2.7
-Gather iron (5s) energy: 2.7
-Build Wind Turbine (1s) energy: 3.9
+Gather cobalt (5s) energy: 0.9
+Gather cobalt (5s) energy: 0.9
+Gather silicon (5s) energy: 0.9
+Build Solar Panel T1 (1s) energy: 7.4
+Gather iron (5s) energy: 7.4
+Gather titanium (5s) energy: 7.4
+Gather titanium (5s) energy: 7.4
+Build Drill T2 (1s) energy: 2.4
+Gather iron (5s) energy: 2.4
+Gather cobalt (5s) energy: 2.4
+Gather cobalt (5s) energy: 2.4
+Gather silicon (5s) energy: 2.4
+496s : 1810.5ti o2: 0.0ppq heat: 0.0pK pressure: 1810.5nPa biomass: 0.0
+Build Solar Panel T1 (1s) energy: 8.9
+Gather iron (5s) energy: 8.9
+Gather titanium (5s) energy: 8.9
+Gather titanium (5s) energy: 8.9
+Build Drill T2 (1s) energy: 3.9
 Gather iron (5s) energy: 3.9
-Build Wind Turbine (1s) energy: 5.1
-Gather iron (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Build Drill T2 (1s) energy: 0.1
-Gather iron (5s) energy: 0.1
-Build Wind Turbine (1s) energy: 1.3
-Gather iron (5s) energy: 1.3
-Build Wind Turbine (1s) energy: 2.5
-Gather iron (5s) energy: 2.5
-682s : 3922.6ti o2: 0.0ppq heat: 0.0pK pressure: 3922.6nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 3.7
-Gather iron (5s) energy: 3.7
-Build Wind Turbine (1s) energy: 4.9
-Gather iron (5s) energy: 4.9
-Build Wind Turbine (1s) energy: 6.1
-Gather iron (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Build Drill T2 (1s) energy: 1.1
-Gather iron (5s) energy: 1.1
-Build Wind Turbine (1s) energy: 2.3
-Gather iron (5s) energy: 2.3
-Build Wind Turbine (1s) energy: 3.5
-Gather iron (5s) energy: 3.5
-Build Wind Turbine (1s) energy: 4.7
-Gather iron (5s) energy: 4.7
-Build Wind Turbine (1s) energy: 5.9
-Gather iron (5s) energy: 5.9
-Gather titanium (5s) energy: 5.9
-745s : 4931.2ti o2: 0.0ppq heat: 0.0pK pressure: 4931.2nPa biomass: 0.0
-Gather titanium (5s) energy: 5.9
-Build Drill T2 (1s) energy: 0.9
-Gather iron (5s) energy: 0.9
-Build Wind Turbine (1s) energy: 2.1
-Gather iron (5s) energy: 2.1
-Build Wind Turbine (1s) energy: 3.3
-Gather iron (5s) energy: 3.3
-Build Wind Turbine (1s) energy: 4.5
-Gather iron (5s) energy: 4.5
-Build Wind Turbine (1s) energy: 5.7
-Gather iron (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Build Drill T2 (1s) energy: 0.7
-Gather iron (5s) energy: 0.7
-Build Wind Turbine (1s) energy: 1.9
+Gather cobalt (5s) energy: 3.9
+Gather cobalt (5s) energy: 3.9
+Gather silicon (5s) energy: 3.9
+Build Solar Panel T1 (1s) energy: 10.4
+Gather iron (5s) energy: 10.4
+Gather titanium (5s) energy: 10.4
+Gather titanium (5s) energy: 10.4
+Build Drill T2 (1s) energy: 5.4
+Gather iron (5s) energy: 5.4
+Gather titanium (5s) energy: 5.4
+560s : 2472.0ti o2: 0.0ppq heat: 0.0pK pressure: 2472.0nPa biomass: 0.0
+Gather titanium (5s) energy: 5.4
+Build Drill T2 (1s) energy: 0.4
+Gather iron (5s) energy: 0.4
+Gather cobalt (5s) energy: 0.4
+Gather cobalt (5s) energy: 0.4
+Gather silicon (5s) energy: 0.4
+Build Solar Panel T1 (1s) energy: 6.9
+Gather iron (5s) energy: 6.9
+Gather titanium (5s) energy: 6.9
+Gather titanium (5s) energy: 6.9
+Build Drill T2 (1s) energy: 1.9
 Gather iron (5s) energy: 1.9
-Build Wind Turbine (1s) energy: 3.1
-Gather iron (5s) energy: 3.1
-808s : 6094.3ti o2: 0.0ppq heat: 0.0pK pressure: 6094.3nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 4.3
-Gather iron (5s) energy: 4.3
-Build Wind Turbine (1s) energy: 5.5
-Gather iron (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Build Drill T2 (1s) energy: 0.5
-Gather iron (5s) energy: 0.5
-Build Wind Turbine (1s) energy: 1.7
-Gather iron (5s) energy: 1.7
-Build Wind Turbine (1s) energy: 2.9
+Gather cobalt (5s) energy: 1.9
+Gather cobalt (5s) energy: 1.9
+Gather silicon (5s) energy: 1.9
+623s : 3343.5ti o2: 0.0ppq heat: 0.0pK pressure: 3343.5nPa biomass: 0.0
+Build Solar Panel T1 (1s) energy: 8.4
+Gather iron (5s) energy: 8.4
+Gather titanium (5s) energy: 8.4
+Gather titanium (5s) energy: 8.4
+Build Drill T2 (1s) energy: 3.4
+Gather iron (5s) energy: 3.4
+Gather cobalt (5s) energy: 3.4
+Gather cobalt (5s) energy: 3.4
+Gather silicon (5s) energy: 3.4
+Build Solar Panel T1 (1s) energy: 9.9
+Gather iron (5s) energy: 9.9
+Gather titanium (5s) energy: 9.9
+Gather titanium (5s) energy: 9.9
+Build Drill T2 (1s) energy: 4.9
+Gather iron (5s) energy: 4.9
+Gather cobalt (5s) energy: 4.9
+687s : 4389.0ti o2: 0.0ppq heat: 0.0pK pressure: 4389.0nPa biomass: 0.0
+Gather cobalt (5s) energy: 4.9
+Gather silicon (5s) energy: 4.9
+Build Solar Panel T1 (1s) energy: 11.4
+Gather iron (5s) energy: 11.4
+Gather titanium (5s) energy: 11.4
+Gather titanium (5s) energy: 11.4
+Build Drill T2 (1s) energy: 6.4
+Gather iron (5s) energy: 6.4
+Gather titanium (5s) energy: 6.4
+Gather titanium (5s) energy: 6.4
+Build Drill T2 (1s) energy: 1.4
+Gather iron (5s) energy: 1.4
+Gather cobalt (5s) energy: 1.4
+Gather cobalt (5s) energy: 1.4
+Gather silicon (5s) energy: 1.4
+750s : 5607.0ti o2: 0.0ppq heat: 0.0pK pressure: 5607.0nPa biomass: 0.0
+Build Solar Panel T1 (1s) energy: 7.9
+Gather iron (5s) energy: 7.9
+Gather titanium (5s) energy: 7.9
+Gather titanium (5s) energy: 7.9
+Build Drill T2 (1s) energy: 2.9
 Gather iron (5s) energy: 2.9
-Build Wind Turbine (1s) energy: 4.1
-Gather iron (5s) energy: 4.1
-Build Wind Turbine (1s) energy: 5.3
-Gather iron (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-870s : 7374.2ti o2: 0.0ppq heat: 0.0pK pressure: 7374.2nPa biomass: 0.0
-Build Drill T2 (1s) energy: 0.3
-Gather iron (5s) energy: 0.3
-Build Wind Turbine (1s) energy: 1.5
-Gather iron (5s) energy: 1.5
-Build Wind Turbine (1s) energy: 2.7
-Gather iron (5s) energy: 2.7
-Build Wind Turbine (1s) energy: 3.9
-Gather iron (5s) energy: 3.9
-Build Wind Turbine (1s) energy: 5.1
-Gather iron (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Build Drill T2 (1s) energy: 0.1
-Gather iron (5s) energy: 0.1
-Build Wind Turbine (1s) energy: 1.3
-Gather iron (5s) energy: 1.3
-Build Wind Turbine (1s) energy: 2.5
-Gather iron (5s) energy: 2.5
-Build Wind Turbine (1s) energy: 3.7
-Gather iron (5s) energy: 3.7
-934s : 8860.0ti o2: 0.0ppq heat: 0.0pK pressure: 8860.0nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 4.9
-Gather iron (5s) energy: 4.9
-Build Wind Turbine (1s) energy: 6.1
-Gather iron (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Build Drill T2 (1s) energy: 1.1
-Gather iron (5s) energy: 1.1
-Build Wind Turbine (1s) energy: 2.3
-Gather iron (5s) energy: 2.3
-Build Wind Turbine (1s) energy: 3.5
-Gather iron (5s) energy: 3.5
-Build Wind Turbine (1s) energy: 4.7
-Gather iron (5s) energy: 4.7
-Build Wind Turbine (1s) energy: 5.9
+Gather cobalt (5s) energy: 2.9
+Gather cobalt (5s) energy: 2.9
+Gather silicon (5s) energy: 2.9
+Build Solar Panel T1 (1s) energy: 9.4
+Gather iron (5s) energy: 9.4
+Gather titanium (5s) energy: 9.4
+Gather titanium (5s) energy: 9.4
+Build Drill T2 (1s) energy: 4.4
+Gather iron (5s) energy: 4.4
+Gather cobalt (5s) energy: 4.4
+814s : 7036.5ti o2: 0.0ppq heat: 0.0pK pressure: 7036.5nPa biomass: 0.0
+Gather cobalt (5s) energy: 4.4
+Gather silicon (5s) energy: 4.4
+Build Solar Panel T1 (1s) energy: 10.9
+Gather iron (5s) energy: 10.9
+Gather titanium (5s) energy: 10.9
+Gather titanium (5s) energy: 10.9
+Build Drill T2 (1s) energy: 5.9
 Gather iron (5s) energy: 5.9
 Gather titanium (5s) energy: 5.9
 Gather titanium (5s) energy: 5.9
-996s : 10418.9ti o2: 0.0ppq heat: 0.0pK pressure: 10418.9nPa biomass: 0.0
 Build Drill T2 (1s) energy: 0.9
 Gather iron (5s) energy: 0.9
-Build Wind Turbine (1s) energy: 2.1
-Gather iron (5s) energy: 2.1
-Build Wind Turbine (1s) energy: 3.3
-Gather iron (5s) energy: 3.3
-Build Wind Turbine (1s) energy: 4.5
-Gather iron (5s) energy: 4.5
-Build Wind Turbine (1s) energy: 5.7
-Gather iron (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Build Drill T2 (1s) energy: 0.7
-Gather iron (5s) energy: 0.7
-Build Wind Turbine (1s) energy: 1.9
+Gather cobalt (5s) energy: 0.9
+Gather cobalt (5s) energy: 0.9
+Gather silicon (5s) energy: 0.9
+877s : 8632.5ti o2: 0.0ppq heat: 0.0pK pressure: 8632.5nPa biomass: 0.0
+Build Solar Panel T1 (1s) energy: 7.4
+Gather iron (5s) energy: 7.4
+Gather titanium (5s) energy: 7.4
+Gather titanium (5s) energy: 7.4
+Build Drill T2 (1s) energy: 2.4
+Gather iron (5s) energy: 2.4
+Gather cobalt (5s) energy: 2.4
+Gather cobalt (5s) energy: 2.4
+Gather silicon (5s) energy: 2.4
+Build Solar Panel T1 (1s) energy: 8.9
+Gather iron (5s) energy: 8.9
+Gather titanium (5s) energy: 8.9
+Gather titanium (5s) energy: 8.9
+Build Drill T2 (1s) energy: 3.9
+Gather iron (5s) energy: 3.9
+Gather cobalt (5s) energy: 3.9
+941s : 10446.0ti o2: 0.0ppq heat: 0.0pK pressure: 10446.0nPa biomass: 0.0
+Gather cobalt (5s) energy: 3.9
+Gather silicon (5s) energy: 3.9
+Build Solar Panel T1 (1s) energy: 10.4
+Gather iron (5s) energy: 10.4
+Gather titanium (5s) energy: 10.4
+Gather titanium (5s) energy: 10.4
+Build Drill T2 (1s) energy: 5.4
+Gather iron (5s) energy: 5.4
+Gather titanium (5s) energy: 5.4
+Gather titanium (5s) energy: 5.4
+Build Drill T2 (1s) energy: 0.4
+Gather iron (5s) energy: 0.4
+Gather cobalt (5s) energy: 0.4
+Gather cobalt (5s) energy: 0.4
+Gather silicon (5s) energy: 0.4
+1004s : 12420.0ti o2: 0.0ppq heat: 0.0pK pressure: 12420.0nPa biomass: 0.0
+Build Solar Panel T1 (1s) energy: 6.9
+Gather iron (5s) energy: 6.9
+Gather titanium (5s) energy: 6.9
+Gather titanium (5s) energy: 6.9
+Build Drill T2 (1s) energy: 1.9
 Gather iron (5s) energy: 1.9
-Build Wind Turbine (1s) energy: 3.1
-Gather iron (5s) energy: 3.1
-Build Wind Turbine (1s) energy: 4.3
-Gather iron (5s) energy: 4.3
-1060s : 12192.7ti o2: 0.0ppq heat: 0.0pK pressure: 12192.7nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 5.5
-Gather iron (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Build Drill T2 (1s) energy: 0.5
-Gather iron (5s) energy: 0.5
-Build Wind Turbine (1s) energy: 1.7
-Gather iron (5s) energy: 1.7
-Build Wind Turbine (1s) energy: 2.9
+Gather cobalt (5s) energy: 1.9
+Gather cobalt (5s) energy: 1.9
+Gather silicon (5s) energy: 1.9
+Build Solar Panel T1 (1s) energy: 8.4
+Gather iron (5s) energy: 8.4
+Gather titanium (5s) energy: 8.4
+Gather titanium (5s) energy: 8.4
+Build Drill T2 (1s) energy: 3.4
+Gather iron (5s) energy: 3.4
+Gather cobalt (5s) energy: 3.4
+1068s : 14617.5ti o2: 0.0ppq heat: 0.0pK pressure: 14617.5nPa biomass: 0.0
+Gather cobalt (5s) energy: 3.4
+Gather silicon (5s) energy: 3.4
+Build Solar Panel T1 (1s) energy: 9.9
+Gather iron (5s) energy: 9.9
+Gather titanium (5s) energy: 9.9
+Gather titanium (5s) energy: 9.9
+Build Drill T2 (1s) energy: 4.9
+Gather iron (5s) energy: 4.9
+Gather cobalt (5s) energy: 4.9
+Gather cobalt (5s) energy: 4.9
+Gather silicon (5s) energy: 4.9
+Build Solar Panel T1 (1s) energy: 11.4
+Gather iron (5s) energy: 11.4
+Gather titanium (5s) energy: 11.4
+Gather titanium (5s) energy: 11.4
+1131s : 16939.5ti o2: 0.0ppq heat: 0.0pK pressure: 16939.5nPa biomass: 0.0
+Build Drill T2 (1s) energy: 6.4
+Gather iron (5s) energy: 6.4
+Gather titanium (5s) energy: 6.4
+Gather titanium (5s) energy: 6.4
+Build Drill T2 (1s) energy: 1.4
+Gather iron (5s) energy: 1.4
+Gather cobalt (5s) energy: 1.4
+Gather cobalt (5s) energy: 1.4
+Gather silicon (5s) energy: 1.4
+Build Solar Panel T1 (1s) energy: 7.9
+Gather iron (5s) energy: 7.9
+Gather titanium (5s) energy: 7.9
+Gather titanium (5s) energy: 7.9
+Build Drill T2 (1s) energy: 2.9
 Gather iron (5s) energy: 2.9
-Build Wind Turbine (1s) energy: 4.1
-Gather iron (5s) energy: 4.1
-Build Wind Turbine (1s) energy: 5.3
-Gather iron (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Build Drill T2 (1s) energy: 0.3
-Gather iron (5s) energy: 0.3
-1122s : 14047.1ti o2: 0.0ppq heat: 0.0pK pressure: 14047.1nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 1.5
-Gather iron (5s) energy: 1.5
-Build Wind Turbine (1s) energy: 2.7
-Gather iron (5s) energy: 2.7
-Build Wind Turbine (1s) energy: 3.9
-Gather iron (5s) energy: 3.9
-Build Wind Turbine (1s) energy: 5.1
-Gather iron (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Build Drill T2 (1s) energy: 0.1
-Gather iron (5s) energy: 0.1
-Build Wind Turbine (1s) energy: 1.3
-Gather iron (5s) energy: 1.3
-Build Wind Turbine (1s) energy: 2.5
-Gather iron (5s) energy: 2.5
-Build Wind Turbine (1s) energy: 3.7
-Gather iron (5s) energy: 3.7
-Build Wind Turbine (1s) energy: 4.9
-Gather iron (5s) energy: 4.9
-1186s : 16119.4ti o2: 0.0ppq heat: 0.0pK pressure: 16119.4nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 6.1
-Gather iron (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Build Drill T2 (1s) energy: 1.1
-Gather iron (5s) energy: 1.1
-Build Wind Turbine (1s) energy: 2.3
-Gather iron (5s) energy: 2.3
-Build Wind Turbine (1s) energy: 3.5
-Gather iron (5s) energy: 3.5
-Build Wind Turbine (1s) energy: 4.7
-Gather iron (5s) energy: 4.7
-Build Wind Turbine (1s) energy: 5.9
+Gather cobalt (5s) energy: 2.9
+1195s : 19519.5ti o2: 0.0ppq heat: 0.0pK pressure: 19519.5nPa biomass: 0.0
+Gather cobalt (5s) energy: 2.9
+Gather silicon (5s) energy: 2.9
+Build Solar Panel T1 (1s) energy: 9.4
+Gather iron (5s) energy: 9.4
+Gather titanium (5s) energy: 9.4
+Gather titanium (5s) energy: 9.4
+Build Drill T2 (1s) energy: 4.4
+Gather iron (5s) energy: 4.4
+Gather cobalt (5s) energy: 4.4
+Gather cobalt (5s) energy: 4.4
+Gather silicon (5s) energy: 4.4
+Build Solar Panel T1 (1s) energy: 10.9
+Gather iron (5s) energy: 10.9
+Gather titanium (5s) energy: 10.9
+Gather titanium (5s) energy: 10.9
+1258s : 22219.5ti o2: 0.0ppq heat: 0.0pK pressure: 22219.5nPa biomass: 0.0
+Build Drill T2 (1s) energy: 5.9
 Gather iron (5s) energy: 5.9
 Gather titanium (5s) energy: 5.9
 Gather titanium (5s) energy: 5.9
 Build Drill T2 (1s) energy: 0.9
 Gather iron (5s) energy: 0.9
-1248s : 18252.8ti o2: 0.0ppq heat: 0.0pK pressure: 18252.8nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 2.1
-Gather iron (5s) energy: 2.1
-Build Wind Turbine (1s) energy: 3.3
-Gather iron (5s) energy: 3.3
-Build Wind Turbine (1s) energy: 4.5
-Gather iron (5s) energy: 4.5
-Build Wind Turbine (1s) energy: 5.7
-Gather iron (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Build Drill T2 (1s) energy: 0.7
-Gather iron (5s) energy: 0.7
-Build Wind Turbine (1s) energy: 1.9
+Gather cobalt (5s) energy: 0.9
+Gather cobalt (5s) energy: 0.9
+Gather silicon (5s) energy: 0.9
+Build Solar Panel T1 (1s) energy: 7.4
+Gather iron (5s) energy: 7.4
+Gather titanium (5s) energy: 7.4
+Gather titanium (5s) energy: 7.4
+Build Drill T2 (1s) energy: 2.4
+Gather iron (5s) energy: 2.4
+Gather cobalt (5s) energy: 2.4
+1322s : 25183.5ti o2: 0.0ppq heat: 0.0pK pressure: 25183.5nPa biomass: 0.0
+Gather cobalt (5s) energy: 2.4
+Gather silicon (5s) energy: 2.4
+Build Solar Panel T1 (1s) energy: 8.9
+Gather iron (5s) energy: 8.9
+Gather titanium (5s) energy: 8.9
+Gather titanium (5s) energy: 8.9
+Build Drill T2 (1s) energy: 3.9
+Gather iron (5s) energy: 3.9
+Gather cobalt (5s) energy: 3.9
+Gather cobalt (5s) energy: 3.9
+Gather silicon (5s) energy: 3.9
+Build Solar Panel T1 (1s) energy: 10.4
+Gather iron (5s) energy: 10.4
+Gather titanium (5s) energy: 10.4
+Gather titanium (5s) energy: 10.4
+1385s : 28261.5ti o2: 0.0ppq heat: 0.0pK pressure: 28261.5nPa biomass: 0.0
+Build Drill T2 (1s) energy: 5.4
+Gather iron (5s) energy: 5.4
+Gather titanium (5s) energy: 5.4
+Gather titanium (5s) energy: 5.4
+Build Drill T2 (1s) energy: 0.4
+Gather iron (5s) energy: 0.4
+Gather cobalt (5s) energy: 0.4
+Gather cobalt (5s) energy: 0.4
+Gather silicon (5s) energy: 0.4
+Build Solar Panel T1 (1s) energy: 6.9
+Gather iron (5s) energy: 6.9
+Gather titanium (5s) energy: 6.9
+Gather titanium (5s) energy: 6.9
+Build Drill T2 (1s) energy: 1.9
 Gather iron (5s) energy: 1.9
-Build Wind Turbine (1s) energy: 3.1
-Gather iron (5s) energy: 3.1
-Build Wind Turbine (1s) energy: 4.3
-Gather iron (5s) energy: 4.3
-Build Wind Turbine (1s) energy: 5.5
-Gather iron (5s) energy: 5.5
-1312s : 20613.1ti o2: 0.0ppq heat: 0.0pK pressure: 20613.1nPa biomass: 0.0
-Gather titanium (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Build Drill T2 (1s) energy: 0.5
-Gather iron (5s) energy: 0.5
-Build Wind Turbine (1s) energy: 1.7
-Gather iron (5s) energy: 1.7
-Build Wind Turbine (1s) energy: 2.9
+Gather cobalt (5s) energy: 1.9
+1449s : 31609.5ti o2: 0.0ppq heat: 0.0pK pressure: 31609.5nPa biomass: 0.0
+Gather cobalt (5s) energy: 1.9
+Gather silicon (5s) energy: 1.9
+Build Solar Panel T1 (1s) energy: 8.4
+Gather iron (5s) energy: 8.4
+Gather titanium (5s) energy: 8.4
+Gather titanium (5s) energy: 8.4
+Build Drill T2 (1s) energy: 3.4
+Gather iron (5s) energy: 3.4
+Gather cobalt (5s) energy: 3.4
+Gather cobalt (5s) energy: 3.4
+Gather silicon (5s) energy: 3.4
+Build Solar Panel T1 (1s) energy: 9.9
+Gather iron (5s) energy: 9.9
+Gather titanium (5s) energy: 9.9
+Gather titanium (5s) energy: 9.9
+1512s : 35065.5ti o2: 0.0ppq heat: 0.0pK pressure: 35065.5nPa biomass: 0.0
+Build Drill T2 (1s) energy: 4.9
+Gather iron (5s) energy: 4.9
+Gather cobalt (5s) energy: 4.9
+Gather cobalt (5s) energy: 4.9
+Gather silicon (5s) energy: 4.9
+Build Solar Panel T1 (1s) energy: 11.4
+Gather iron (5s) energy: 11.4
+Gather titanium (5s) energy: 11.4
+Gather titanium (5s) energy: 11.4
+Build Drill T2 (1s) energy: 6.4
+Gather iron (5s) energy: 6.4
+Gather titanium (5s) energy: 6.4
+Gather titanium (5s) energy: 6.4
+Build Drill T2 (1s) energy: 1.4
+Gather iron (5s) energy: 1.4
+Gather cobalt (5s) energy: 1.4
+1576s : 38766.0ti o2: 0.0ppq heat: 0.0pK pressure: 38766.0nPa biomass: 0.0
+Gather cobalt (5s) energy: 1.4
+Gather silicon (5s) energy: 1.4
+Build Solar Panel T1 (1s) energy: 7.9
+Gather iron (5s) energy: 7.9
+Gather titanium (5s) energy: 7.9
+Gather titanium (5s) energy: 7.9
+Build Drill T2 (1s) energy: 2.9
 Gather iron (5s) energy: 2.9
-Build Wind Turbine (1s) energy: 4.1
-Gather iron (5s) energy: 4.1
-Build Wind Turbine (1s) energy: 5.3
-Gather iron (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Build Drill T2 (1s) energy: 0.3
-Gather iron (5s) energy: 0.3
-Build Wind Turbine (1s) energy: 1.5
-Gather iron (5s) energy: 1.5
-1374s : 23043.5ti o2: 0.0ppq heat: 0.0pK pressure: 23043.5nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 2.7
-Gather iron (5s) energy: 2.7
-Build Wind Turbine (1s) energy: 3.9
-Gather iron (5s) energy: 3.9
-Build Wind Turbine (1s) energy: 5.1
-Gather iron (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Build Drill T2 (1s) energy: 0.1
-Gather iron (5s) energy: 0.1
-Build Wind Turbine (1s) energy: 1.3
-Gather iron (5s) energy: 1.3
-Build Wind Turbine (1s) energy: 2.5
-Gather iron (5s) energy: 2.5
-Build Wind Turbine (1s) energy: 3.7
-Gather iron (5s) energy: 3.7
-Build Wind Turbine (1s) energy: 4.9
-Gather iron (5s) energy: 4.9
-Build Wind Turbine (1s) energy: 6.1
-Gather iron (5s) energy: 6.1
-1438s : 25700.8ti o2: 0.0ppq heat: 0.0pK pressure: 25700.8nPa biomass: 0.0
-Gather titanium (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Build Drill T2 (1s) energy: 1.1
-Gather iron (5s) energy: 1.1
-Build Wind Turbine (1s) energy: 2.3
-Gather iron (5s) energy: 2.3
-Build Wind Turbine (1s) energy: 3.5
-Gather iron (5s) energy: 3.5
-Build Wind Turbine (1s) energy: 4.7
-Gather iron (5s) energy: 4.7
-Build Wind Turbine (1s) energy: 5.9
+Gather cobalt (5s) energy: 2.9
+Gather cobalt (5s) energy: 2.9
+Gather silicon (5s) energy: 2.9
+Build Solar Panel T1 (1s) energy: 9.4
+Gather iron (5s) energy: 9.4
+Gather titanium (5s) energy: 9.4
+Gather titanium (5s) energy: 9.4
+1639s : 42600.0ti o2: 0.0ppq heat: 0.0pK pressure: 42600.0nPa biomass: 0.0
+Build Drill T2 (1s) energy: 4.4
+Gather iron (5s) energy: 4.4
+Gather cobalt (5s) energy: 4.4
+Gather cobalt (5s) energy: 4.4
+Gather silicon (5s) energy: 4.4
+Build Solar Panel T1 (1s) energy: 10.9
+Gather iron (5s) energy: 10.9
+Gather titanium (5s) energy: 10.9
+Gather titanium (5s) energy: 10.9
+Build Drill T2 (1s) energy: 5.9
 Gather iron (5s) energy: 5.9
 Gather titanium (5s) energy: 5.9
 Gather titanium (5s) energy: 5.9
 Build Drill T2 (1s) energy: 0.9
 Gather iron (5s) energy: 0.9
-Build Wind Turbine (1s) energy: 2.1
-Gather iron (5s) energy: 2.1
-1500s : 28410.2ti o2: 0.0ppq heat: 0.0pK pressure: 28410.2nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 3.3
-Gather iron (5s) energy: 3.3
-Build Wind Turbine (1s) energy: 4.5
-Gather iron (5s) energy: 4.5
-Build Wind Turbine (1s) energy: 5.7
-Gather iron (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Build Drill T2 (1s) energy: 0.7
-Gather iron (5s) energy: 0.7
-Build Wind Turbine (1s) energy: 1.9
+Gather cobalt (5s) energy: 0.9
+1703s : 46684.5ti o2: 0.0ppq heat: 0.0pK pressure: 46684.5nPa biomass: 0.0
+Gather cobalt (5s) energy: 0.9
+Gather silicon (5s) energy: 0.9
+Build Solar Panel T1 (1s) energy: 7.4
+Gather iron (5s) energy: 7.4
+Gather titanium (5s) energy: 7.4
+Gather titanium (5s) energy: 7.4
+Build Drill T2 (1s) energy: 2.4
+Gather iron (5s) energy: 2.4
+Gather cobalt (5s) energy: 2.4
+Gather cobalt (5s) energy: 2.4
+Gather silicon (5s) energy: 2.4
+Build Solar Panel T1 (1s) energy: 8.9
+Gather iron (5s) energy: 8.9
+Gather titanium (5s) energy: 8.9
+Gather titanium (5s) energy: 8.9
+1766s : 50896.5ti o2: 0.0ppq heat: 0.0pK pressure: 50896.5nPa biomass: 0.0
+Build Drill T2 (1s) energy: 3.9
+Gather iron (5s) energy: 3.9
+Gather cobalt (5s) energy: 3.9
+Gather cobalt (5s) energy: 3.9
+Gather silicon (5s) energy: 3.9
+Build Solar Panel T1 (1s) energy: 10.4
+Gather iron (5s) energy: 10.4
+Gather titanium (5s) energy: 10.4
+Gather titanium (5s) energy: 10.4
+Build Drill T2 (1s) energy: 5.4
+Gather iron (5s) energy: 5.4
+Gather titanium (5s) energy: 5.4
+Gather titanium (5s) energy: 5.4
+Build Drill T2 (1s) energy: 0.4
+Gather iron (5s) energy: 0.4
+Gather cobalt (5s) energy: 0.4
+1830s : 55365.0ti o2: 0.0ppq heat: 0.0pK pressure: 55365.0nPa biomass: 0.0
+Gather cobalt (5s) energy: 0.4
+Gather silicon (5s) energy: 0.4
+Build Solar Panel T1 (1s) energy: 6.9
+Gather iron (5s) energy: 6.9
+Gather titanium (5s) energy: 6.9
+Gather titanium (5s) energy: 6.9
+Build Drill T2 (1s) energy: 1.9
 Gather iron (5s) energy: 1.9
-Build Wind Turbine (1s) energy: 3.1
-Gather iron (5s) energy: 3.1
-Build Wind Turbine (1s) energy: 4.3
-Gather iron (5s) energy: 4.3
-Build Wind Turbine (1s) energy: 5.5
-Gather iron (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-1563s : 31308.8ti o2: 0.0ppq heat: 0.0pK pressure: 31308.8nPa biomass: 0.0
-Gather titanium (5s) energy: 5.5
-Build Drill T2 (1s) energy: 0.5
-Gather iron (5s) energy: 0.5
-Build Wind Turbine (1s) energy: 1.7
-Gather iron (5s) energy: 1.7
-Build Wind Turbine (1s) energy: 2.9
+Gather cobalt (5s) energy: 1.9
+Gather cobalt (5s) energy: 1.9
+Gather silicon (5s) energy: 1.9
+Build Solar Panel T1 (1s) energy: 8.4
+Gather iron (5s) energy: 8.4
+Gather titanium (5s) energy: 8.4
+Gather titanium (5s) energy: 8.4
+1893s : 59955.0ti o2: 0.0ppq heat: 0.0pK pressure: 59955.0nPa biomass: 0.0
+Build Drill T2 (1s) energy: 3.4
+Gather iron (5s) energy: 3.4
+Gather cobalt (5s) energy: 3.4
+Gather cobalt (5s) energy: 3.4
+Gather silicon (5s) energy: 3.4
+Build Solar Panel T1 (1s) energy: 9.9
+Gather iron (5s) energy: 9.9
+Gather titanium (5s) energy: 9.9
+Gather titanium (5s) energy: 9.9
+Build Drill T2 (1s) energy: 4.9
+Gather iron (5s) energy: 4.9
+Gather cobalt (5s) energy: 4.9
+Gather cobalt (5s) energy: 4.9
+Gather silicon (5s) energy: 4.9
+Build Solar Panel T1 (1s) energy: 11.4
+Gather iron (5s) energy: 11.4
+1957s : 64792.5ti o2: 0.0ppq heat: 0.0pK pressure: 64792.5nPa biomass: 0.0
+Gather titanium (5s) energy: 11.4
+Gather titanium (5s) energy: 11.4
+Build Drill T2 (1s) energy: 6.4
+Gather iron (5s) energy: 6.4
+Gather titanium (5s) energy: 6.4
+Gather titanium (5s) energy: 6.4
+Build Drill T2 (1s) energy: 1.4
+Gather iron (5s) energy: 1.4
+Gather cobalt (5s) energy: 1.4
+Gather cobalt (5s) energy: 1.4
+Gather silicon (5s) energy: 1.4
+Build Solar Panel T1 (1s) energy: 7.9
+Gather iron (5s) energy: 7.9
+Gather titanium (5s) energy: 7.9
+Gather titanium (5s) energy: 7.9
+2020s : 69744.0ti o2: 0.0ppq heat: 0.0pK pressure: 69744.0nPa biomass: 0.0
+Build Drill T2 (1s) energy: 2.9
 Gather iron (5s) energy: 2.9
-Build Wind Turbine (1s) energy: 4.1
-Gather iron (5s) energy: 4.1
-Build Wind Turbine (1s) energy: 5.3
-Gather iron (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Build Drill T2 (1s) energy: 0.3
-Gather iron (5s) energy: 0.3
-Build Wind Turbine (1s) energy: 1.5
-Gather iron (5s) energy: 1.5
-Build Wind Turbine (1s) energy: 2.7
-Gather iron (5s) energy: 2.7
-1626s : 34361.9ti o2: 0.0ppq heat: 0.0pK pressure: 34361.9nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 3.9
-Gather iron (5s) energy: 3.9
-Build Wind Turbine (1s) energy: 5.1
-Gather iron (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Build Drill T2 (1s) energy: 0.1
-Gather iron (5s) energy: 0.1
-Build Wind Turbine (1s) energy: 1.3
-Gather iron (5s) energy: 1.3
-Build Wind Turbine (1s) energy: 2.5
-Gather iron (5s) energy: 2.5
-Build Wind Turbine (1s) energy: 3.7
-Gather iron (5s) energy: 3.7
-Build Wind Turbine (1s) energy: 4.9
-Gather iron (5s) energy: 4.9
-Build Wind Turbine (1s) energy: 6.1
-Gather iron (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-1689s : 37553.0ti o2: 0.0ppq heat: 0.0pK pressure: 37553.0nPa biomass: 0.0
-Gather titanium (5s) energy: 6.1
-Build Drill T2 (1s) energy: 1.1
-Gather iron (5s) energy: 1.1
-Build Wind Turbine (1s) energy: 2.3
-Gather iron (5s) energy: 2.3
-Build Wind Turbine (1s) energy: 3.5
-Gather iron (5s) energy: 3.5
-Build Wind Turbine (1s) energy: 4.7
-Gather iron (5s) energy: 4.7
-Build Wind Turbine (1s) energy: 5.9
+Gather cobalt (5s) energy: 2.9
+Gather cobalt (5s) energy: 2.9
+Gather silicon (5s) energy: 2.9
+Build Solar Panel T1 (1s) energy: 9.4
+Gather iron (5s) energy: 9.4
+Gather titanium (5s) energy: 9.4
+Gather titanium (5s) energy: 9.4
+Build Drill T2 (1s) energy: 4.4
+Gather iron (5s) energy: 4.4
+Gather cobalt (5s) energy: 4.4
+Gather cobalt (5s) energy: 4.4
+Gather silicon (5s) energy: 4.4
+Build Solar Panel T1 (1s) energy: 10.9
+Gather iron (5s) energy: 10.9
+2084s : 74965.5ti o2: 0.0ppq heat: 0.0pK pressure: 74965.5nPa biomass: 0.0
+Gather titanium (5s) energy: 10.9
+Gather titanium (5s) energy: 10.9
+Build Drill T2 (1s) energy: 5.9
 Gather iron (5s) energy: 5.9
 Gather titanium (5s) energy: 5.9
 Gather titanium (5s) energy: 5.9
 Build Drill T2 (1s) energy: 0.9
 Gather iron (5s) energy: 0.9
-Build Wind Turbine (1s) energy: 2.1
-Gather iron (5s) energy: 2.1
-Build Wind Turbine (1s) energy: 3.3
-Gather iron (5s) energy: 3.3
-1752s : 40889.6ti o2: 0.0ppq heat: 0.0pK pressure: 40889.6nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 4.5
-Gather iron (5s) energy: 4.5
-Build Wind Turbine (1s) energy: 5.7
-Gather iron (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Build Drill T2 (1s) energy: 0.7
-Gather iron (5s) energy: 0.7
-Build Wind Turbine (1s) energy: 1.9
+Gather cobalt (5s) energy: 0.9
+Gather cobalt (5s) energy: 0.9
+Gather silicon (5s) energy: 0.9
+Build Solar Panel T1 (1s) energy: 7.4
+Gather iron (5s) energy: 7.4
+Gather titanium (5s) energy: 7.4
+Gather titanium (5s) energy: 7.4
+2147s : 80295.0ti o2: 0.0ppq heat: 0.0pK pressure: 80295.0nPa biomass: 0.0
+Build Drill T2 (1s) energy: 2.4
+Gather iron (5s) energy: 2.4
+Gather cobalt (5s) energy: 2.4
+Gather cobalt (5s) energy: 2.4
+Gather silicon (5s) energy: 2.4
+Build Solar Panel T1 (1s) energy: 8.9
+Gather iron (5s) energy: 8.9
+Gather titanium (5s) energy: 8.9
+Gather titanium (5s) energy: 8.9
+Build Drill T2 (1s) energy: 3.9
+Gather iron (5s) energy: 3.9
+Gather cobalt (5s) energy: 3.9
+Gather cobalt (5s) energy: 3.9
+Gather silicon (5s) energy: 3.9
+Build Solar Panel T1 (1s) energy: 10.4
+Gather iron (5s) energy: 10.4
+2211s : 85900.5ti o2: 0.0ppq heat: 0.0pK pressure: 85900.5nPa biomass: 0.0
+Gather titanium (5s) energy: 10.4
+Gather titanium (5s) energy: 10.4
+Build Drill T2 (1s) energy: 5.4
+Gather iron (5s) energy: 5.4
+Gather titanium (5s) energy: 5.4
+Gather titanium (5s) energy: 5.4
+Build Drill T2 (1s) energy: 0.4
+Gather iron (5s) energy: 0.4
+Gather cobalt (5s) energy: 0.4
+Gather cobalt (5s) energy: 0.4
+Gather silicon (5s) energy: 0.4
+Build Solar Panel T1 (1s) energy: 6.9
+Gather iron (5s) energy: 6.9
+Gather titanium (5s) energy: 6.9
+Gather titanium (5s) energy: 6.9
+2274s : 91608.0ti o2: 0.0ppq heat: 0.0pK pressure: 91608.0nPa biomass: 0.0
+Build Drill T2 (1s) energy: 1.9
 Gather iron (5s) energy: 1.9
-Build Wind Turbine (1s) energy: 3.1
-Gather iron (5s) energy: 3.1
-Build Wind Turbine (1s) energy: 4.3
-Gather iron (5s) energy: 4.3
-Build Wind Turbine (1s) energy: 5.5
-Gather iron (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-1814s : 44308.5ti o2: 0.0ppq heat: 0.0pK pressure: 44308.5nPa biomass: 0.0
-Build Drill T2 (1s) energy: 0.5
-Gather iron (5s) energy: 0.5
-Build Wind Turbine (1s) energy: 1.7
-Gather iron (5s) energy: 1.7
-Build Wind Turbine (1s) energy: 2.9
+Gather cobalt (5s) energy: 1.9
+Gather cobalt (5s) energy: 1.9
+Gather silicon (5s) energy: 1.9
+Build Solar Panel T1 (1s) energy: 8.4
+Gather iron (5s) energy: 8.4
+Gather titanium (5s) energy: 8.4
+Gather titanium (5s) energy: 8.4
+Build Drill T2 (1s) energy: 3.4
+Gather iron (5s) energy: 3.4
+Gather cobalt (5s) energy: 3.4
+Gather cobalt (5s) energy: 3.4
+Gather silicon (5s) energy: 3.4
+Build Solar Panel T1 (1s) energy: 9.9
+Gather iron (5s) energy: 9.9
+2338s : 97597.5ti o2: 0.0ppq heat: 0.0pK pressure: 97597.5nPa biomass: 0.0
+Gather titanium (5s) energy: 9.9
+Gather titanium (5s) energy: 9.9
+Build Drill T2 (1s) energy: 4.9
+Gather iron (5s) energy: 4.9
+Gather cobalt (5s) energy: 4.9
+Gather cobalt (5s) energy: 4.9
+Gather silicon (5s) energy: 4.9
+Build Solar Panel T1 (1s) energy: 11.4
+Gather iron (5s) energy: 11.4
+Gather titanium (5s) energy: 11.4
+Gather titanium (5s) energy: 11.4
+Build Drill T2 (1s) energy: 6.4
+Gather iron (5s) energy: 6.4
+Gather titanium (5s) energy: 6.4
+Gather titanium (5s) energy: 6.4
+2401s : 103651.5ti o2: 0.0ppq heat: 0.0pK pressure: 103651.5nPa biomass: 0.0
+Build Drill T2 (1s) energy: 1.4
+Gather iron (5s) energy: 1.4
+Gather cobalt (5s) energy: 1.4
+Gather cobalt (5s) energy: 1.4
+Gather silicon (5s) energy: 1.4
+Build Solar Panel T1 (1s) energy: 7.9
+Gather iron (5s) energy: 7.9
+Gather titanium (5s) energy: 7.9
+Gather titanium (5s) energy: 7.9
+Build Drill T2 (1s) energy: 2.9
 Gather iron (5s) energy: 2.9
-Build Wind Turbine (1s) energy: 4.1
-Gather iron (5s) energy: 4.1
-Build Wind Turbine (1s) energy: 5.3
-Gather iron (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Build Drill T2 (1s) energy: 0.3
-Gather iron (5s) energy: 0.3
-Build Wind Turbine (1s) energy: 1.5
-Gather iron (5s) energy: 1.5
-Build Wind Turbine (1s) energy: 2.7
-Gather iron (5s) energy: 2.7
-Build Wind Turbine (1s) energy: 3.9
-Gather iron (5s) energy: 3.9
-1878s : 48002.3ti o2: 0.0ppq heat: 0.0pK pressure: 48002.3nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 5.1
-Gather iron (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Build Drill T2 (1s) energy: 0.1
-Gather iron (5s) energy: 0.1
-Build Wind Turbine (1s) energy: 1.3
-Gather iron (5s) energy: 1.3
-Build Wind Turbine (1s) energy: 2.5
-Gather iron (5s) energy: 2.5
-Build Wind Turbine (1s) energy: 3.7
-Gather iron (5s) energy: 3.7
-Build Wind Turbine (1s) energy: 4.9
-Gather iron (5s) energy: 4.9
-Build Wind Turbine (1s) energy: 6.1
-Gather iron (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-1940s : 51709.2ti o2: 0.0ppq heat: 0.0pK pressure: 51709.2nPa biomass: 0.0
-Build Drill T2 (1s) energy: 1.1
-Gather iron (5s) energy: 1.1
-Build Wind Turbine (1s) energy: 2.3
-Gather iron (5s) energy: 2.3
-Build Wind Turbine (1s) energy: 3.5
-Gather iron (5s) energy: 3.5
-Build Wind Turbine (1s) energy: 4.7
-Gather iron (5s) energy: 4.7
-Build Wind Turbine (1s) energy: 5.9
+Gather cobalt (5s) energy: 2.9
+Gather cobalt (5s) energy: 2.9
+Gather silicon (5s) energy: 2.9
+Build Solar Panel T1 (1s) energy: 9.4
+Gather iron (5s) energy: 9.4
+2465s : 110025.0ti o2: 0.0ppq heat: 0.0pK pressure: 110025.0nPa biomass: 0.0
+Gather titanium (5s) energy: 9.4
+Gather titanium (5s) energy: 9.4
+Build Drill T2 (1s) energy: 4.4
+Gather iron (5s) energy: 4.4
+Gather cobalt (5s) energy: 4.4
+Gather cobalt (5s) energy: 4.4
+Gather silicon (5s) energy: 4.4
+Build Solar Panel T1 (1s) energy: 10.9
+Gather iron (5s) energy: 10.9
+Gather titanium (5s) energy: 10.9
+Gather titanium (5s) energy: 10.9
+Build Drill T2 (1s) energy: 5.9
 Gather iron (5s) energy: 5.9
 Gather titanium (5s) energy: 5.9
 Gather titanium (5s) energy: 5.9
+2528s : 116457.0ti o2: 0.0ppq heat: 0.0pK pressure: 116457.0nPa biomass: 0.0
 Build Drill T2 (1s) energy: 0.9
 Gather iron (5s) energy: 0.9
-Build Wind Turbine (1s) energy: 2.1
-Gather iron (5s) energy: 2.1
-Build Wind Turbine (1s) energy: 3.3
-Gather iron (5s) energy: 3.3
-Build Wind Turbine (1s) energy: 4.5
-Gather iron (5s) energy: 4.5
-2004s : 55691.0ti o2: 0.0ppq heat: 0.0pK pressure: 55691.0nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 5.7
-Gather iron (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Build Drill T2 (1s) energy: 0.7
-Gather iron (5s) energy: 0.7
-Build Wind Turbine (1s) energy: 1.9
+Gather cobalt (5s) energy: 0.9
+Gather cobalt (5s) energy: 0.9
+Gather silicon (5s) energy: 0.9
+Build Solar Panel T1 (1s) energy: 7.4
+Gather iron (5s) energy: 7.4
+Gather titanium (5s) energy: 7.4
+Gather titanium (5s) energy: 7.4
+Build Drill T2 (1s) energy: 2.4
+Gather iron (5s) energy: 2.4
+Gather cobalt (5s) energy: 2.4
+Gather cobalt (5s) energy: 2.4
+Gather silicon (5s) energy: 2.4
+Build Solar Panel T1 (1s) energy: 8.9
+Gather iron (5s) energy: 8.9
+2592s : 123214.5ti o2: 0.0ppq heat: 0.0pK pressure: 123214.5nPa biomass: 0.0
+Gather titanium (5s) energy: 8.9
+Gather titanium (5s) energy: 8.9
+Build Drill T2 (1s) energy: 3.9
+Gather iron (5s) energy: 3.9
+Gather cobalt (5s) energy: 3.9
+Gather cobalt (5s) energy: 3.9
+Gather silicon (5s) energy: 3.9
+Build Solar Panel T1 (1s) energy: 10.4
+Gather iron (5s) energy: 10.4
+Gather titanium (5s) energy: 10.4
+Gather titanium (5s) energy: 10.4
+Build Drill T2 (1s) energy: 5.4
+Gather iron (5s) energy: 5.4
+Gather titanium (5s) energy: 5.4
+Gather titanium (5s) energy: 5.4
+2655s : 130024.5ti o2: 0.0ppq heat: 0.0pK pressure: 130024.5nPa biomass: 0.0
+Build Drill T2 (1s) energy: 0.4
+Gather iron (5s) energy: 0.4
+Gather cobalt (5s) energy: 0.4
+Gather cobalt (5s) energy: 0.4
+Gather silicon (5s) energy: 0.4
+Build Solar Panel T1 (1s) energy: 6.9
+Gather iron (5s) energy: 6.9
+Gather titanium (5s) energy: 6.9
+Gather titanium (5s) energy: 6.9
+Build Drill T2 (1s) energy: 1.9
 Gather iron (5s) energy: 1.9
-Build Wind Turbine (1s) energy: 3.1
-Gather iron (5s) energy: 3.1
-Build Wind Turbine (1s) energy: 4.3
-Gather iron (5s) energy: 4.3
-Build Wind Turbine (1s) energy: 5.5
-Gather iron (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Build Drill T2 (1s) energy: 0.5
-Gather iron (5s) energy: 0.5
-2066s : 59684.4ti o2: 0.0ppq heat: 0.0pK pressure: 59684.4nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 1.7
-Gather iron (5s) energy: 1.7
-Build Wind Turbine (1s) energy: 2.9
+Gather cobalt (5s) energy: 1.9
+Gather cobalt (5s) energy: 1.9
+Gather silicon (5s) energy: 1.9
+Build Solar Panel T1 (1s) energy: 8.4
+Gather iron (5s) energy: 8.4
+2719s : 137166.0ti o2: 0.0ppq heat: 0.0pK pressure: 137166.0nPa biomass: 0.0
+Gather titanium (5s) energy: 8.4
+Gather titanium (5s) energy: 8.4
+Build Drill T2 (1s) energy: 3.4
+Gather iron (5s) energy: 3.4
+Gather cobalt (5s) energy: 3.4
+Gather cobalt (5s) energy: 3.4
+Gather silicon (5s) energy: 3.4
+Build Solar Panel T1 (1s) energy: 9.9
+Gather iron (5s) energy: 9.9
+Gather titanium (5s) energy: 9.9
+Gather titanium (5s) energy: 9.9
+Build Drill T2 (1s) energy: 4.9
+Gather iron (5s) energy: 4.9
+Gather cobalt (5s) energy: 4.9
+Gather cobalt (5s) energy: 4.9
+2782s : 144354.0ti o2: 0.0ppq heat: 0.0pK pressure: 144354.0nPa biomass: 0.0
+Gather silicon (5s) energy: 4.9
+Build Solar Panel T1 (1s) energy: 11.4
+Gather iron (5s) energy: 11.4
+Gather titanium (5s) energy: 11.4
+Gather titanium (5s) energy: 11.4
+Build Drill T2 (1s) energy: 6.4
+Gather iron (5s) energy: 6.4
+Gather titanium (5s) energy: 6.4
+Gather titanium (5s) energy: 6.4
+Build Drill T2 (1s) energy: 1.4
+Gather iron (5s) energy: 1.4
+Gather cobalt (5s) energy: 1.4
+Gather cobalt (5s) energy: 1.4
+Gather silicon (5s) energy: 1.4
+Build Solar Panel T1 (1s) energy: 7.9
+Gather iron (5s) energy: 7.9
+2846s : 151848.0ti o2: 0.0ppq heat: 0.0pK pressure: 151848.0nPa biomass: 0.0
+Gather titanium (5s) energy: 7.9
+Gather titanium (5s) energy: 7.9
+Build Drill T2 (1s) energy: 2.9
 Gather iron (5s) energy: 2.9
-Build Wind Turbine (1s) energy: 4.1
-Gather iron (5s) energy: 4.1
-Build Wind Turbine (1s) energy: 5.3
-Gather iron (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Build Drill T2 (1s) energy: 0.3
-Gather iron (5s) energy: 0.3
-Build Wind Turbine (1s) energy: 1.5
-Gather iron (5s) energy: 1.5
-Build Wind Turbine (1s) energy: 2.7
-Gather iron (5s) energy: 2.7
-Build Wind Turbine (1s) energy: 3.9
-Gather iron (5s) energy: 3.9
-Build Wind Turbine (1s) energy: 5.1
-Gather iron (5s) energy: 5.1
-2130s : 63964.7ti o2: 0.0ppq heat: 0.0pK pressure: 63964.7nPa biomass: 0.0
-Gather titanium (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Build Drill T2 (1s) energy: 0.1
-Gather iron (5s) energy: 0.1
-Build Wind Turbine (1s) energy: 1.3
-Gather iron (5s) energy: 1.3
-Build Wind Turbine (1s) energy: 2.5
-Gather iron (5s) energy: 2.5
-Build Wind Turbine (1s) energy: 3.7
-Gather iron (5s) energy: 3.7
-Build Wind Turbine (1s) energy: 4.9
-Gather iron (5s) energy: 4.9
-Build Wind Turbine (1s) energy: 6.1
-Gather iron (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Build Drill T2 (1s) energy: 1.1
-Gather iron (5s) energy: 1.1
-2192s : 68246.1ti o2: 0.0ppq heat: 0.0pK pressure: 68246.1nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 2.3
-Gather iron (5s) energy: 2.3
-Build Wind Turbine (1s) energy: 3.5
-Gather iron (5s) energy: 3.5
-Build Wind Turbine (1s) energy: 4.7
-Gather iron (5s) energy: 4.7
-Build Wind Turbine (1s) energy: 5.9
+Gather cobalt (5s) energy: 2.9
+Gather cobalt (5s) energy: 2.9
+Gather silicon (5s) energy: 2.9
+Build Solar Panel T1 (1s) energy: 9.4
+Gather iron (5s) energy: 9.4
+Gather titanium (5s) energy: 9.4
+Gather titanium (5s) energy: 9.4
+Build Drill T2 (1s) energy: 4.4
+Gather iron (5s) energy: 4.4
+Gather cobalt (5s) energy: 4.4
+Gather cobalt (5s) energy: 4.4
+2909s : 159414.0ti o2: 0.0ppq heat: 0.0pK pressure: 159414.0nPa biomass: 0.0
+Gather silicon (5s) energy: 4.4
+Build Solar Panel T1 (1s) energy: 10.9
+Gather iron (5s) energy: 10.9
+Gather titanium (5s) energy: 10.9
+Gather titanium (5s) energy: 10.9
+Build Drill T2 (1s) energy: 5.9
 Gather iron (5s) energy: 5.9
 Gather titanium (5s) energy: 5.9
 Gather titanium (5s) energy: 5.9
 Build Drill T2 (1s) energy: 0.9
 Gather iron (5s) energy: 0.9
-Build Wind Turbine (1s) energy: 2.1
-Gather iron (5s) energy: 2.1
-Build Wind Turbine (1s) energy: 3.3
-Gather iron (5s) energy: 3.3
-Build Wind Turbine (1s) energy: 4.5
-Gather iron (5s) energy: 4.5
-Build Wind Turbine (1s) energy: 5.7
-Gather iron (5s) energy: 5.7
-2256s : 72814.4ti o2: 0.0ppq heat: 0.0pK pressure: 72814.4nPa biomass: 0.0
-Gather titanium (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Build Drill T2 (1s) energy: 0.7
-Gather iron (5s) energy: 0.7
-Build Wind Turbine (1s) energy: 1.9
+Gather cobalt (5s) energy: 0.9
+Gather cobalt (5s) energy: 0.9
+Gather silicon (5s) energy: 0.9
+Build Solar Panel T1 (1s) energy: 7.4
+Gather iron (5s) energy: 7.4
+2973s : 167292.0ti o2: 0.0ppq heat: 0.0pK pressure: 167292.0nPa biomass: 0.0
+Gather titanium (5s) energy: 7.4
+Gather titanium (5s) energy: 7.4
+Build Drill T2 (1s) energy: 2.4
+Gather titanium (5s) energy: 2.4
+Gather iron (5s) energy: 2.4
+Build Drill T1 (1s) energy: 1.9
+Gather titanium (5s) energy: 1.9
 Gather iron (5s) energy: 1.9
-Build Wind Turbine (1s) energy: 3.1
-Gather iron (5s) energy: 3.1
-Build Wind Turbine (1s) energy: 4.3
-Gather iron (5s) energy: 4.3
-Build Wind Turbine (1s) energy: 5.5
-Gather iron (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Build Drill T2 (1s) energy: 0.5
-Gather iron (5s) energy: 0.5
-Build Wind Turbine (1s) energy: 1.7
-Gather iron (5s) energy: 1.7
-2318s : 77383.8ti o2: 0.0ppq heat: 0.0pK pressure: 77383.8nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 2.9
-Gather iron (5s) energy: 2.9
-Build Wind Turbine (1s) energy: 4.1
-Gather iron (5s) energy: 4.1
-Build Wind Turbine (1s) energy: 5.3
-Gather iron (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Build Drill T2 (1s) energy: 0.3
-Gather iron (5s) energy: 0.3
-Build Wind Turbine (1s) energy: 1.5
-Gather iron (5s) energy: 1.5
-Build Wind Turbine (1s) energy: 2.7
-Gather iron (5s) energy: 2.7
-Build Wind Turbine (1s) energy: 3.9
-Gather iron (5s) energy: 3.9
-Build Wind Turbine (1s) energy: 5.1
-Gather iron (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-2381s : 82172.4ti o2: 0.0ppq heat: 0.0pK pressure: 82172.4nPa biomass: 0.0
-Gather titanium (5s) energy: 5.1
-Build Drill T2 (1s) energy: 0.1
-Gather iron (5s) energy: 0.1
-Build Wind Turbine (1s) energy: 1.3
-Gather iron (5s) energy: 1.3
-Build Wind Turbine (1s) energy: 2.5
-Gather iron (5s) energy: 2.5
-Build Wind Turbine (1s) energy: 3.7
-Gather iron (5s) energy: 3.7
-Build Wind Turbine (1s) energy: 4.9
-Gather iron (5s) energy: 4.9
-Build Wind Turbine (1s) energy: 6.1
-Gather iron (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Build Drill T2 (1s) energy: 1.1
-Gather iron (5s) energy: 1.1
-Build Wind Turbine (1s) energy: 2.3
-Gather iron (5s) energy: 2.3
-2444s : 87106.5ti o2: 0.0ppq heat: 0.0pK pressure: 87106.5nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 3.5
-Gather iron (5s) energy: 3.5
-Build Wind Turbine (1s) energy: 4.7
-Gather iron (5s) energy: 4.7
-Build Wind Turbine (1s) energy: 5.9
-Gather iron (5s) energy: 5.9
-Gather titanium (5s) energy: 5.9
-Gather titanium (5s) energy: 5.9
-Build Drill T2 (1s) energy: 0.9
-Gather iron (5s) energy: 0.9
-Build Wind Turbine (1s) energy: 2.1
-Gather iron (5s) energy: 2.1
-Build Wind Turbine (1s) energy: 3.3
-Gather iron (5s) energy: 3.3
-Build Wind Turbine (1s) energy: 4.5
-Gather iron (5s) energy: 4.5
-Build Wind Turbine (1s) energy: 5.7
-Gather iron (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-2507s : 92178.6ti o2: 0.0ppq heat: 0.0pK pressure: 92178.6nPa biomass: 0.0
-Gather titanium (5s) energy: 5.7
-Build Drill T2 (1s) energy: 0.7
-Gather iron (5s) energy: 0.7
-Build Wind Turbine (1s) energy: 1.9
-Gather iron (5s) energy: 1.9
-Build Wind Turbine (1s) energy: 3.1
-Gather iron (5s) energy: 3.1
-Build Wind Turbine (1s) energy: 4.3
-Gather iron (5s) energy: 4.3
-Build Wind Turbine (1s) energy: 5.5
-Gather iron (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Build Drill T2 (1s) energy: 0.5
-Gather iron (5s) energy: 0.5
-Build Wind Turbine (1s) energy: 1.7
-Gather iron (5s) energy: 1.7
-Build Wind Turbine (1s) energy: 2.9
-Gather iron (5s) energy: 2.9
-2570s : 97405.2ti o2: 0.0ppq heat: 0.0pK pressure: 97405.2nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 4.1
-Gather iron (5s) energy: 4.1
-Build Wind Turbine (1s) energy: 5.3
-Gather iron (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Build Drill T2 (1s) energy: 0.3
-Gather iron (5s) energy: 0.3
-Build Wind Turbine (1s) energy: 1.5
-Gather iron (5s) energy: 1.5
-Build Wind Turbine (1s) energy: 2.7
-Gather iron (5s) energy: 2.7
-Build Wind Turbine (1s) energy: 3.9
-Gather iron (5s) energy: 3.9
-Build Wind Turbine (1s) energy: 5.1
-Gather iron (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-2632s : 102684.1ti o2: 0.0ppq heat: 0.0pK pressure: 102684.1nPa biomass: 0.0
-Build Drill T2 (1s) energy: 0.1
-Gather iron (5s) energy: 0.1
-Build Wind Turbine (1s) energy: 1.3
-Gather iron (5s) energy: 1.3
-Build Wind Turbine (1s) energy: 2.5
-Gather iron (5s) energy: 2.5
-Build Wind Turbine (1s) energy: 3.7
-Gather iron (5s) energy: 3.7
-Build Wind Turbine (1s) energy: 4.9
-Gather iron (5s) energy: 4.9
-Build Wind Turbine (1s) energy: 6.1
-Gather iron (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Build Drill T2 (1s) energy: 1.1
-Gather iron (5s) energy: 1.1
-Build Wind Turbine (1s) energy: 2.3
-Gather iron (5s) energy: 2.3
-Build Wind Turbine (1s) energy: 3.5
-Gather iron (5s) energy: 3.5
-2696s : 108288.9ti o2: 0.0ppq heat: 0.0pK pressure: 108288.9nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 4.7
-Gather iron (5s) energy: 4.7
-Build Wind Turbine (1s) energy: 5.9
-Gather iron (5s) energy: 5.9
-Gather titanium (5s) energy: 5.9
-Gather titanium (5s) energy: 5.9
-Build Drill T2 (1s) energy: 0.9
-Gather iron (5s) energy: 0.9
-Build Wind Turbine (1s) energy: 2.1
-Gather iron (5s) energy: 2.1
-Build Wind Turbine (1s) energy: 3.3
-Gather iron (5s) energy: 3.3
-Build Wind Turbine (1s) energy: 4.5
-Gather iron (5s) energy: 4.5
-Build Wind Turbine (1s) energy: 5.7
-Gather iron (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-2758s : 113846.8ti o2: 0.0ppq heat: 0.0pK pressure: 113846.8nPa biomass: 0.0
-Build Drill T2 (1s) energy: 0.7
-Gather iron (5s) energy: 0.7
-Build Wind Turbine (1s) energy: 1.9
-Gather iron (5s) energy: 1.9
-Build Wind Turbine (1s) energy: 3.1
-Gather iron (5s) energy: 3.1
-Build Wind Turbine (1s) energy: 4.3
-Gather iron (5s) energy: 4.3
-Build Wind Turbine (1s) energy: 5.5
-Gather iron (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Build Drill T2 (1s) energy: 0.5
-Gather iron (5s) energy: 0.5
-Build Wind Turbine (1s) energy: 1.7
-Gather iron (5s) energy: 1.7
-Build Wind Turbine (1s) energy: 2.9
-Gather iron (5s) energy: 2.9
-Build Wind Turbine (1s) energy: 4.1
-Gather iron (5s) energy: 4.1
-2822s : 119748.6ti o2: 0.0ppq heat: 0.0pK pressure: 119748.6nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 5.3
-Gather iron (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Build Drill T2 (1s) energy: 0.3
-Gather iron (5s) energy: 0.3
-Build Wind Turbine (1s) energy: 1.5
-Gather iron (5s) energy: 1.5
-Build Wind Turbine (1s) energy: 2.7
-Gather iron (5s) energy: 2.7
-Build Wind Turbine (1s) energy: 3.9
-Gather iron (5s) energy: 3.9
-Build Wind Turbine (1s) energy: 5.1
-Gather iron (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Build Drill T2 (1s) energy: 0.1
-Gather iron (5s) energy: 0.1
-2884s : 125602.0ti o2: 0.0ppq heat: 0.0pK pressure: 125602.0nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 1.3
-Gather iron (5s) energy: 1.3
-Build Wind Turbine (1s) energy: 2.5
-Gather iron (5s) energy: 2.5
-Build Wind Turbine (1s) energy: 3.7
-Gather iron (5s) energy: 3.7
-Build Wind Turbine (1s) energy: 4.9
-Gather iron (5s) energy: 4.9
-Build Wind Turbine (1s) energy: 6.1
-Gather iron (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Build Drill T2 (1s) energy: 1.1
-Gather iron (5s) energy: 1.1
-Build Wind Turbine (1s) energy: 2.3
-Gather iron (5s) energy: 2.3
-Build Wind Turbine (1s) energy: 3.5
-Gather iron (5s) energy: 3.5
-Build Wind Turbine (1s) energy: 4.7
-Gather iron (5s) energy: 4.7
-2948s : 131793.3ti o2: 0.0ppq heat: 0.0pK pressure: 131793.3nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 5.9
-Gather iron (5s) energy: 5.9
-Gather titanium (5s) energy: 5.9
-Gather titanium (5s) energy: 5.9
-Build Drill T2 (1s) energy: 0.9
-Gather iron (5s) energy: 0.9
-Build Wind Turbine (1s) energy: 2.1
-Gather iron (5s) energy: 2.1
-Build Wind Turbine (1s) energy: 3.3
-Gather iron (5s) energy: 3.3
-Build Wind Turbine (1s) energy: 4.5
-Gather iron (5s) energy: 4.5
-Build Wind Turbine (1s) energy: 5.7
-Gather iron (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Build Drill T2 (1s) energy: 0.7
-Gather iron (5s) energy: 0.7
-3010s : 137925.7ti o2: 0.0ppq heat: 0.0pK pressure: 137925.7nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 1.9
-Gather iron (5s) energy: 1.9
-Build Wind Turbine (1s) energy: 3.1
-Gather iron (5s) energy: 3.1
-Build Wind Turbine (1s) energy: 4.3
-Gather iron (5s) energy: 4.3
-Build Wind Turbine (1s) energy: 5.5
-Gather iron (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Build Drill T2 (1s) energy: 0.5
-Gather iron (5s) energy: 0.5
-Build Wind Turbine (1s) energy: 1.7
-Gather iron (5s) energy: 1.7
-Build Wind Turbine (1s) energy: 2.9
-Gather iron (5s) energy: 2.9
-Build Wind Turbine (1s) energy: 4.1
-Gather iron (5s) energy: 4.1
-Build Wind Turbine (1s) energy: 5.3
-Gather iron (5s) energy: 5.3
-3074s : 144414.0ti o2: 0.0ppq heat: 0.0pK pressure: 144414.0nPa biomass: 0.0
-Gather titanium (5s) energy: 5.3
-Gather titanium (5s) energy: 5.3
-Build Drill T2 (1s) energy: 0.3
-Gather iron (5s) energy: 0.3
-Build Wind Turbine (1s) energy: 1.5
-Gather iron (5s) energy: 1.5
-Build Wind Turbine (1s) energy: 2.7
-Gather iron (5s) energy: 2.7
-Build Wind Turbine (1s) energy: 3.9
-Gather iron (5s) energy: 3.9
-Build Wind Turbine (1s) energy: 5.1
-Gather iron (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Gather titanium (5s) energy: 5.1
-Build Drill T2 (1s) energy: 0.1
-Gather iron (5s) energy: 0.1
-Build Wind Turbine (1s) energy: 1.3
-Gather iron (5s) energy: 1.3
-3136s : 150843.4ti o2: 0.0ppq heat: 0.0pK pressure: 150843.4nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 2.5
-Gather iron (5s) energy: 2.5
-Build Wind Turbine (1s) energy: 3.7
-Gather iron (5s) energy: 3.7
-Build Wind Turbine (1s) energy: 4.9
-Gather iron (5s) energy: 4.9
-Build Wind Turbine (1s) energy: 6.1
-Gather iron (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Gather titanium (5s) energy: 6.1
-Build Drill T2 (1s) energy: 1.1
-Gather iron (5s) energy: 1.1
-Build Wind Turbine (1s) energy: 2.3
-Gather iron (5s) energy: 2.3
-Build Wind Turbine (1s) energy: 3.5
-Gather iron (5s) energy: 3.5
-Build Wind Turbine (1s) energy: 4.7
-Gather iron (5s) energy: 4.7
-Build Wind Turbine (1s) energy: 5.9
-Gather iron (5s) energy: 5.9
-3200s : 157619.7ti o2: 0.0ppq heat: 0.0pK pressure: 157619.7nPa biomass: 0.0
-Gather titanium (5s) energy: 5.9
-Gather titanium (5s) energy: 5.9
-Build Drill T2 (1s) energy: 0.9
-Gather iron (5s) energy: 0.9
-Build Wind Turbine (1s) energy: 2.1
-Gather iron (5s) energy: 2.1
-Build Wind Turbine (1s) energy: 3.3
-Gather iron (5s) energy: 3.3
-Build Wind Turbine (1s) energy: 4.5
-Gather iron (5s) energy: 4.5
-Build Wind Turbine (1s) energy: 5.7
-Gather iron (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Gather titanium (5s) energy: 5.7
-Build Drill T2 (1s) energy: 0.7
-Gather iron (5s) energy: 0.7
-Build Wind Turbine (1s) energy: 1.9
-Gather iron (5s) energy: 1.9
-3262s : 164328.1ti o2: 0.0ppq heat: 0.0pK pressure: 164328.1nPa biomass: 0.0
-Build Wind Turbine (1s) energy: 3.1
-Gather iron (5s) energy: 3.1
-Build Wind Turbine (1s) energy: 4.3
-Gather iron (5s) energy: 4.3
-Build Wind Turbine (1s) energy: 5.5
-Gather iron (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Gather titanium (5s) energy: 5.5
-Build Drill T2 (1s) energy: 0.5
-Gather titanium (5s) energy: 0.5
-Gather iron (5s) energy: 0.5
-Build Drill T1 (1s) energy: 0.0
-Gather iron (5s) energy: 0.0
-Build Wind Turbine (1s) energy: 1.2
-Gather titanium (5s) energy: 1.2
-Gather iron (5s) energy: 1.2
-Build Drill T1 (1s) energy: 0.7
-Gather titanium (5s) energy: 0.7
-3324s : 171184.4ti o2: 0.0ppq heat: 0.0pK pressure: 171184.4nPa biomass: 0.0
-Gather iron (5s) energy: 0.7
-Build Drill T1 (1s) energy: 0.2
-Gather iron (5s) energy: 0.2
-Build Wind Turbine (1s) energy: 1.4
+Build Drill T1 (1s) energy: 1.4
 Gather titanium (5s) energy: 1.4
 Gather iron (5s) energy: 1.4
 Build Drill T1 (1s) energy: 0.9
@@ -1054,4 +802,6 @@ Gather titanium (5s) energy: 0.9
 Gather iron (5s) energy: 0.9
 Build Drill T1 (1s) energy: 0.4
 Gather iron (5s) energy: 0.4
-Reached Blue Sky in 3363s with 1003 actions.
+Gather magnesium (5s) energy: 0.4
+3038s : 175486.7ti o2: 0.0ppq heat: 0.0pK pressure: 175486.7nPa biomass: 0.0
+Reached Blue Sky in 3038s with 758 actions.

@@ -138,46 +138,39 @@ class PlanBuilder {
     return sim.unlockedStructures.where((structure) => structure.energy > 0);
   }
 
+  Iterable<Plan> possibleEnergyStructurePlans(double neededEnergy) {
+    assert(neededEnergy > 0);
+    return unlockedEnergyStructures.map((energyStructure) {
+      var builder = PlanBuilder(sim);
+      builder.availableEnergy = -neededEnergy;
+      while (builder.availableEnergy < 0) {
+        builder.planForStructure(energyStructure);
+      }
+      return builder.build();
+    });
+  }
+
   // Negative energyDelta's require more, positive don't.
   void planForEnergy(double neededEnergy) {
-    assert(neededEnergy > 0);
+    // Generate plans for all available energy structures.
+    // Pick the plan with the highest energy per time spent ratio.
 
-    final energyStructures = <Structure>[strutureWithName("Wind Turbine")];
-    while (neededEnergy > 0) {
-      var structure = energyStructures.first;
-      assert(structure.energy > 0);
-      planForStructure(structure);
-      neededEnergy -= structure.energy;
+    // FIXME: Don't recompute every time?
+    var possiblePlans = possibleEnergyStructurePlans(neededEnergy);
+
+    Plan? bestEnergyPlan;
+    double bestEnergyPerExecutionSeconds = 0;
+    for (var plan in possiblePlans) {
+      var energyPerExecutionSeconds = plan.energyDelta / plan.executionTime;
+      if (energyPerExecutionSeconds > bestEnergyPerExecutionSeconds) {
+        bestEnergyPlan = plan;
+        bestEnergyPerExecutionSeconds = energyPerExecutionSeconds;
+      }
     }
-
-    // // Generate plans for all available energy structures.
-    // // Pick the plan with the highest energy per time spent ratio.
-
-    // assert(neededEnergy > 0);
-    // // FIXME: Don't lookup every time.
-    // List<Plan> energyStructurePlans =
-    //     unlockedEnergyStructures.map((energyStructure) {
-    //   var builder = PlanBuilder(sim);
-    //   builder.availableEnergy = -neededEnergy;
-    //   while (builder.availableEnergy < 0) {
-    //     builder.planForStructure(energyStructure);
-    //   }
-    //   return builder.build();
-    // }).toList();
-
-    // Plan? bestEnergyPlan;
-    // double bestEnergyPerExecutionSeconds = 0;
-    // for (var plan in energyStructurePlans) {
-    //   var energyPerExecutionSeconds = plan.energyDelta / plan.executionTime;
-    //   if (energyPerExecutionSeconds > bestEnergyPerExecutionSeconds) {
-    //     bestEnergyPlan = plan;
-    //     bestEnergyPerExecutionSeconds = energyPerExecutionSeconds;
-    //   }
-    // }
-    // if (bestEnergyPlan == null) {
-    //   throw StateError("No best energy plan found");
-    // }
-    // addSubPlan(bestEnergyPlan);
+    if (bestEnergyPlan == null) {
+      throw StateError("No best energy plan found");
+    }
+    addSubPlan(bestEnergyPlan);
   }
 
   void _buildStructure(Structure structure) {
