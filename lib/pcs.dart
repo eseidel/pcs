@@ -1,7 +1,7 @@
 import 'structures.dart';
 
 class World {
-  final int time;
+  final double time;
   final Progress totalProgress;
 
   final List<Structure> structures;
@@ -34,7 +34,7 @@ class World {
         inventory = ItemCounts();
 
   World copyWith({
-    int? time,
+    double? time,
     Progress? totalProgress,
     List<Structure>? structures,
     ItemCounts? inventory,
@@ -55,21 +55,21 @@ class World {
 }
 
 class Action {
-  final int time;
+  final double time;
   final String name;
 
   const Action({required this.time, required this.name});
 
   @override
   String toString() {
-    return '${runtimeType} ${name} (${time}s)';
+    return '$runtimeType $name (${time.toStringAsFixed(0)}s)';
   }
 }
 
 class Gather extends Action {
   final Item resource;
 
-  Gather({required this.resource, required int time})
+  Gather({required this.resource, required double time})
       : super(time: time, name: resource.name);
 }
 
@@ -96,7 +96,7 @@ class Plan {
 
   Plan(this.actions);
 
-  int get executionTime =>
+  double get executionTime =>
       actions.fold(0, (total, action) => total + action.time);
 
   double get energyDelta => actions.fold(
@@ -307,10 +307,12 @@ class Simulation {
   // These could have time relative to position?
   // Supposedly resources do not respawn?  If so the more each is
   // gathered, the longer it should take to get?
-  int gatherTimeFor(Item item) {
-    const int nearby = 5;
-    const int medium = 60;
-    const int distant = 360;
+  double gatherTimeFor(Item item) {
+    const double nearby = 5;
+    const double medium = 60;
+    const double distant = 360;
+    // This is a hack around currently assuming all "items" are gathered.
+    const double impossible = double.infinity;
     switch (item) {
       case Item.aluminium:
         return distant;
@@ -333,6 +335,14 @@ class Simulation {
         return distant;
       case Item.titanium:
         return nearby;
+      case Item.osmium:
+        return distant;
+      case Item.uranium:
+      case Item.uraniumRod:
+      case Item.iridumRod:
+      case Item.pulsarQuartz:
+      case Item.explosivePowder:
+        return impossible;
     }
   }
 

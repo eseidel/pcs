@@ -29,13 +29,14 @@ void main(List<String> arguments) {
     assert(previousTime < world.time);
 
     if (world.time > lastLogTime + logFrequency) {
-      output.writeln("${world.time}s : ${world.totalProgress}");
+      output.writeln(
+          "${world.time.toStringAsFixed(0)}s : ${world.totalProgress}");
       lastLogTime = world.time;
     }
   }
 
   output.writeln(
-      "Reached ${stage.name} in ${world.time}s with ${actionLog.length} actions.");
+      "Reached ${stage.name} in ${world.time.toStringAsFixed(0)}s with ${actionLog.length} actions.");
 
   outputFile.writeAsStringSync(output.toString());
 }

@@ -7,10 +7,16 @@ enum Item {
   cobalt,
   magnesium,
   silicon,
-  superAlloy,
+  superAlloy, // Mostly gated until later.
   titanium,
-  plant,
   water,
+  osmium, // Gated until later.
+  plant, // Not reliably gatherable.
+  uranium, // Not gatherable.
+  iridumRod, // Not gatherable.
+  uraniumRod, // Not gatherable.
+  pulsarQuartz, // Not gatherable,
+  explosivePowder, // Not gatherable,
 }
 
 class ItemCounts {
@@ -212,6 +218,7 @@ class Pressure {
 
 Pressure nPa(double value) => Pressure(value); // nanopascals: e-9
 Pressure uPa(double value) => Pressure(value * 1000); // micropascals: e-6
+Pressure mPa(double value) => Pressure(value * 1000); // millipascals: e-3
 
 // This is really an enum?
 class Goal {
@@ -384,19 +391,59 @@ final allStructures = <Structure>[
   // Beacon - 5.0 nK
   // Exoskeleton T2 - 10.0 nK
   // Drill T3 - 21 nK
-  // Structure(
-  //   name: "Drill T3",
-  //   unlocksAt: Goal(pressure: uPa(1.2)),
-  //   cost: [Item.iron, Item.titanium, Item.titanium],
-  //   progress: Progress(pressure: nPa(1.5)),
-  //   energy: -5,
-  // ),
+  Structure(
+    name: "Drill T3",
+    unlocksAt: Goal(heat: nK(21)),
+    cost: [
+      Item.iron,
+      Item.iron,
+      Item.titanium,
+      Item.titanium,
+      Item.aluminium,
+      Item.aluminium
+    ],
+    progress: Progress(heat: pK(2.5), pressure: nPa(17)),
+    energy: -8.5,
+  ),
   // Biodome - 100.0 nK
   // Sign - 500.0 nK
   // Algae Generator T1 - 2.00 uK
   // Biodome T2 - 12.00 uK
   // Drill T4 - 41.00 uK
+  Structure(
+    name: "Drill T4",
+    unlocksAt: Goal(heat: uK(41)),
+    cost: [
+      Item.superAlloy,
+      Item.superAlloy,
+      Item.superAlloy,
+      Item.osmium,
+      Item.osmium,
+      Item.osmium,
+      Item.superAlloy,
+      Item.superAlloy,
+      Item.superAlloy,
+    ],
+    progress: Progress(heat: pK(25), pressure: nPa(459)),
+    energy: -45,
+  ),
   // Nuclear Fusion Generator - 750.00 uK
+  Structure(
+    name: "Nuclear Fusion Generator",
+    unlocksAt: Goal(heat: uK(750)),
+    cost: [
+      Item.pulsarQuartz,
+      Item.superAlloy,
+      Item.pulsarQuartz,
+      Item.superAlloy,
+      Item.pulsarQuartz,
+      Item.superAlloy,
+      Item.pulsarQuartz,
+      Item.superAlloy,
+      Item.pulsarQuartz
+    ],
+    energy: 1835,
+  ),
 
   // Oxygen Tank T2 - 70 nPa
   // Living Compartment Window - 250 nPa
@@ -406,13 +453,44 @@ final allStructures = <Structure>[
     unlocksAt: Goal(pressure: uPa(1.2)),
     cost: [Item.iron, Item.titanium, Item.titanium],
     progress: Progress(pressure: nPa(1.5)),
+    // FIXME: Add missing heat!
+    // progress: Progress(heat: pK(0.1), pressure: nPa(1.5)),
     energy: -5,
   ),
   // Living Compartment Glass - 4.0 uPa
   // Communication Antenna - 4.0 uPa
   // Screen - Transmissions - 4.0 uPa
   // Nuclear Reactor T1 - 60.0 uPa
+  Structure(
+    name: "Nuclear Reactor T1",
+    unlocksAt: Goal(pressure: uPa(60)),
+    cost: [
+      Item.superAlloy,
+      Item.superAlloy,
+      Item.superAlloy,
+      Item.water,
+      Item.water,
+      Item.uraniumRod,
+    ],
+    energy: 86.5,
+  ),
   // Ore Extractor - 155.00 uPa
+  // Nuclear Reactor T2 - 1.5 mPa
+  Structure(
+    name: "Nuclear Reactor T2",
+    unlocksAt: Goal(pressure: mPa(1.5)),
+    cost: [
+      Item.water,
+      Item.water,
+      Item.water,
+      Item.superAlloy,
+      Item.uraniumRod,
+      Item.uraniumRod,
+      Item.uraniumRod,
+      Item.explosivePowder,
+    ],
+    energy: 331.5,
+  ),
   // Flower Spreader - 2.50 mPa
   // Gas Extractor - 100.00 mPa
   // Ore Extractor T2 - 364.50 mPa
