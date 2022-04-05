@@ -452,9 +452,7 @@ final allStructures = <Structure>[
     name: "Drill T2",
     unlocksAt: Goal(pressure: uPa(1.2)),
     cost: [Item.iron, Item.titanium, Item.titanium],
-    progress: Progress(pressure: nPa(1.5)),
-    // FIXME: Add missing heat!
-    // progress: Progress(heat: pK(0.1), pressure: nPa(1.5)),
+    progress: Progress(heat: pK(0.1), pressure: nPa(1.5)),
     energy: -5,
   ),
   // Living Compartment Glass - 4.0 uPa
