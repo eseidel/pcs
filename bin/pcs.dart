@@ -29,8 +29,7 @@ void main(List<String> arguments) {
     assert(previousTime < world.time);
 
     if (world.time > lastLogTime + logFrequency) {
-      output.writeln(
-          "${world.time}s : TI ${world.totalProgress.terraformationIndex.value.toStringAsFixed(1)}");
+      output.writeln("${world.time}s : ${world.totalProgress}");
       lastLogTime = world.time;
     }
   }

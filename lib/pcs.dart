@@ -49,9 +49,8 @@ class World {
 
   // Intentionally can return infinity.
   double timeToGoal(Goal goal) {
-    double distanceToGoal =
-        goal.ti!.value - totalProgress.terraformationIndex.value;
-    return distanceToGoal / progressPerSecond.terraformationIndex.value;
+    double distanceToGoal = goal.ti!.value - totalProgress.ti.value;
+    return distanceToGoal / progressPerSecond.ti.value;
   }
 }
 

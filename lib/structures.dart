@@ -88,7 +88,7 @@ class Progress {
       this.heat = const Heat.zero(),
       this.biomass = 0});
 
-  Ti get terraformationIndex {
+  Ti get ti {
     return Ti(pressure.nPa + oxygen.ppq + heat.pK + biomass);
   }
 
@@ -109,6 +109,17 @@ class Progress {
       biomass: biomass * timeDelta,
     );
   }
+
+  @override
+  String toString() {
+    var buffer = StringBuffer();
+    buffer.write("$ti");
+    buffer.write(" o2: $oxygen");
+    buffer.write(" heat: $heat");
+    buffer.write(" pressure: $pressure");
+    buffer.write(" biomass: $biomass");
+    return buffer.toString();
+  }
 }
 
 class Ti {
@@ -125,6 +136,12 @@ class Ti {
   Ti scaleBy(double multiplier) => Ti(value * multiplier);
   Ti operator *(Ti other) => Ti(value * other.value);
   bool operator >=(Ti other) => value >= other.value;
+
+  @override
+  String toString() {
+    // FIXME: Automatically scale printed units.
+    return "${value.toStringAsFixed(1)}ti";
+  }
 }
 
 Ti kTi(double value) => Ti(value * 1000);
@@ -137,6 +154,12 @@ class O2 {
   O2 scaleBy(double multiplier) => O2(ppq * multiplier);
   O2 operator *(O2 other) => O2(ppq * other.ppq);
   bool operator >=(O2 other) => ppq >= other.ppq;
+
+  @override
+  String toString() {
+    // FIXME: Automatically scale printed units.
+    return "${ppq.toStringAsFixed(1)}ppq";
+  }
 }
 
 // FIXME: Not sure this is correct.
@@ -152,6 +175,12 @@ class Heat {
   Heat scaleBy(double multiplier) => Heat(pK * multiplier);
   Heat operator *(Heat other) => Heat(pK * other.pK);
   bool operator >=(Heat other) => pK >= other.pK;
+
+  @override
+  String toString() {
+    // FIXME: Automatically scale printed units.
+    return "${pK.toStringAsFixed(1)}pK";
+  }
 }
 
 Heat pK(double value) => Heat(value); // picokelvin: e-12
@@ -166,6 +195,12 @@ class Pressure {
   Pressure scaleBy(double multiplier) => Pressure(nPa * multiplier);
   Pressure operator *(Pressure other) => Pressure(nPa * other.nPa);
   bool operator >=(Pressure other) => nPa >= other.nPa;
+
+  @override
+  String toString() {
+    // FIXME: Automatically scale printed units.
+    return "${nPa.toStringAsFixed(1)}nPa";
+  }
 }
 
 Pressure nPa(double value) => Pressure(value); // nanopascals: e-9
@@ -191,7 +226,7 @@ class Goal {
 
   bool wasReached(Progress totalProgress) {
     if (ti != null) {
-      return totalProgress.terraformationIndex >= ti!;
+      return totalProgress.ti >= ti!;
     } else if (oxygen != null) {
       return totalProgress.oxygen >= oxygen!;
     } else if (heat != null) {
