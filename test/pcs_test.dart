@@ -1,4 +1,6 @@
 import 'package:pcs/pcs.dart';
+import 'package:pcs/structures.dart';
+
 import 'package:test/test.dart';
 
 void main() {
@@ -21,5 +23,13 @@ void main() {
     expect(afterBuild.structures.first, turbine);
     expect(afterBuild.availableEnergy, turbine.energy);
     expect(afterBuild.inventory.countOf(Item.iron), 0);
+  });
+
+  test('Plan.executionTime', () {
+    var turbine = strutureWithName("Wind Turbine");
+    var buildTurbine = Build(turbine);
+    var plan = Plan([buildTurbine, buildTurbine]);
+    expect(buildTurbine.time, greaterThan(0));
+    expect(plan.executionTime, buildTurbine.time * 2);
   });
 }

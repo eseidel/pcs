@@ -1,174 +1,6 @@
 import "dart:math";
 
-enum Item {
-  iron,
-  iridium,
-  ice,
-  aluminium,
-  cobalt,
-  magnesium,
-  silicon,
-  superAlloy,
-  titanium,
-  plant,
-}
-
-class ItemCounts {
-  final List<int> _counts;
-
-  // FIXME: Make this const
-  ItemCounts() : _counts = List<int>.filled(Item.values.length, 0);
-
-  factory ItemCounts.fromItems(List<Item> items) {
-    var counts = List<int>.filled(Item.values.length, 0, growable: false);
-    for (var item in items) {
-      counts[item.index] += 1;
-    }
-    return ItemCounts._(counts);
-  }
-
-  ItemCounts._(this._counts);
-
-  void adjust(Item item, int delta) {
-    _counts[item.index] += delta;
-  }
-
-  int countOf(Item item) {
-    return _counts[item.index];
-  }
-
-  bool operator <(ItemCounts other) {
-    for (int i = 0; i < Item.values.length; i++) {
-      if (_counts[i] >= other._counts[i]) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  bool operator <=(ItemCounts other) {
-    for (int i = 0; i < Item.values.length; i++) {
-      if (_counts[i] > other._counts[i]) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  ItemCounts operator +(ItemCounts other) {
-    var newCounts = List<int>.from(_counts);
-    for (int i = 0; i < Item.values.length; i++) {
-      newCounts[i] += other._counts[i];
-    }
-    return ItemCounts._(newCounts);
-  }
-
-  ItemCounts operator -(ItemCounts other) {
-    var newCounts = List<int>.from(_counts);
-    for (int i = 0; i < Item.values.length; i++) {
-      newCounts[i] -= other._counts[i];
-    }
-    return ItemCounts._(newCounts);
-  }
-}
-
-class Availablility {
-  const Availablility.always();
-}
-
-class Progress {
-  final double pressure;
-  final double oxygen;
-  final double heat;
-  final double biomass;
-
-  const Progress(
-      {this.pressure = 0, this.oxygen = 0, this.heat = 0, this.biomass = 0});
-
-  double get terraformationIndex {
-    return pressure + oxygen + heat + biomass;
-  }
-
-  Progress operator +(Progress other) {
-    return Progress(
-      pressure: pressure + other.pressure,
-      oxygen: oxygen + other.oxygen,
-      heat: heat + other.heat,
-      biomass: biomass + other.biomass,
-    );
-  }
-
-  Progress operator *(double timeDelta) {
-    return Progress(
-      pressure: pressure * timeDelta,
-      oxygen: oxygen * timeDelta,
-      heat: heat * timeDelta,
-      biomass: biomass * timeDelta,
-    );
-  }
-}
-
-class Structure {
-  final Availablility availablility;
-  final List<Item> cost;
-  final double energy;
-  final Progress progress;
-  final String name;
-  final String description;
-
-  bool isAvailable(World world) {
-    return true;
-  }
-
-  const Structure({
-    required this.availablility,
-    required this.cost,
-    required this.energy,
-    required this.name,
-    this.progress = const Progress(),
-    this.description = "",
-  });
-}
-
-// FIXME: Make this const.
-final allStructures = <Structure>[
-  Structure(
-    name: "Drill T1",
-    availablility: Availablility.always(),
-    cost: [Item.titanium, Item.iron],
-    energy: -0.5,
-    progress: Progress(pressure: 0.2),
-  ),
-  Structure(
-    name: "Wind Turbine",
-    availablility: Availablility.always(),
-    cost: [Item.iron],
-    energy: 1.2,
-  ),
-  Structure(
-    name: "Heater T1",
-    availablility: Availablility.always(),
-    cost: [Item.iron, Item.iridium, Item.silicon],
-    progress: Progress(heat: 0.3),
-    energy: -1,
-  ),
-  Structure(
-    name: "Vegetube T1",
-    availablility: Availablility.always(),
-    cost: [Item.iron, Item.ice, Item.magnesium, Item.plant],
-    progress: Progress(oxygen: 1.5),
-    energy: -.35,
-  ),
-];
-
-Structure strutureWithName(String name) {
-  for (var structure in allStructures) {
-    if (structure.name == name) {
-      return structure;
-    }
-  }
-  throw ArgumentError.value(name, "No structure with name");
-}
+import 'structures.dart';
 
 class World {
   final int time;
@@ -189,7 +21,9 @@ class World {
   });
 
   Progress get progressPerSecond {
-    // This does not handle the case of insufficient energy.
+    if (availableEnergy < 0) {
+      return Progress();
+    }
     return structures.fold(Progress(),
         (Progress total, Structure structure) => total + structure.progress);
   }
@@ -213,6 +47,13 @@ class World {
       structures: structures ?? this.structures,
       inventory: inventory ?? this.inventory,
     );
+  }
+
+  // Intentionally can return infinity.
+  double timeToGoal(Goal goal) {
+    double distanceToGoal =
+        goal.ti!.value - totalProgress.terraformationIndex.value;
+    return distanceToGoal / progressPerSecond.terraformationIndex.value;
   }
 }
 
@@ -261,63 +102,6 @@ class RandomActor extends Actor {
   }
 }
 
-class PreferBuild extends Actor {
-  Random random;
-
-  PreferBuild({int? seed}) : random = Random(seed);
-
-  @override
-  Action chooseAction(Simulation sim) {
-    var availableActions = sim.availableActions.toList();
-
-    for (var action in availableActions) {
-      if (action is Build) {
-        return action;
-      }
-    }
-    if (availableActions.length == 1) {
-      return availableActions.first;
-    }
-    return availableActions[random.nextInt(availableActions.length - 1)];
-  }
-}
-
-// class ExpectedValueMap {
-//   double evForAction(Action action) {
-//     return 0;
-//   }
-// }
-
-// class ValueActor {
-//   List<Action> blockingActions(Build action, World world) {
-//     // Diff needs with available resources (including energy)
-//     var unmetResources = action.structure.cost - world.inventory;
-//     var uniqueResources = unmetResources.sumPostive();
-
-//     // Recurse for a buildable energy source.
-//     return [];
-//   }
-
-//   @override
-//   Action chooseAction(Simulation sim) {
-//     var actionToEv = ExpectedValueMap();
-
-//     // Calculate the time distance from goal at current pace.
-//     double timeToGoal = sim.goal.timeToGoal(sim.world.progressPerSecond);
-//     // Look through all available (not necessarily buildable) structure builds.
-//     for (var action in sim.unlockedStructureActions) {
-//       // Calculate the EV of a given build (time saved?)
-//       var ev = computeEvFor(action, sim.world, timeToGoal);
-//       var blocking = blockingActions(action);
-//       // Divide ev between missing ingredients or buildable energy sources.
-//       var evPer = ev / blocking.length;
-//     }
-//     // Setting ev(ingredient) = max(ev(structure) / # missing, ev(ingredient))
-//     // Sort actions by EV.
-//     // If equal, pick randomly.
-//   }
-// }
-
 // Need a way to evaluate value in terms of destructions.
 // e.g. that a 1 resource is worth N seconds (gather time?)
 // Or that 1 energy is worth N seconds
@@ -332,7 +116,8 @@ class Plan {
 
   Plan(this.actions);
 
-  int get executionTime => actions.fold(0, (total, action) => action.time);
+  int get executionTime =>
+      actions.fold(0, (total, action) => total + action.time);
 
   // Total Resource change?
 }
@@ -342,41 +127,53 @@ class Plan {
 // Build up subplans of all the various things
 // Then replay the subplans with inventory / energy available
 class PlanBuilder {
-  List<Action> actions;
-  Simulation sim;
+  final List<Action> _actions;
+  final Simulation sim;
+  // Should this just a be `World future`?
+  // Or computed from _actions based on sim.world.availableEnergy?
+  double availableEnergy;
 
-  PlanBuilder(this.sim) : actions = [];
+  PlanBuilder(this.sim)
+      : _actions = [],
+        availableEnergy = sim.world.availableEnergy;
 
+  // Negative energyDelta's require more, positive don't.
   void planForEnergy(double neededEnergy) {
+    assert(neededEnergy > 0);
     // FIXME: Don't lookup every time.
     final energyStructures = <Structure>[strutureWithName("Wind Turbine")];
     while (neededEnergy > 0) {
       var structure = energyStructures.first;
+      assert(structure.energy > 0);
       planForStructure(structure);
       neededEnergy -= structure.energy;
     }
   }
 
+  void _buildStructure(Structure structure) {
+    availableEnergy += structure.energy;
+    _actions.add(Build(structure));
+  }
+
   void planForStructure(Structure structure) {
-    var worldEnergy = 0; // FIXME: ignoring existing energy.
+    if (structure.energy < 0 && availableEnergy < structure.energy.abs()) {
+      // structure energy is negative
+      var neededEnergy = availableEnergy + structure.energy;
+      assert(neededEnergy < 0);
+      planForEnergy(neededEnergy.abs());
+    }
     for (var item in structure.cost) {
       planForResource(item);
     }
-    if (structure.energy < 0 && worldEnergy < structure.energy.abs()) {
-      // structure energy is negative
-      var neededEnergy = worldEnergy + structure.energy;
-      assert(neededEnergy < 0);
-      planForEnergy(neededEnergy);
-    }
-    actions.add(Build(structure));
+    _buildStructure(structure);
   }
 
   void planForResource(Item item) {
-    actions.add(Gather(resource: item, time: sim.gatherTimeFor(item)));
+    _actions.add(Gather(resource: item, time: sim.gatherTimeFor(item)));
   }
 
   Plan build() {
-    return Plan(actions);
+    return Plan(_actions);
   }
 }
 
@@ -405,12 +202,62 @@ class Sprinter extends Actor {
         newStructures.add(action.structure);
       }
     }
-    var newWorld = sim.world.copyWith(structures: newStructures);
+    // FIXME: Share code with applyAction?
+    var timeDelta = plan.executionTime;
+    var futureTime = sim.world.time + timeDelta;
+    var futureProgress = sim.world.totalProgress +
+        sim.world.progressPerSecond * timeDelta.toDouble();
+    var newWorld = sim.world.copyWith(
+        structures: newStructures,
+        totalProgress: futureProgress,
+        time: futureTime);
     // var newProgressPerSecond = newWorld.progressPerSecond;
-    return plan.executionTime + sim.goal.timeToGoal(newWorld);
+    return newWorld.timeToGoal(sim.goal);
     // var tiPerSecond = newProgressPerSecond.terraformationIndex -
     //     currentProgressPerSecond.terraformationIndex;
     // return tiPerSecond / action.time;
+  }
+
+  // The best plan is the one which reduces our time to goal
+  // by the most, per second spent executing the plan.
+  Plan findBestPlan(Simulation sim) {
+    // Calculate the time distance from goal at current pace.
+    double timeToGoal = sim.world.timeToGoal(sim.goal);
+    // FIXME: When timeToGoal is infinity the logic below breaks.
+    // We should probably just pick the fastest to complete (not best
+    // improvement) to get away from infinity as soon as possible?
+    if (timeToGoal.isInfinite) {
+      timeToGoal = double.maxFinite;
+    }
+
+    Plan? bestPlan;
+    double bestTimeToGoalDeltaPerSecond = 0;
+    // Generate plans for all available structures.
+    // Pick the plan with the highest EV.
+    for (var plan in sim.possiblePlans) {
+      var newTimeToGoal = timeToGoalWithPlan(sim, plan);
+      var executionTime = plan.executionTime;
+      var timeToGoalDeltaPerSecond =
+          (newTimeToGoal - timeToGoal) / executionTime;
+      if (timeToGoalDeltaPerSecond <= bestTimeToGoalDeltaPerSecond) {
+        bestPlan = plan;
+        bestTimeToGoalDeltaPerSecond = timeToGoalDeltaPerSecond;
+      }
+    }
+    if (bestPlan == null) {
+      for (var plan in sim.possiblePlans) {
+        var newTimeToGoal = timeToGoalWithPlan(sim, plan);
+        var executionTime = plan.executionTime;
+        var timeToGoalDeltaPerSecond =
+            (newTimeToGoal - timeToGoal) / executionTime;
+        if (timeToGoalDeltaPerSecond <= bestTimeToGoalDeltaPerSecond) {
+          bestPlan = plan;
+          bestTimeToGoalDeltaPerSecond = timeToGoalDeltaPerSecond;
+        }
+      }
+      throw StateError("No best plan found");
+    }
+    return bestPlan;
   }
 
   @override
@@ -421,24 +268,9 @@ class Sprinter extends Actor {
       existingPlan = null;
     }
 
-    // Calculate the time distance from goal at current pace.
-    double timeToGoal = sim.goal.timeToGoal(sim.world);
-    Plan? bestPlan;
-    double bestTimeToGoalDelta = 0;
-    // Generate plans for all available structures.
-    // Pick the plan with the highest EV.
-    for (var plan in sim.possiblePlans) {
-      var newTimeToGoal = timeToGoalWithPlan(sim, plan);
-      var timeToGoalDelta = newTimeToGoal - timeToGoal;
-      if (timeToGoalDelta <= bestTimeToGoalDelta) {
-        bestPlan = plan;
-        bestTimeToGoalDelta = timeToGoalDelta;
-      }
-    }
-    if (bestPlan == null) {
-      throw StateError("No best plan found");
-    }
-
+    var bestPlan = findBestPlan(sim);
+    // var structure = strutureWithName("Drill T1");
+    // var bestPlan = sim.planForStructure(structure);
     existingPlan = PlanIterator(bestPlan);
     existingPlan!.moveNextAction();
     return existingPlan!.currentAction;
@@ -459,23 +291,7 @@ bool canAfford(Structure structure, double worldEnergy, ItemCounts inventory) {
   return ItemCounts.fromItems(structure.cost) <= inventory;
 }
 
-class Goal {
-  final int terraformingIndexGoal;
-
-  Goal(this.terraformingIndexGoal);
-
-  bool wasReached(Progress totalProgress) {
-    return totalProgress.terraformationIndex >= terraformingIndexGoal;
-  }
-
-  // Intentionally can return infinity.
-  double timeToGoal(World world) {
-    double distanceToGoal =
-        terraformingIndexGoal - world.totalProgress.terraformationIndex;
-    return distanceToGoal / world.progressPerSecond.terraformationIndex;
-  }
-}
-
+// How is this diferent from PlanBuilder?
 class Simulation {
   final World world;
   final Goal goal;
@@ -484,18 +300,22 @@ class Simulation {
 
   // FIXME: not all items can be gathered?
   // These could have time relative to position?
+  // Supposedly resources do not respawn?  If so the more each is
+  // gathered, the longer it should take to get?
   int gatherTimeFor(Item item) {
     const int nearby = 5;
-    const int distant = 60;
+    const int medium = 60;
+    const int distant = 360;
     switch (item) {
       case Item.aluminium:
         return distant;
       case Item.cobalt:
         return nearby;
+      case Item.water:
       case Item.ice:
         return nearby;
       case Item.iridium:
-        return distant;
+        return medium;
       case Item.iron:
         return nearby;
       case Item.magnesium:
@@ -516,8 +336,9 @@ class Simulation {
   }
 
   Iterable<Structure> get unlockedStructures {
-    // All structures are currently unlocked.
-    return allStructures;
+    // Cache this?
+    return allStructures
+        .where((structure) => structure.isAvailable(world.totalProgress));
   }
 
   Iterable<Build> get unlockedStructureActions {
@@ -567,6 +388,8 @@ World applyAction(Action action, World world) {
   var inventory = world.inventory;
   var structures = world.structures;
 
+  print("$action energy: ${world.availableEnergy.toStringAsFixed(1)}");
+
   if (action is Gather) {
     inventory.adjust(action.resource, 1);
   } else if (action is Build) {
@@ -584,18 +407,19 @@ World applyAction(Action action, World world) {
 }
 
 SimulationResult simulate(World world, Actor actor, Goal goal) {
-  var sim = Simulation(world, goal);
   var actionLog = <Action>[];
   var previousTime = world.time;
   var lastLogTime = world.time;
-  var logFrequency = 10;
+  var logFrequency = 60;
 
   while (!goal.wasReached(world.totalProgress)) {
+    var sim = Simulation(world, goal);
     var action = actor.chooseAction(sim);
     world = applyAction(action, world);
     assert(previousTime < world.time);
     if (world.time > lastLogTime + logFrequency) {
-      print("${world.time} : TI ${world.totalProgress.terraformationIndex}");
+      print(
+          "${world.time}s : TI ${world.totalProgress.terraformationIndex.value.toStringAsFixed(1)}");
       lastLogTime = world.time;
     }
     actionLog.add(action);
