@@ -56,28 +56,26 @@ class World {
 
 class Action {
   final int time;
-  const Action({required this.time});
+  final String name;
+
+  const Action({required this.time, required this.name});
+
+  @override
+  String toString() {
+    return '${runtimeType} ${name} (${time}s)';
+  }
 }
 
 class Gather extends Action {
   final Item resource;
 
-  const Gather({required this.resource, required int time}) : super(time: time);
-
-  @override
-  String toString() {
-    return 'Gather ${resource.name} (${time}s)';
-  }
+  Gather({required this.resource, required int time})
+      : super(time: time, name: resource.name);
 }
 
 class Build extends Action {
   final Structure structure;
-  Build(this.structure) : super(time: 1);
-
-  @override
-  String toString() {
-    return 'Build ${structure.name} (${time}s)';
-  }
+  Build(this.structure) : super(time: 1, name: structure.name);
 }
 
 abstract class Actor {
@@ -129,7 +127,7 @@ class PlanBuilder {
       } else if (action is Gather) {
         _fetchItem(action.resource);
       } else {
-        throw ArgumentError("Unknown plan type?");
+        throw ArgumentError("Unknown Action type?");
       }
     }
   }

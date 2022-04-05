@@ -82,6 +82,13 @@ class Progress {
   final Heat heat;
   final double biomass;
 
+  // Used by tests which need a progress where everything is unlocked.
+  const Progress.allUnlocks()
+      : pressure = const Pressure(double.maxFinite),
+        oxygen = const O2(double.maxFinite),
+        heat = const Heat(double.maxFinite),
+        biomass = double.maxFinite;
+
   const Progress(
       {this.pressure = const Pressure.zero(),
       this.oxygen = const O2.zero(),
