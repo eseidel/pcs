@@ -1,5 +1,3 @@
-import "dart:math";
-
 import 'structures.dart';
 
 class World {
@@ -87,21 +85,6 @@ abstract class Actor {
   Action chooseAction(Simulation sim);
 }
 
-class RandomActor extends Actor {
-  Random random;
-
-  RandomActor({int? seed}) : random = Random(seed);
-
-  @override
-  Action chooseAction(Simulation sim) {
-    var availableActions = sim.availableActions.toList();
-    if (availableActions.length == 1) {
-      return availableActions.first;
-    }
-    return availableActions[random.nextInt(availableActions.length - 1)];
-  }
-}
-
 // Need a way to evaluate value in terms of destructions.
 // e.g. that a 1 resource is worth N seconds (gather time?)
 // Or that 1 energy is worth N seconds
@@ -119,13 +102,16 @@ class Plan {
   int get executionTime =>
       actions.fold(0, (total, action) => total + action.time);
 
+  double get energyDelta => actions.fold(
+      0,
+      (total, action) =>
+          total + (action is Build ? action.structure.energy : 0));
+
   // Total Resource change?
 }
 
 // Ignore inventory planning for now?
-// Ignore energy surplus planning for now?
-// Build up subplans of all the various things
-// Then replay the subplans with inventory / energy available
+// Build up and cache subplans and then replay with energy/item availability?
 class PlanBuilder {
   final List<Action> _actions;
   final Simulation sim;
@@ -137,10 +123,26 @@ class PlanBuilder {
       : _actions = [],
         availableEnergy = sim.world.availableEnergy;
 
+  void addSubPlan(Plan plan) {
+    for (var action in plan.actions) {
+      if (action is Build) {
+        _buildStructure(action.structure);
+      } else if (action is Gather) {
+        _fetchItem(action.resource);
+      } else {
+        throw ArgumentError("Unknown plan type?");
+      }
+    }
+  }
+
+  Iterable<Structure> get unlockedEnergyStructures {
+    return sim.unlockedStructures.where((structure) => structure.energy > 0);
+  }
+
   // Negative energyDelta's require more, positive don't.
   void planForEnergy(double neededEnergy) {
     assert(neededEnergy > 0);
-    // FIXME: Don't lookup every time.
+
     final energyStructures = <Structure>[strutureWithName("Wind Turbine")];
     while (neededEnergy > 0) {
       var structure = energyStructures.first;
@@ -148,6 +150,35 @@ class PlanBuilder {
       planForStructure(structure);
       neededEnergy -= structure.energy;
     }
+
+    // // Generate plans for all available energy structures.
+    // // Pick the plan with the highest energy per time spent ratio.
+
+    // assert(neededEnergy > 0);
+    // // FIXME: Don't lookup every time.
+    // List<Plan> energyStructurePlans =
+    //     unlockedEnergyStructures.map((energyStructure) {
+    //   var builder = PlanBuilder(sim);
+    //   builder.availableEnergy = -neededEnergy;
+    //   while (builder.availableEnergy < 0) {
+    //     builder.planForStructure(energyStructure);
+    //   }
+    //   return builder.build();
+    // }).toList();
+
+    // Plan? bestEnergyPlan;
+    // double bestEnergyPerExecutionSeconds = 0;
+    // for (var plan in energyStructurePlans) {
+    //   var energyPerExecutionSeconds = plan.energyDelta / plan.executionTime;
+    //   if (energyPerExecutionSeconds > bestEnergyPerExecutionSeconds) {
+    //     bestEnergyPlan = plan;
+    //     bestEnergyPerExecutionSeconds = energyPerExecutionSeconds;
+    //   }
+    // }
+    // if (bestEnergyPlan == null) {
+    //   throw StateError("No best energy plan found");
+    // }
+    // addSubPlan(bestEnergyPlan);
   }
 
   void _buildStructure(Structure structure) {
@@ -168,9 +199,10 @@ class PlanBuilder {
     _buildStructure(structure);
   }
 
-  void planForResource(Item item) {
-    _actions.add(Gather(resource: item, time: sim.gatherTimeFor(item)));
-  }
+  void _fetchItem(Item item) =>
+      _actions.add(Gather(resource: item, time: sim.gatherTimeFor(item)));
+
+  void planForResource(Item item) => _fetchItem(item);
 
   Plan build() {
     return Plan(_actions);
@@ -245,16 +277,6 @@ class Sprinter extends Actor {
       }
     }
     if (bestPlan == null) {
-      for (var plan in sim.possiblePlans) {
-        var newTimeToGoal = timeToGoalWithPlan(sim, plan);
-        var executionTime = plan.executionTime;
-        var timeToGoalDeltaPerSecond =
-            (newTimeToGoal - timeToGoal) / executionTime;
-        if (timeToGoalDeltaPerSecond <= bestTimeToGoalDeltaPerSecond) {
-          bestPlan = plan;
-          bestTimeToGoalDeltaPerSecond = timeToGoalDeltaPerSecond;
-        }
-      }
       throw StateError("No best plan found");
     }
     return bestPlan;
@@ -275,13 +297,6 @@ class Sprinter extends Actor {
     existingPlan!.moveNextAction();
     return existingPlan!.currentAction;
   }
-}
-
-class SimulationResult {
-  final World world;
-  final List<Action> actionLog;
-
-  SimulationResult(this.world, this.actionLog);
 }
 
 bool canAfford(Structure structure, double worldEnergy, ItemCounts inventory) {
@@ -341,24 +356,6 @@ class Simulation {
         .where((structure) => structure.isAvailable(world.totalProgress));
   }
 
-  Iterable<Build> get unlockedStructureActions {
-    return unlockedStructures.map((structure) => Build(structure));
-  }
-
-  Iterable<Build> get affordableStructureActions sync* {
-    var worldEnergy = world.availableEnergy;
-    for (var structure in allStructures) {
-      if (canAfford(structure, worldEnergy, world.inventory)) {
-        yield Build(structure);
-      }
-    }
-  }
-
-  Iterable<Action> get availableActions {
-    Iterable<Action> gathers = gatherActions;
-    return gathers.followedBy(affordableStructureActions);
-  }
-
   Plan planForStructure(Structure structure) {
     var builder = PlanBuilder(this);
     builder.planForStructure(structure);
@@ -388,8 +385,6 @@ World applyAction(Action action, World world) {
   var inventory = world.inventory;
   var structures = world.structures;
 
-  print("$action energy: ${world.availableEnergy.toStringAsFixed(1)}");
-
   if (action is Gather) {
     inventory.adjust(action.resource, 1);
   } else if (action is Build) {
@@ -406,23 +401,13 @@ World applyAction(Action action, World world) {
   );
 }
 
-SimulationResult simulate(World world, Actor actor, Goal goal) {
-  var actionLog = <Action>[];
-  var previousTime = world.time;
-  var lastLogTime = world.time;
-  var logFrequency = 60;
+class ActionResult {
+  final Action action;
+  final World world;
+  const ActionResult(this.action, this.world);
+}
 
-  while (!goal.wasReached(world.totalProgress)) {
-    var sim = Simulation(world, goal);
-    var action = actor.chooseAction(sim);
-    world = applyAction(action, world);
-    assert(previousTime < world.time);
-    if (world.time > lastLogTime + logFrequency) {
-      print(
-          "${world.time}s : TI ${world.totalProgress.terraformationIndex.value.toStringAsFixed(1)}");
-      lastLogTime = world.time;
-    }
-    actionLog.add(action);
-  }
-  return SimulationResult(world, actionLog);
+ActionResult planOneAction(World world, Actor actor, Goal goal) {
+  var action = actor.chooseAction(Simulation(world, goal));
+  return ActionResult(action, applyAction(action, world));
 }
