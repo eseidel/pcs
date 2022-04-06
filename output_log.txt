@@ -789,4 +789,12 @@ Gather titanium (5s) energy: 1.1
 Gather iron (5s) energy: 1.1
 Build Drill T1 (1s) energy: 0.6
 Gather iron (5s) energy: 0.6
+Structures:
+Drill T2 : 48
+Solar Panel T1 : 44
+Vegetube T2 : 35
+Drill T1 : 32
+Wind Turbine : 12
+
+3031s : 175346.4ti o2: 42608.4ppq heat: 7239.3pK pressure: 125498.7nPa biomass: 0.0
 Reached Blue Sky in 3031s with 743 actions.

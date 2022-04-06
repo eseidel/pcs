@@ -6,5 +6,6 @@ TODO
 * Add more structures
 * Merge Gathers together
 * Simulate inventory
-* Simulate non-respawning resources
+* Simulate non-respawning resources (increasing gather base costs?)
+* Gathers should have a base-cost and then smaller per-item cost?
 * Simulate oxygen, food, or water?

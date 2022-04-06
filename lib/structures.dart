@@ -11,12 +11,13 @@ enum Item {
   titanium,
   water,
   osmium, // Gated until later.
-  plant, // Not reliably gatherable.
   uranium, // Not gatherable.
   iridumRod, // Not gatherable.
   uraniumRod, // Not gatherable.
   pulsarQuartz, // Not gatherable,
   explosivePowder, // Not gatherable,
+  // plant is kinda a hack, it's more of a "type" of item.
+  plant, // Not reliably gatherable.
 }
 
 class ItemCounts {
@@ -297,7 +298,12 @@ final allStructures = <Structure>[
   Structure(
     name: "Vegetube T1",
     unlocksAt: Goal.zero(),
-    cost: [Item.iron, Item.ice, Item.magnesium, Item.plant],
+    cost: [
+      Item.iron,
+      Item.ice,
+      Item.magnesium,
+      Item.plant,
+    ],
     progress: Progress(oxygen: ppq(0.15)),
     energy: -.35,
   ),
@@ -367,7 +373,8 @@ final allStructures = <Structure>[
       Item.silicon,
       Item.silicon,
       Item.magnesium,
-      Item.aluminium
+      Item.aluminium,
+      // Item.plant,
     ],
     progress: Progress(oxygen: ppq(13.0)),
     energy: -7.25,
@@ -382,7 +389,14 @@ final allStructures = <Structure>[
   Structure(
     name: "Vegetube T2",
     unlocksAt: Goal(heat: pK(500)),
-    cost: [Item.iron, Item.ice, Item.ice, Item.magnesium, Item.silicon],
+    cost: [
+      Item.iron,
+      Item.ice,
+      Item.ice,
+      Item.magnesium,
+      Item.silicon,
+      // Item.plant
+    ],
     progress: Progress(oxygen: ppq(1.2)),
     energy: -1.25,
   ),
