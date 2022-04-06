@@ -132,13 +132,9 @@ class PlanBuilder {
     }
   }
 
-  Iterable<Structure> get unlockedEnergyStructures {
-    return sim.unlockedStructures.where((structure) => structure.energy > 0);
-  }
-
   Iterable<Plan> possibleEnergyStructurePlans(double neededEnergy) {
     assert(neededEnergy > 0);
-    return unlockedEnergyStructures.map((energyStructure) {
+    return sim.unlockedEnergyStructures.map((energyStructure) {
       var builder = PlanBuilder(sim);
       builder.availableEnergy = -neededEnergy;
       while (builder.availableEnergy < 0) {
@@ -256,7 +252,7 @@ class Sprinter extends Actor {
     double bestTimeToGoalDeltaPerSecond = 0;
     // Generate plans for all available structures.
     // Pick the plan with the highest EV.
-    for (var plan in sim.possiblePlans) {
+    for (var plan in sim.possibleNonEnergyStructurePlans) {
       var newTimeToGoal = timeToGoalWithPlan(sim, plan);
       var executionTime = plan.executionTime;
       var timeToGoalDeltaPerSecond =
@@ -346,14 +342,18 @@ class Simulation {
     }
   }
 
-  Iterable<Gather> get gatherActions {
-    return Item.values.map((i) => Gather(resource: i, time: gatherTimeFor(i)));
-  }
-
   Iterable<Structure> get unlockedStructures {
     // Cache this?
     return allStructures
         .where((structure) => structure.isAvailable(world.totalProgress));
+  }
+
+  Iterable<Structure> get unlockedEnergyStructures {
+    return unlockedStructures.where((structure) => structure.energy > 0);
+  }
+
+  Iterable<Structure> get unlockedNonEnergyStructures {
+    return unlockedStructures.where((structure) => structure.energy < 0);
   }
 
   Plan planForStructure(Structure structure) {
@@ -362,13 +362,13 @@ class Simulation {
     return builder.build();
   }
 
-  Iterable<Plan> get possiblePlans sync* {
+  Iterable<Plan> get possibleNonEnergyStructurePlans sync* {
     // Gather plans only make sense as sub-plans.
     // Energy plans only make sense as sub-plans.
     // Chips and inventory make sense as sub-plans.
     // Structures (and rockets) are the only top-level plans
     // (i.e. plans that move towards a goal).
-    for (var structure in unlockedStructures) {
+    for (var structure in unlockedNonEnergyStructures) {
       yield planForStructure(structure);
     }
   }
