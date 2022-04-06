@@ -19,7 +19,12 @@ void main() {
       -progressPerActionSecond(a).compareTo(progressPerActionSecond(b)));
 
   for (var plan in plans) {
+    var structure = (plan.actions.last as Build).structure;
     print(
-        "${plan.actions.last.name} time: ${plan.executionTime} tiDelta: ${plan.tiDelta} tiDelta/time: ${progressPerActionSecond(plan).toStringAsFixed(4)}");
+        "${structure.name} time: ${plan.executionTime} tiDelta: ${plan.tiDelta} tiDelta/time: ${progressPerActionSecond(plan).toStringAsFixed(4)} unlocksAt: ${structure.unlocksAt}");
   }
+
+  // Questions to answer
+  // List of structures ordered by ti unlock and tiDelta?
+  // List of structures ordered by unlock / areaDelta?
 }

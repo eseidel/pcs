@@ -110,9 +110,7 @@ class Progress {
       this.heat = const Heat.zero(),
       this.biomass = const Biomass.zero()});
 
-  Ti get ti {
-    return Ti(pressure.nPa + oxygen.ppq + heat.pK + biomass.grams);
-  }
+  Ti get ti => pressure.toTi() + oxygen.toTi() + heat.toTi() + biomass.toTi();
 
   Progress operator +(Progress other) {
     return Progress(
@@ -149,10 +147,15 @@ class Ti {
   const Ti(this.value);
   const Ti.zero() : value = 0;
 
-  const Ti.kilo(double kiloTi) : value = kiloTi * 1000;
-  const Ti.mega(double megaTi) : value = megaTi * 1000000;
-  const Ti.giga(double gigaTi) : value = gigaTi * 1000000000;
-  const Ti.tera(double teraTi) : value = teraTi * 1000000000000;
+  static const double kiloMultiplier = 1000;
+  static const double megaMultiplier = 1000000;
+  static const double gigaMultiplier = 1000000000;
+  static const double teraMultiplier = 1000000000000;
+
+  const Ti.kilo(double kiloTi) : value = kiloTi * kiloMultiplier;
+  const Ti.mega(double megaTi) : value = megaTi * megaMultiplier;
+  const Ti.giga(double gigaTi) : value = gigaTi * gigaMultiplier;
+  const Ti.tera(double teraTi) : value = teraTi * teraMultiplier;
 
   Ti operator +(Ti other) => Ti(value + other.value);
   Ti scaleBy(double multiplier) => Ti(value * multiplier);
@@ -161,8 +164,22 @@ class Ti {
 
   @override
   String toString() {
-    // FIXME: Automatically scale printed units.
-    return "${value.toStringAsFixed(1)}ti";
+    var value = this.value;
+    var suffix = "ti";
+    if (value >= teraMultiplier) {
+      value /= teraMultiplier;
+      suffix = 'TTi';
+    } else if (value >= gigaMultiplier) {
+      value /= gigaMultiplier;
+      suffix = 'GTi';
+    } else if (value >= megaMultiplier) {
+      value /= megaMultiplier;
+      suffix = 'MTi';
+    } else if (value >= kiloMultiplier) {
+      value /= kiloMultiplier;
+      suffix = 'kTi';
+    }
+    return "${value.toStringAsFixed(1)}$suffix";
   }
 }
 
@@ -176,11 +193,27 @@ class O2 {
   O2 scaleBy(double multiplier) => O2(ppq * multiplier);
   O2 operator *(O2 other) => O2(ppq * other.ppq);
   bool operator >=(O2 other) => ppq >= other.ppq;
+  Ti toTi() => Ti(ppq);
+
+  static const double pptMultiplier = 1000;
+  static const double ppbMultiplier = 1000000;
+  static const double ppmMultiplier = 1000000000;
 
   @override
   String toString() {
-    // FIXME: Automatically scale printed units.
-    return "${ppq.toStringAsFixed(1)}ppq";
+    var value = ppq;
+    var suffix = "ppq";
+    if (value >= ppmMultiplier) {
+      value /= ppmMultiplier;
+      suffix = 'ppm';
+    } else if (value >= ppbMultiplier) {
+      value /= ppbMultiplier;
+      suffix = 'ppb';
+    } else if (value >= pptMultiplier) {
+      value /= pptMultiplier;
+      suffix = 'ppt';
+    }
+    return "${value.toStringAsFixed(1)}$suffix";
   }
 }
 
@@ -198,11 +231,23 @@ class Heat {
   Heat scaleBy(double multiplier) => Heat(pK * multiplier);
   Heat operator *(Heat other) => Heat(pK * other.pK);
   bool operator >=(Heat other) => pK >= other.pK;
+  Ti toTi() => Ti(pK);
+
+  static const double nanoMultiplier = 1000;
+  static const double microMultiplier = 1000000;
 
   @override
   String toString() {
-    // FIXME: Automatically scale printed units.
-    return "${pK.toStringAsFixed(1)}pK";
+    var value = pK;
+    var suffix = "pK";
+    if (value >= microMultiplier) {
+      value /= microMultiplier;
+      suffix = 'uK';
+    } else if (value >= nanoMultiplier) {
+      value /= nanoMultiplier;
+      suffix = 'nK';
+    }
+    return "${value.toStringAsFixed(1)}$suffix";
   }
 }
 
@@ -218,17 +263,29 @@ class Pressure {
   Pressure scaleBy(double multiplier) => Pressure(nPa * multiplier);
   Pressure operator *(Pressure other) => Pressure(nPa * other.nPa);
   bool operator >=(Pressure other) => nPa >= other.nPa;
+  Ti toTi() => Ti(nPa);
+
+  static const double microMultiplier = 1000;
+  static const double milliMultiplier = 1000000;
 
   @override
   String toString() {
-    // FIXME: Automatically scale printed units.
-    return "${nPa.toStringAsFixed(1)}nPa";
+    var value = nPa;
+    var suffix = "nPa";
+    if (value >= milliMultiplier) {
+      value /= milliMultiplier;
+      suffix = 'mPa';
+    } else if (value >= microMultiplier) {
+      value /= microMultiplier;
+      suffix = 'uPa';
+    }
+    return "${value.toStringAsFixed(1)}$suffix";
   }
 }
 
 Pressure nPa(double value) => Pressure(value); // nanopascals: e-9
 Pressure uPa(double value) => Pressure(value * 1000); // micropascals: e-6
-Pressure mPa(double value) => Pressure(value * 1000); // millipascals: e-3
+Pressure mPa(double value) => Pressure(value * 1000000); // millipascals: e-3
 
 class Biomass {
   final double grams; // grams
@@ -238,6 +295,7 @@ class Biomass {
   Biomass scaleBy(double multiplier) => Biomass(grams * multiplier);
   Biomass operator *(Biomass other) => Biomass(grams * other.grams);
   bool operator >=(Biomass other) => grams >= other.grams;
+  Ti toTi() => Ti(grams);
 
   @override
   String toString() {
@@ -275,6 +333,18 @@ class Goal {
       return totalProgress.heat >= heat!;
     }
     return totalProgress.pressure >= pressure!;
+  }
+
+  @override
+  String toString() {
+    if (ti != null) {
+      return ti.toString();
+    } else if (oxygen != null) {
+      return "$oxygen (${oxygen!.toTi()})";
+    } else if (heat != null) {
+      return "$heat (${heat!.toTi()})";
+    }
+    return "$pressure (${pressure!.toTi()})";
   }
 }
 
