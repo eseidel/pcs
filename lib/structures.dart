@@ -11,11 +11,19 @@ enum Item {
   titanium,
   water,
   osmium, // Gated until later.
+  zeolite, // Gated until later.
   uranium, // Not gatherable.
   iridumRod, // Not gatherable.
   uraniumRod, // Not gatherable.
-  pulsarQuartz, // Not gatherable,
-  explosivePowder, // Not gatherable,
+  pulsarQuartz, // Not gatherable.
+  explosivePowder, // Not gatherable.
+  fertilizer, // Not gatherable.
+  fertilizerT2, // Not gatherable.
+  bioplasticNugget, // Not gatherable.
+  eggplant, // Not gatherable.
+  bacteriaSample, // Not gatherable.
+  treeBark, // Not gatherable.
+  seedLirma, // Not reliably gatherable.
   // plant is kinda a hack, it's more of a "type" of item.
   plant, // Not reliably gatherable.
 }
@@ -87,23 +95,23 @@ class Progress {
   final Pressure pressure;
   final O2 oxygen;
   final Heat heat;
-  final double biomass;
+  final Biomass biomass;
 
   // Used by tests which need a progress where everything is unlocked.
   const Progress.allUnlocks()
       : pressure = const Pressure(double.maxFinite),
         oxygen = const O2(double.maxFinite),
         heat = const Heat(double.maxFinite),
-        biomass = double.maxFinite;
+        biomass = const Biomass(double.maxFinite);
 
   const Progress(
       {this.pressure = const Pressure.zero(),
       this.oxygen = const O2.zero(),
       this.heat = const Heat.zero(),
-      this.biomass = 0});
+      this.biomass = const Biomass.zero()});
 
   Ti get ti {
-    return Ti(pressure.nPa + oxygen.ppq + heat.pK + biomass);
+    return Ti(pressure.nPa + oxygen.ppq + heat.pK + biomass.grams);
   }
 
   Progress operator +(Progress other) {
@@ -120,7 +128,7 @@ class Progress {
       pressure: pressure.scaleBy(timeDelta),
       oxygen: oxygen.scaleBy(timeDelta),
       heat: heat.scaleBy(timeDelta),
-      biomass: biomass * timeDelta,
+      biomass: biomass.scaleBy(timeDelta),
     );
   }
 
@@ -180,6 +188,7 @@ class O2 {
 O2 ppq(double value) => O2(value); // e-15
 O2 ppt(double value) => O2(value * 1000); // e-12
 O2 ppb(double value) => O2(value * 1000000); // e-9
+O2 ppm(double value) => O2(value * 1000000000); // e-6
 
 class Heat {
   final double pK; // picokelvin?  e-12?
@@ -221,6 +230,24 @@ Pressure nPa(double value) => Pressure(value); // nanopascals: e-9
 Pressure uPa(double value) => Pressure(value * 1000); // micropascals: e-6
 Pressure mPa(double value) => Pressure(value * 1000); // millipascals: e-3
 
+class Biomass {
+  final double grams; // grams
+  const Biomass(this.grams);
+  const Biomass.zero() : grams = 0;
+  Biomass operator +(Biomass other) => Biomass(grams + other.grams);
+  Biomass scaleBy(double multiplier) => Biomass(grams * multiplier);
+  Biomass operator *(Biomass other) => Biomass(grams * other.grams);
+  bool operator >=(Biomass other) => grams >= other.grams;
+
+  @override
+  String toString() {
+    // FIXME: Automatically scale printed units.
+    return "${grams.toStringAsFixed(1)}g";
+  }
+}
+
+Biomass g(double value) => Biomass(value); // grams
+
 // This is really an enum?
 class Goal {
   final Ti? ti;
@@ -251,6 +278,12 @@ class Goal {
   }
 }
 
+enum Location {
+  outside,
+  inside,
+  // inventory, // Maybe if "Structures" and "Items" merge?
+}
+
 class Structure {
   final Goal unlocksAt;
   final List<Item> cost;
@@ -258,6 +291,7 @@ class Structure {
   final Progress progress;
   final String name;
   final String description;
+  final Location location;
 
   bool isAvailable(Progress progress) {
     return unlocksAt.wasReached(progress);
@@ -270,6 +304,7 @@ class Structure {
     required this.name,
     this.progress = const Progress(),
     this.description = "",
+    required this.location,
   });
 }
 
@@ -281,12 +316,14 @@ final allStructures = <Structure>[
     cost: [Item.titanium, Item.iron],
     energy: -0.5,
     progress: Progress(pressure: nPa(0.2)),
+    location: Location.outside,
   ),
   Structure(
     name: "Wind Turbine",
     unlocksAt: Goal.zero(),
     cost: [Item.iron],
     energy: 1.2,
+    location: Location.outside,
   ),
   Structure(
     name: "Heater T1",
@@ -294,6 +331,7 @@ final allStructures = <Structure>[
     cost: [Item.iron, Item.iridium, Item.silicon],
     progress: Progress(heat: pK(0.3)),
     energy: -1,
+    location: Location.inside,
   ),
   Structure(
     name: "Vegetube T1",
@@ -306,6 +344,7 @@ final allStructures = <Structure>[
     ],
     progress: Progress(oxygen: ppq(0.15)),
     energy: -.35,
+    location: Location.inside,
   ),
 
   // Backpack T2 - 300 Ti
@@ -315,6 +354,7 @@ final allStructures = <Structure>[
     unlocksAt: Goal(ti: kTi(1.0)),
     cost: [Item.iron, Item.cobalt, Item.cobalt, Item.silicon],
     energy: 6.5,
+    location: Location.outside,
   ),
 
   // Backpack T3 - 2.5 kTi
@@ -331,6 +371,7 @@ final allStructures = <Structure>[
       Item.aluminium
     ],
     energy: 19.5,
+    location: Location.outside,
   ),
 
   // Double Bed - 25.0 kTi
@@ -360,6 +401,7 @@ final allStructures = <Structure>[
     ],
     progress: Progress(heat: pK(4.5)),
     energy: -3.5,
+    location: Location.inside,
   ),
 
   // Oxygen Tank T3 - 5 ppt o2
@@ -378,13 +420,54 @@ final allStructures = <Structure>[
     ],
     progress: Progress(oxygen: ppq(13.0)),
     energy: -7.25,
+    location: Location.outside,
   ),
 
   // Heater T3 - 80 ppt o2
+  Structure(
+    name: "Heater T3",
+    unlocksAt: Goal(oxygen: ppt(80)),
+    cost: [
+      Item.silicon,
+      Item.titanium,
+      Item.aluminium,
+      Item.iridium,
+    ],
+    progress: Progress(heat: pK(28.5), pressure: nPa(0.6)),
+    energy: -17.5,
+    location: Location.inside,
+  ),
   // Grass Spreader - 150.0 ppt o2
+  Structure(
+    name: "Grass Spreader",
+    unlocksAt: Goal(oxygen: ppt(150)),
+    cost: [
+      Item.water,
+      Item.water,
+      Item.magnesium,
+      Item.aluminium,
+      Item.seedLirma,
+    ],
+    progress: Progress(oxygen: ppq(108), biomass: g(0.15)),
+    energy: -13.8,
+    location: Location.outside,
+  ),
   // Flower Pot - 420.00 ppt
   // Tree Spreader T2 - 7.50 ppm
-
+  Structure(
+    name: "Tree Spreader T2",
+    unlocksAt: Goal(oxygen: ppm(7.5)),
+    cost: [
+      Item.superAlloy,
+      Item.bacteriaSample,
+      Item.treeBark,
+      Item.fertilizerT2,
+      Item.zeolite,
+    ],
+    progress: Progress(oxygen: ppt(1.950), biomass: g(149)),
+    energy: -71,
+    location: Location.outside,
+  ),
   // Vegetube T2 - 500 pK
   Structure(
     name: "Vegetube T2",
@@ -399,6 +482,7 @@ final allStructures = <Structure>[
     ],
     progress: Progress(oxygen: ppq(1.2)),
     energy: -1.25,
+    location: Location.inside,
   ),
 
   // Screen - Progress - 2.0 nK
@@ -418,10 +502,26 @@ final allStructures = <Structure>[
     ],
     progress: Progress(heat: pK(2.5), pressure: nPa(17)),
     energy: -8.5,
+    location: Location.outside,
   ),
   // Biodome - 100.0 nK
   // Sign - 500.0 nK
   // Algae Generator T1 - 2.00 uK
+  Structure(
+    name: "Algae Generator T1",
+    unlocksAt: Goal(heat: uK(2)),
+    cost: [
+      Item.bioplasticNugget,
+      Item.eggplant,
+      Item.water,
+      Item.magnesium,
+      Item.superAlloy,
+    ],
+    progress: Progress(oxygen: ppq(127), biomass: g(0.6)),
+    energy: -13.0,
+    location: Location.outside,
+  ),
+
   // Biodome T2 - 12.00 uK
   // Drill T4 - 41.00 uK
   Structure(
@@ -440,6 +540,7 @@ final allStructures = <Structure>[
     ],
     progress: Progress(heat: pK(25), pressure: nPa(459)),
     energy: -45,
+    location: Location.outside,
   ),
   // Nuclear Fusion Generator - 750.00 uK
   Structure(
@@ -457,6 +558,7 @@ final allStructures = <Structure>[
       Item.pulsarQuartz
     ],
     energy: 1835,
+    location: Location.outside,
   ),
 
   // Oxygen Tank T2 - 70 nPa
@@ -468,6 +570,7 @@ final allStructures = <Structure>[
     cost: [Item.iron, Item.titanium, Item.titanium],
     progress: Progress(heat: pK(0.1), pressure: nPa(1.5)),
     energy: -5,
+    location: Location.outside,
   ),
   // Living Compartment Glass - 4.0 uPa
   // Communication Antenna - 4.0 uPa
@@ -485,6 +588,7 @@ final allStructures = <Structure>[
       Item.uraniumRod,
     ],
     energy: 86.5,
+    location: Location.outside,
   ),
   // Ore Extractor - 155.00 uPa
   // Nuclear Reactor T2 - 1.5 mPa
@@ -502,10 +606,33 @@ final allStructures = <Structure>[
       Item.explosivePowder,
     ],
     energy: 331.5,
+    location: Location.outside,
   ),
   // Flower Spreader - 2.50 mPa
+  Structure(
+    name: "Flower Spreader",
+    unlocksAt: Goal(pressure: mPa(2.5)),
+    cost: [
+      Item.water,
+      Item.water,
+      Item.water,
+      Item.superAlloy,
+      Item.magnesium,
+      Item.fertilizer
+    ],
+    energy: -28.8,
+    progress: Progress(biomass: g(7.2)),
+    location: Location.outside,
+  ),
   // Gas Extractor - 100.00 mPa
   // Ore Extractor T2 - 364.50 mPa
+
+  // Biomass unlocks:
+  // Biolab
+  // Algae Generator T2
+  // Biomass Rocket
+  // Flower Spreader T2
+  // Tree Spreader
 ];
 
 Structure strutureWithName(String name) {

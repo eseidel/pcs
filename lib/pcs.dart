@@ -328,6 +328,7 @@ class Simulation {
         return nearby;
       case Item.magnesium:
         return nearby;
+      case Item.seedLirma:
       case Item.plant:
         return distant;
       case Item.silicon:
@@ -337,11 +338,19 @@ class Simulation {
       case Item.titanium:
         return nearby;
       case Item.osmium:
-        return distant;
+        return distant; // Gated until later?
+      case Item.zeolite:
+        return impossible; // Nearby once late?
       case Item.uranium:
       case Item.uraniumRod:
       case Item.iridumRod:
       case Item.pulsarQuartz:
+      case Item.eggplant:
+      case Item.fertilizer:
+      case Item.fertilizerT2:
+      case Item.bacteriaSample:
+      case Item.treeBark:
+      case Item.bioplasticNugget:
       case Item.explosivePowder:
         return impossible;
     }

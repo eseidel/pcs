@@ -2,9 +2,12 @@ Planet Crafter Simulator/Solver
 
 An attempt at simulating enough of Planet Crafter to guess at what an optimium route might look like.
 
+Based on Early Access 0.4.007.
+https://store.steampowered.com/app/1284190/The_Planet_Crafter/
+
 # What's here
 
-A script for simulating building towards Blue Sky:
+A script for simulating building towards the "Blue Sky" milestone:
 ```
 dart run .\bin\simulate.dart
 Simulating to Blue Sky into output_log.txt...
@@ -37,10 +40,15 @@ Nuclear Reactor T2 time: Infinity energy: 331.5 ratio: 0.00
 ```
 
 
-TODO
+# TODO
 * Add more structures
 * Merge Gathers together
 * Simulate inventory
 * Simulate non-respawning resources (increasing gather base costs?)
 * Gathers should have a base-cost and then smaller per-item cost?
+* Support structure destruction.
+* Support item construction/transmutation (e.g. iridium rod)
 * Simulate oxygen, food, or water?
+* Simulate "growing" in plant generators.
+* Require construction/destruction chips.
+* Require indoor space for indoor structures.
