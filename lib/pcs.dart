@@ -104,6 +104,11 @@ class Plan {
       (total, action) =>
           total + (action is Build ? action.structure.energy : 0));
 
+  Ti get tiDelta => actions.fold(
+      Ti(0),
+      (total, action) =>
+          total + (action is Build ? action.structure.progress.ti : Ti(0)));
+
   // Total Resource change?
 }
 
@@ -311,7 +316,7 @@ class Simulation {
     const double impossible = double.infinity;
     switch (item) {
       case Item.aluminium:
-        return distant;
+        return medium;
       case Item.cobalt:
         return nearby;
       case Item.water:
