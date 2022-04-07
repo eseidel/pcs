@@ -39,6 +39,14 @@ Nuclear Reactor T1 time: Infinity energy: 86.5 ratio: 0.00
 Nuclear Reactor T2 time: Infinity energy: 331.5 ratio: 0.00
 ```
 
+# Current speedrun to Blue Sky guess?
+Heater T1 if you have iridium, Drill T1 otherwise.
+Skip VegeTube T1.  VegeTube T2 ASAP once unlocks and have plants.
+Drill T2 once unlocks.
+Upgrade all Heater T1s to T2s once unlocks.
+Drill T3 once unlocks (heat).
+Upgrade all VegeTube T2 to T3 once unlocks and have plants.
+Heater T3s once unlocks (not worth tearing down T2s?)
 
 # TODO
 * Add more structures

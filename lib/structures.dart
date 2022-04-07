@@ -335,6 +335,17 @@ class Goal {
     return totalProgress.pressure >= pressure!;
   }
 
+  Ti toTi() {
+    if (ti != null) {
+      return ti!;
+    } else if (oxygen != null) {
+      return oxygen!.toTi();
+    } else if (heat != null) {
+      return heat!.toTi();
+    }
+    return pressure!.toTi();
+  }
+
   @override
   String toString() {
     if (ti != null) {
