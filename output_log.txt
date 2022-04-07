@@ -125,7 +125,7 @@ Gather iron (5s) energy: 6.4
 Build Drill T1 (1s) energy: 5.9
 Gather iron (5s) energy: 5.9
 Gather titanium (5s) energy: 5.9
-433s : 1317.0ti o2: 0.0ppq heat: 0.0pK pressure: 1317.0nPa biomass: 0.0g
+433s : 1.3kTi o2: 0.0ppq heat: 0.0pK pressure: 1.3uPa biomass: 0.0g
 Gather titanium (5s) energy: 5.9
 Build Drill T2 (1s) energy: 0.9
 Gather iron (5s) energy: 0.9
@@ -141,7 +141,7 @@ Gather iron (5s) energy: 2.4
 Gather cobalt (5s) energy: 2.4
 Gather cobalt (5s) energy: 2.4
 Gather silicon (5s) energy: 2.4
-496s : 1818.2ti o2: 0.0ppq heat: 7.7pK pressure: 1810.5nPa biomass: 0.0g
+496s : 1.8kTi o2: 0.0ppq heat: 7.7pK pressure: 1.8uPa biomass: 0.0g
 Build Solar Panel T1 (1s) energy: 8.9
 Gather iron (5s) energy: 8.9
 Gather titanium (5s) energy: 8.9
@@ -158,7 +158,7 @@ Gather titanium (5s) energy: 10.4
 Build Drill T2 (1s) energy: 5.4
 Gather iron (5s) energy: 5.4
 Gather titanium (5s) energy: 5.4
-560s : 2498.2ti o2: 0.0ppq heat: 26.2pK pressure: 2472.0nPa biomass: 0.0g
+560s : 2.5kTi o2: 0.0ppq heat: 26.2pK pressure: 2.5uPa biomass: 0.0g
 Gather titanium (5s) energy: 5.4
 Build Drill T2 (1s) energy: 0.4
 Gather iron (5s) energy: 0.4
@@ -174,7 +174,7 @@ Gather iron (5s) energy: 1.9
 Gather cobalt (5s) energy: 1.9
 Gather cobalt (5s) energy: 1.9
 Gather silicon (5s) energy: 1.9
-623s : 3402.6ti o2: 0.0ppq heat: 59.1pK pressure: 3343.5nPa biomass: 0.0g
+623s : 3.4kTi o2: 0.0ppq heat: 59.1pK pressure: 3.3uPa biomass: 0.0g
 Build Solar Panel T1 (1s) energy: 8.4
 Gather iron (5s) energy: 8.4
 Gather titanium (5s) energy: 8.4
@@ -191,7 +191,7 @@ Gather titanium (5s) energy: 9.9
 Build Drill T2 (1s) energy: 4.9
 Gather iron (5s) energy: 4.9
 Gather cobalt (5s) energy: 4.9
-687s : 4492.2ti o2: 0.0ppq heat: 103.2pK pressure: 4389.0nPa biomass: 0.0g
+687s : 4.5kTi o2: 0.0ppq heat: 103.2pK pressure: 4.4uPa biomass: 0.0g
 Gather cobalt (5s) energy: 4.9
 Gather silicon (5s) energy: 4.9
 Build Solar Panel T1 (1s) energy: 11.4
@@ -207,7 +207,7 @@ Gather iron (5s) energy: 1.4
 Gather cobalt (5s) energy: 1.4
 Gather cobalt (5s) energy: 1.4
 Gather silicon (5s) energy: 1.4
-750s : 5766.2ti o2: 0.0ppq heat: 159.2pK pressure: 5607.0nPa biomass: 0.0g
+750s : 5.8kTi o2: 0.0ppq heat: 159.2pK pressure: 5.6uPa biomass: 0.0g
 Build Solar Panel T1 (1s) energy: 7.9
 Gather iron (5s) energy: 7.9
 Gather titanium (5s) energy: 7.9
@@ -224,7 +224,7 @@ Gather titanium (5s) energy: 9.4
 Build Drill T2 (1s) energy: 4.4
 Gather iron (5s) energy: 4.4
 Gather cobalt (5s) energy: 4.4
-814s : 7265.4ti o2: 0.0ppq heat: 228.9pK pressure: 7036.5nPa biomass: 0.0g
+814s : 7.3kTi o2: 0.0ppq heat: 228.9pK pressure: 7.0uPa biomass: 0.0g
 Gather cobalt (5s) energy: 4.4
 Gather silicon (5s) energy: 4.4
 Build Solar Panel T1 (1s) energy: 10.9
@@ -240,7 +240,7 @@ Gather iron (5s) energy: 0.9
 Gather cobalt (5s) energy: 0.9
 Gather cobalt (5s) energy: 0.9
 Gather silicon (5s) energy: 0.9
-877s : 8942.6ti o2: 0.0ppq heat: 310.1pK pressure: 8632.5nPa biomass: 0.0g
+877s : 8.9kTi o2: 0.0ppq heat: 310.1pK pressure: 8.6uPa biomass: 0.0g
 Build Solar Panel T1 (1s) energy: 7.4
 Gather iron (5s) energy: 7.4
 Gather titanium (5s) energy: 7.4
@@ -257,7 +257,7 @@ Gather titanium (5s) energy: 8.9
 Build Drill T2 (1s) energy: 3.9
 Gather iron (5s) energy: 3.9
 Gather cobalt (5s) energy: 3.9
-941s : 10851.4ti o2: 0.0ppq heat: 405.4pK pressure: 10446.0nPa biomass: 0.0g
+941s : 10.9kTi o2: 0.0ppq heat: 405.4pK pressure: 10.4uPa biomass: 0.0g
 Gather cobalt (5s) energy: 3.9
 Gather silicon (5s) energy: 3.9
 Build Solar Panel T1 (1s) energy: 10.4
@@ -273,7 +273,7 @@ Gather iron (5s) energy: 0.4
 Gather cobalt (5s) energy: 0.4
 Gather cobalt (5s) energy: 0.4
 Gather silicon (5s) energy: 0.4
-1004s : 12931.8ti o2: 0.0ppq heat: 511.8pK pressure: 12420.0nPa biomass: 0.0g
+1004s : 12.9kTi o2: 0.0ppq heat: 511.8pK pressure: 12.4uPa biomass: 0.0g
 Build Solar Panel T1 (1s) energy: 6.9
 Gather iron (5s) energy: 6.9
 Gather titanium (5s) energy: 6.9
@@ -289,7 +289,7 @@ Gather iron (5s) energy: 0.6
 Gather cobalt (5s) energy: 0.6
 Gather cobalt (5s) energy: 0.6
 Gather silicon (5s) energy: 0.6
-1067s : 15221.8ti o2: 24.0ppq heat: 629.8pK pressure: 14568.0nPa biomass: 0.0g
+1067s : 15.2kTi o2: 24.0ppq heat: 629.8pK pressure: 14.6uPa biomass: 0.0g
 Build Solar Panel T1 (1s) energy: 7.1
 Gather iron (5s) energy: 7.1
 Gather titanium (5s) energy: 7.1
@@ -305,7 +305,7 @@ Gather iron (5s) energy: 0.9
 Gather cobalt (5s) energy: 0.9
 Gather cobalt (5s) energy: 0.9
 Gather silicon (5s) energy: 0.9
-1130s : 17688.2ti o2: 123.6ppq heat: 754.1pK pressure: 16810.5nPa biomass: 0.0g
+1130s : 17.7kTi o2: 123.6ppq heat: 754.1pK pressure: 16.8uPa biomass: 0.0g
 Build Solar Panel T1 (1s) energy: 7.4
 Gather iron (5s) energy: 7.4
 Gather titanium (5s) energy: 7.4
@@ -321,7 +321,7 @@ Gather iron (5s) energy: 1.1
 Gather cobalt (5s) energy: 1.1
 Gather cobalt (5s) energy: 1.1
 Gather silicon (5s) energy: 1.1
-1193s : 20331.0ti o2: 298.8ppq heat: 884.7pK pressure: 19147.5nPa biomass: 0.0g
+1193s : 20.3kTi o2: 298.8ppq heat: 884.7pK pressure: 19.1uPa biomass: 0.0g
 Build Solar Panel T1 (1s) energy: 7.6
 Gather iron (5s) energy: 7.6
 Gather titanium (5s) energy: 7.6
@@ -337,7 +337,7 @@ Gather iron (5s) energy: 1.4
 Gather ice (5s) energy: 1.4
 Gather ice (5s) energy: 1.4
 Gather magnesium (5s) energy: 1.4
-1256s : 23150.2ti o2: 549.6ppq heat: 1021.6pK pressure: 21579.0nPa biomass: 0.0g
+1256s : 23.2kTi o2: 549.6ppq heat: 1.0nK pressure: 21.6uPa biomass: 0.0g
 Gather silicon (5s) energy: 1.4
 Build Vegetube T2 (1s) energy: 0.1
 Gather iron (5s) energy: 0.1
@@ -353,7 +353,7 @@ Gather iron (5s) energy: 1.6
 Gather ice (5s) energy: 1.6
 Gather ice (5s) energy: 1.6
 Gather magnesium (5s) energy: 1.6
-1319s : 26148.6ti o2: 920.4ppq heat: 1162.2pK pressure: 24066.0nPa biomass: 0.0g
+1319s : 26.1kTi o2: 920.4ppq heat: 1.2nK pressure: 24.1uPa biomass: 0.0g
 Gather silicon (5s) energy: 1.6
 Build Vegetube T2 (1s) energy: 0.4
 Gather iron (5s) energy: 0.4
@@ -369,7 +369,7 @@ Gather iron (5s) energy: 1.9
 Gather ice (5s) energy: 1.9
 Gather ice (5s) energy: 1.9
 Gather magnesium (5s) energy: 1.9
-1382s : 29323.4ti o2: 1366.8ppq heat: 1309.1pK pressure: 26647.5nPa biomass: 0.0g
+1382s : 29.3kTi o2: 1.4ppt heat: 1.3nK pressure: 26.6uPa biomass: 0.0g
 Gather silicon (5s) energy: 1.9
 Build Vegetube T2 (1s) energy: 0.6
 Gather iron (5s) energy: 0.6
@@ -385,7 +385,7 @@ Gather iron (5s) energy: 2.1
 Gather ice (5s) energy: 2.1
 Gather ice (5s) energy: 2.1
 Gather magnesium (5s) energy: 2.1
-1445s : 32674.6ti o2: 1888.8ppq heat: 1462.3pK pressure: 29323.5nPa biomass: 0.0g
+1445s : 32.7kTi o2: 1.9ppt heat: 1.5nK pressure: 29.3uPa biomass: 0.0g
 Gather silicon (5s) energy: 2.1
 Build Vegetube T2 (1s) energy: 0.9
 Gather iron (5s) energy: 0.9
@@ -401,7 +401,7 @@ Gather iron (5s) energy: 2.4
 Gather ice (5s) energy: 2.4
 Gather ice (5s) energy: 2.4
 Gather magnesium (5s) energy: 2.4
-1508s : 36202.2ti o2: 2486.4ppq heat: 1621.8pK pressure: 32094.0nPa biomass: 0.0g
+1508s : 36.2kTi o2: 2.5ppt heat: 1.6nK pressure: 32.1uPa biomass: 0.0g
 Gather silicon (5s) energy: 2.4
 Build Vegetube T2 (1s) energy: 1.1
 Gather iron (5s) energy: 1.1
@@ -417,7 +417,7 @@ Gather iron (5s) energy: 2.6
 Gather ice (5s) energy: 2.6
 Gather ice (5s) energy: 2.6
 Gather magnesium (5s) energy: 2.6
-1571s : 39906.2ti o2: 3159.6ppq heat: 1787.6pK pressure: 34959.0nPa biomass: 0.0g
+1571s : 39.9kTi o2: 3.2ppt heat: 1.8nK pressure: 35.0uPa biomass: 0.0g
 Gather silicon (5s) energy: 2.6
 Build Vegetube T2 (1s) energy: 1.4
 Gather iron (5s) energy: 1.4
@@ -433,7 +433,7 @@ Gather silicon (5s) energy: 0.1
 Build Solar Panel T1 (1s) energy: 6.6
 Gather iron (5s) energy: 6.6
 Gather titanium (5s) energy: 6.6
-1634s : 43791.8ti o2: 3945.6ppq heat: 1957.7pK pressure: 37888.5nPa biomass: 0.0g
+1634s : 43.8kTi o2: 3.9ppt heat: 2.0nK pressure: 37.9uPa biomass: 0.0g
 Gather titanium (5s) energy: 6.6
 Build Drill T2 (1s) energy: 1.6
 Gather iron (5s) energy: 1.6
@@ -449,7 +449,7 @@ Gather silicon (5s) energy: 0.4
 Build Solar Panel T1 (1s) energy: 6.9
 Gather iron (5s) energy: 6.9
 Gather titanium (5s) energy: 6.9
-1697s : 47851.4ti o2: 4814.4ppq heat: 2133.5pK pressure: 40903.5nPa biomass: 0.0g
+1697s : 47.9kTi o2: 4.8ppt heat: 2.1nK pressure: 40.9uPa biomass: 0.0g
 Gather titanium (5s) energy: 6.9
 Build Drill T2 (1s) energy: 1.9
 Gather iron (5s) energy: 1.9
@@ -465,7 +465,7 @@ Gather silicon (5s) energy: 0.6
 Build Solar Panel T1 (1s) energy: 7.1
 Gather iron (5s) energy: 7.1
 Gather titanium (5s) energy: 7.1
-1760s : 52087.4ti o2: 5758.8ppq heat: 2315.6pK pressure: 44013.0nPa biomass: 0.0g
+1760s : 52.1kTi o2: 5.8ppt heat: 2.3nK pressure: 44.0uPa biomass: 0.0g
 Gather titanium (5s) energy: 7.1
 Build Drill T2 (1s) energy: 2.1
 Gather iron (5s) energy: 2.1
@@ -481,7 +481,7 @@ Gather silicon (5s) energy: 0.9
 Build Solar Panel T1 (1s) energy: 7.4
 Gather iron (5s) energy: 7.4
 Gather titanium (5s) energy: 7.4
-1823s : 56499.8ti o2: 6778.8ppq heat: 2504.0pK pressure: 47217.0nPa biomass: 0.0g
+1823s : 56.5kTi o2: 6.8ppt heat: 2.5nK pressure: 47.2uPa biomass: 0.0g
 Gather titanium (5s) energy: 7.4
 Build Drill T2 (1s) energy: 2.4
 Gather iron (5s) energy: 2.4
@@ -497,7 +497,7 @@ Gather silicon (5s) energy: 1.1
 Build Solar Panel T1 (1s) energy: 7.6
 Gather iron (5s) energy: 7.6
 Gather titanium (5s) energy: 7.6
-1886s : 61088.6ti o2: 7874.4ppq heat: 2698.7pK pressure: 50515.5nPa biomass: 0.0g
+1886s : 61.1kTi o2: 7.9ppt heat: 2.7nK pressure: 50.5uPa biomass: 0.0g
 Gather titanium (5s) energy: 7.6
 Build Drill T2 (1s) energy: 2.6
 Gather iron (5s) energy: 2.6
@@ -513,7 +513,7 @@ Gather magnesium (5s) energy: 1.4
 Gather silicon (5s) energy: 1.4
 Build Vegetube T2 (1s) energy: 0.1
 Gather iron (5s) energy: 0.1
-1949s : 65859.8ti o2: 9051.6ppq heat: 2899.7pK pressure: 53908.5nPa biomass: 0.0g
+1949s : 65.9kTi o2: 9.1ppt heat: 2.9nK pressure: 53.9uPa biomass: 0.0g
 Gather cobalt (5s) energy: 0.1
 Gather cobalt (5s) energy: 0.1
 Gather silicon (5s) energy: 0.1
@@ -529,7 +529,7 @@ Gather magnesium (5s) energy: 1.6
 Gather silicon (5s) energy: 1.6
 Build Vegetube T2 (1s) energy: 0.4
 Gather iron (5s) energy: 0.4
-2012s : 70804.2ti o2: 10342.8ppq heat: 3104.4pK pressure: 57357.0nPa biomass: 0.0g
+2012s : 70.8kTi o2: 10.3ppt heat: 3.1nK pressure: 57.4uPa biomass: 0.0g
 Gather cobalt (5s) energy: 0.4
 Gather cobalt (5s) energy: 0.4
 Gather silicon (5s) energy: 0.4
@@ -545,7 +545,7 @@ Gather magnesium (5s) energy: 1.9
 Gather silicon (5s) energy: 1.9
 Build Vegetube T2 (1s) energy: 0.6
 Gather iron (5s) energy: 0.6
-2075s : 75925.0ti o2: 11709.6ppq heat: 3315.4pK pressure: 60900.0nPa biomass: 0.0g
+2075s : 75.9kTi o2: 11.7ppt heat: 3.3nK pressure: 60.9uPa biomass: 0.0g
 Gather cobalt (5s) energy: 0.6
 Gather cobalt (5s) energy: 0.6
 Gather silicon (5s) energy: 0.6
@@ -561,7 +561,7 @@ Gather magnesium (5s) energy: 2.1
 Gather silicon (5s) energy: 2.1
 Build Vegetube T2 (1s) energy: 0.9
 Gather iron (5s) energy: 0.9
-2138s : 81222.2ti o2: 13152.0ppq heat: 3532.7pK pressure: 64537.5nPa biomass: 0.0g
+2138s : 81.2kTi o2: 13.2ppt heat: 3.5nK pressure: 64.5uPa biomass: 0.0g
 Gather cobalt (5s) energy: 0.9
 Gather cobalt (5s) energy: 0.9
 Gather silicon (5s) energy: 0.9
@@ -577,7 +577,7 @@ Gather magnesium (5s) energy: 2.4
 Gather silicon (5s) energy: 2.4
 Build Vegetube T2 (1s) energy: 1.1
 Gather iron (5s) energy: 1.1
-2201s : 86695.8ti o2: 14670.0ppq heat: 3756.3pK pressure: 68269.5nPa biomass: 0.0g
+2201s : 86.7kTi o2: 14.7ppt heat: 3.8nK pressure: 68.3uPa biomass: 0.0g
 Gather cobalt (5s) energy: 1.1
 Gather cobalt (5s) energy: 1.1
 Gather silicon (5s) energy: 1.1
@@ -593,7 +593,7 @@ Gather magnesium (5s) energy: 2.6
 Gather silicon (5s) energy: 2.6
 Build Vegetube T2 (1s) energy: 1.4
 Gather iron (5s) energy: 1.4
-2264s : 92345.8ti o2: 16263.6ppq heat: 3986.2pK pressure: 72096.0nPa biomass: 0.0g
+2264s : 92.3kTi o2: 16.3ppt heat: 4.0nK pressure: 72.1uPa biomass: 0.0g
 Gather ice (5s) energy: 1.4
 Gather ice (5s) energy: 1.4
 Gather magnesium (5s) energy: 1.4
@@ -609,7 +609,7 @@ Gather titanium (5s) energy: 6.6
 Gather titanium (5s) energy: 6.6
 Build Drill T2 (1s) energy: 1.6
 Gather iron (5s) energy: 1.6
-2327s : 98175.0ti o2: 17977.2ppq heat: 4219.8pK pressure: 75978.0nPa biomass: 0.0g
+2327s : 98.2kTi o2: 18.0ppt heat: 4.2nK pressure: 76.0uPa biomass: 0.0g
 Gather ice (5s) energy: 1.6
 Gather ice (5s) energy: 1.6
 Gather magnesium (5s) energy: 1.6
@@ -625,7 +625,7 @@ Gather titanium (5s) energy: 6.9
 Gather titanium (5s) energy: 6.9
 Build Drill T2 (1s) energy: 1.9
 Gather iron (5s) energy: 1.9
-2390s : 104180.6ti o2: 19766.4ppq heat: 4459.7pK pressure: 79954.5nPa biomass: 0.0g
+2390s : 104.2kTi o2: 19.8ppt heat: 4.5nK pressure: 80.0uPa biomass: 0.0g
 Gather ice (5s) energy: 1.9
 Gather ice (5s) energy: 1.9
 Gather magnesium (5s) energy: 1.9
@@ -641,7 +641,7 @@ Gather titanium (5s) energy: 7.1
 Gather titanium (5s) energy: 7.1
 Build Drill T2 (1s) energy: 2.1
 Gather iron (5s) energy: 2.1
-2453s : 110362.6ti o2: 21631.2ppq heat: 4705.9pK pressure: 84025.5nPa biomass: 0.0g
+2453s : 110.4kTi o2: 21.6ppt heat: 4.7nK pressure: 84.0uPa biomass: 0.0g
 Gather ice (5s) energy: 2.1
 Gather ice (5s) energy: 2.1
 Gather magnesium (5s) energy: 2.1
@@ -657,7 +657,7 @@ Gather titanium (5s) energy: 7.4
 Gather titanium (5s) energy: 7.4
 Build Drill T2 (1s) energy: 2.4
 Gather iron (5s) energy: 2.4
-2516s : 116721.0ti o2: 23571.6ppq heat: 4958.4pK pressure: 88191.0nPa biomass: 0.0g
+2516s : 116.7kTi o2: 23.6ppt heat: 5.0nK pressure: 88.2uPa biomass: 0.0g
 Gather ice (5s) energy: 2.4
 Gather ice (5s) energy: 2.4
 Gather magnesium (5s) energy: 2.4
@@ -673,7 +673,7 @@ Gather titanium (5s) energy: 7.6
 Gather titanium (5s) energy: 7.6
 Build Drill T2 (1s) energy: 2.6
 Gather iron (5s) energy: 2.6
-2579s : 123255.8ti o2: 25587.6ppq heat: 5217.2pK pressure: 92451.0nPa biomass: 0.0g
+2579s : 123.3kTi o2: 25.6ppt heat: 5.2nK pressure: 92.5uPa biomass: 0.0g
 Gather ice (5s) energy: 2.6
 Gather ice (5s) energy: 2.6
 Gather magnesium (5s) energy: 2.6
@@ -688,7 +688,7 @@ Build Vegetube T2 (1s) energy: 0.1
 Gather iron (5s) energy: 0.1
 Gather cobalt (5s) energy: 0.1
 Gather cobalt (5s) energy: 0.1
-2641s : 129870.2ti o2: 27663.6ppq heat: 5477.6pK pressure: 96729.0nPa biomass: 0.0g
+2641s : 129.9kTi o2: 27.7ppt heat: 5.5nK pressure: 96.7uPa biomass: 0.0g
 Gather silicon (5s) energy: 0.1
 Build Solar Panel T1 (1s) energy: 6.6
 Gather iron (5s) energy: 6.6
@@ -704,7 +704,7 @@ Build Vegetube T2 (1s) energy: 0.4
 Gather iron (5s) energy: 0.4
 Gather cobalt (5s) energy: 0.4
 Gather cobalt (5s) energy: 0.4
-2704s : 136757.8ti o2: 29874.0ppq heat: 5746.3pK pressure: 101137.5nPa biomass: 0.0g
+2704s : 136.8kTi o2: 29.9ppt heat: 5.7nK pressure: 101.1uPa biomass: 0.0g
 Gather silicon (5s) energy: 0.4
 Build Solar Panel T1 (1s) energy: 6.9
 Gather iron (5s) energy: 6.9
@@ -720,10 +720,10 @@ Gather water (5s) energy: 8.4
 Gather silicon (5s) energy: 8.4
 Gather silicon (5s) energy: 8.4
 Gather magnesium (5s) energy: 8.4
-2767s : 143803.8ti o2: 32142.0ppq heat: 6021.3pK pressure: 105640.5nPa biomass: 0.0g
+2767s : 143.8kTi o2: 32.1ppt heat: 6.0nK pressure: 105.6uPa biomass: 0.0g
 Gather aluminium (60s) energy: 8.4
 Build Vegetube T3 (1s) energy: 1.1
-2828s : 150660.2ti o2: 34338.0ppq heat: 6289.7pK pressure: 110032.5nPa biomass: 0.0g
+2828s : 150.7kTi o2: 34.3ppt heat: 6.3nK pressure: 110.0uPa biomass: 0.0g
 Gather iron (5s) energy: 1.1
 Gather cobalt (5s) energy: 1.1
 Gather cobalt (5s) energy: 1.1
@@ -734,7 +734,7 @@ Gather silicon (5s) energy: 7.6
 Gather silicon (5s) energy: 7.6
 Gather magnesium (5s) energy: 7.6
 Gather aluminium (60s) energy: 7.6
-2929s : 163325.6ti o2: 39287.0ppq heat: 6734.1pK pressure: 117304.5nPa biomass: 0.0g
+2929s : 163.3kTi o2: 39.3ppt heat: 6.7nK pressure: 117.3uPa biomass: 0.0g
 Build Vegetube T3 (1s) energy: 0.4
 Gather iron (5s) energy: 0.4
 Gather cobalt (5s) energy: 0.4
@@ -750,7 +750,7 @@ Gather ice (5s) energy: 1.9
 Gather ice (5s) energy: 1.9
 Gather magnesium (5s) energy: 1.9
 Gather silicon (5s) energy: 1.9
-2992s : 172071.8ti o2: 43180.0ppq heat: 7013.8pK pressure: 121878.0nPa biomass: 0.0g
+2992s : 172.1kTi o2: 43.2ppt heat: 7.0nK pressure: 121.9uPa biomass: 0.0g
 Build Vegetube T2 (1s) energy: 0.6
 Gather titanium (5s) energy: 0.6
 Gather iron (5s) energy: 0.6
@@ -765,5 +765,5 @@ Vegetube T2 : 31
 Wind Turbine : 12
 Vegetube T3 : 2
 
-3014s : 175179.0ti o2: 44569.2ppq heat: 7112.8pK pressure: 123497.0nPa biomass: 0.0g
+3014s : 175.2kTi o2: 44.6ppt heat: 7.1nK pressure: 123.5uPa biomass: 0.0g
 Reached Blue Sky in 3014s with 712 actions.
