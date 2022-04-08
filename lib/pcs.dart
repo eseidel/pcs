@@ -214,7 +214,6 @@ class PlanIterator {
   Action get currentAction => plan.actions[currentActionIndex];
 }
 
-// Picks the best action, ignoring material costs.
 class Sprinter extends Actor {
   PlanIterator? existingPlan;
 
@@ -282,8 +281,6 @@ class Sprinter extends Actor {
     }
 
     var bestPlan = findBestPlan(sim);
-    // var structure = strutureWithName("Drill T1");
-    // var bestPlan = sim.planForStructure(structure);
     existingPlan = PlanIterator(bestPlan);
     existingPlan!.moveNextAction();
     return existingPlan!.currentAction;
@@ -389,13 +386,9 @@ class Simulation {
 }
 
 World applyAction(Action action, World world) {
-  // Progress time.
-
   var totalProgress =
       world.totalProgress + world.progressPerSecond * action.time.toDouble();
-
   var time = world.time + action.time;
-
   var inventory = world.inventory;
   var structures = world.structures;
 
