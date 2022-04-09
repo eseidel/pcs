@@ -1,4 +1,5 @@
 // Not sure Items and Structures are actually separate?
+
 enum Item {
   iron,
   iridium,
@@ -154,8 +155,10 @@ class Ti {
   const Ti.tera(double teraTi) : value = teraTi * teraMultiplier;
 
   Ti operator +(Ti other) => Ti(value + other.value);
+  Ti operator -(Ti other) => Ti(value - other.value);
   Ti scaleBy(double multiplier) => Ti(value * multiplier);
   Ti operator *(Ti other) => Ti(value * other.value);
+  bool operator <(Ti other) => value < other.value;
   bool operator >=(Ti other) => value >= other.value;
 
   @override
@@ -186,6 +189,7 @@ class O2 {
   const O2(this.ppq);
   const O2.zero() : ppq = 0;
   O2 operator +(O2 other) => O2(ppq + other.ppq);
+  O2 operator -(O2 other) => O2(ppq - other.ppq);
   O2 scaleBy(double multiplier) => O2(ppq * multiplier);
   O2 operator *(O2 other) => O2(ppq * other.ppq);
   bool operator >=(O2 other) => ppq >= other.ppq;
@@ -224,6 +228,7 @@ class Heat {
   const Heat(this.pK);
   const Heat.zero() : pK = 0;
   Heat operator +(Heat other) => Heat(pK + other.pK);
+  Heat operator -(Heat other) => Heat(pK - other.pK);
   Heat scaleBy(double multiplier) => Heat(pK * multiplier);
   Heat operator *(Heat other) => Heat(pK * other.pK);
   bool operator >=(Heat other) => pK >= other.pK;
@@ -256,6 +261,7 @@ class Pressure {
   const Pressure(this.nPa);
   const Pressure.zero() : nPa = 0;
   Pressure operator +(Pressure other) => Pressure(nPa + other.nPa);
+  Pressure operator -(Pressure other) => Pressure(nPa - other.nPa);
   Pressure scaleBy(double multiplier) => Pressure(nPa * multiplier);
   Pressure operator *(Pressure other) => Pressure(nPa * other.nPa);
   bool operator >=(Pressure other) => nPa >= other.nPa;
@@ -288,6 +294,7 @@ class Biomass {
   const Biomass(this.grams);
   const Biomass.zero() : grams = 0;
   Biomass operator +(Biomass other) => Biomass(grams + other.grams);
+  Biomass operator -(Biomass other) => Biomass(grams - other.grams);
   Biomass scaleBy(double multiplier) => Biomass(grams * multiplier);
   Biomass operator *(Biomass other) => Biomass(grams * other.grams);
   bool operator >=(Biomass other) => grams >= other.grams;
@@ -308,8 +315,9 @@ class Goal {
   final O2? oxygen;
   final Heat? heat;
   final Pressure? pressure;
+  final Biomass? biomass;
 
-  const Goal({this.ti, this.oxygen, this.heat, this.pressure});
+  const Goal({this.ti, this.oxygen, this.heat, this.pressure, this.biomass});
   //  {
   //   assert([ti, oxygen, heat, pressure].where((e) e == null).length == 3);
   // }
@@ -318,7 +326,8 @@ class Goal {
       : ti = const Ti(0),
         oxygen = null,
         heat = null,
-        pressure = null;
+        pressure = null,
+        biomass = null;
 
   bool wasReached(Progress totalProgress) {
     if (ti != null) {
@@ -327,8 +336,10 @@ class Goal {
       return totalProgress.oxygen >= oxygen!;
     } else if (heat != null) {
       return totalProgress.heat >= heat!;
+    } else if (pressure != null) {
+      return totalProgress.pressure >= pressure!;
     }
-    return totalProgress.pressure >= pressure!;
+    return totalProgress.biomass >= biomass!;
   }
 
   Ti toTi() {
@@ -338,8 +349,10 @@ class Goal {
       return oxygen!.toTi();
     } else if (heat != null) {
       return heat!.toTi();
+    } else if (pressure != null) {
+      return pressure!.toTi();
     }
-    return pressure!.toTi();
+    return biomass!.toTi();
   }
 
   @override
@@ -350,8 +363,10 @@ class Goal {
       return "$oxygen (${oxygen!.toTi()})";
     } else if (heat != null) {
       return "$heat (${heat!.toTi()})";
+    } else if (pressure != null) {
+      return "$pressure (${pressure!.toTi()})";
     }
-    return "$pressure (${pressure!.toTi()})";
+    return "$biomass (${biomass!.toTi()})";
   }
 }
 

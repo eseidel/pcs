@@ -49,8 +49,21 @@ class World {
 
   // Intentionally can return infinity.
   double timeToGoal(Goal goal) {
-    double distanceToGoal = goal.ti!.value - totalProgress.ti.value;
-    return distanceToGoal / progressPerSecond.ti.value;
+    if (goal.ti != null) {
+      double distanceToGoal = goal.ti!.value - totalProgress.ti.value;
+      return distanceToGoal / progressPerSecond.ti.value;
+    } else if (goal.heat != null) {
+      double distanceToGoal = goal.heat!.pK - totalProgress.heat.pK;
+      return distanceToGoal / progressPerSecond.heat.pK;
+    } else if (goal.oxygen != null) {
+      double distanceToGoal = goal.oxygen!.ppq - totalProgress.oxygen.ppq;
+      return distanceToGoal / progressPerSecond.oxygen.ppq;
+    } else if (goal.pressure != null) {
+      double distanceToGoal = goal.pressure!.nPa - totalProgress.pressure.nPa;
+      return distanceToGoal / progressPerSecond.pressure.nPa;
+    }
+    double distanceToGoal = goal.biomass!.grams - totalProgress.biomass.grams;
+    return distanceToGoal / progressPerSecond.biomass.grams;
   }
 }
 

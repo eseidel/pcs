@@ -22,9 +22,18 @@ String structureCountsString(World world) {
   return buffer.toString();
 }
 
+Iterable<Structure> unlockableStructuresBeforeGoal(Goal goal) sync* {
+  for (var structure in allStructures) {
+    var unlockAsTi = structure.unlocksAt.toTi();
+    if (unlockAsTi.value != 0 && unlockAsTi < goal.toTi()) {
+      yield structure;
+    }
+  }
+}
+
 void main(List<String> arguments) {
   var stage = stageByName("Blue Sky");
-  var goal = Goal(ti: stage.startsAt);
+  var stageGoal = Goal(ti: stage.startsAt);
 
   var outputPath = 'output_log.txt';
   var outputFile = File(outputPath);
@@ -39,20 +48,33 @@ void main(List<String> arguments) {
   var lastLogTime = world.time;
   var logFrequency = 60;
 
-  while (!goal.wasReached(world.totalProgress)) {
-    var result = planOneAction(world, actor, goal);
-    world = result.world;
-    actionLog.add(result.action);
-    output.writeln(
-        "${result.action} energy: ${world.availableEnergy.toStringAsFixed(1)}");
+  // var possibleSubGoals = unlockableStructuresBeforeGoal(stageGoal)
+  //     .map((structure) => structure.unlocksAt)
+  //     .toList();
 
-    assert(previousTime < world.time);
+  // possibleSubGoals.sort((a, b) {
+  //   return a.toTi().value.compareTo(b.toTi().value);
+  // });
 
-    if (world.time > lastLogTime + logFrequency) {
+  // var goals = possibleSubGoals + [stageGoal];
+  var goals = [stageGoal];
+  for (var goal in goals) {
+    while (!goal.wasReached(world.totalProgress)) {
+      var result = planOneAction(world, actor, goal);
+      world = result.world;
+      actionLog.add(result.action);
       output.writeln(
-          "${world.time.toStringAsFixed(0)}s : ${world.totalProgress}");
-      lastLogTime = world.time;
+          "${result.action} energy: ${world.availableEnergy.toStringAsFixed(1)}");
+
+      assert(previousTime < world.time);
+
+      if (world.time > lastLogTime + logFrequency) {
+        output.writeln(
+            "${world.time.toStringAsFixed(0)}s : ${world.totalProgress}");
+        lastLogTime = world.time;
+      }
     }
+    output.writeln("Goal reached: $goal");
   }
 
   output.writeln(structureCountsString(world));

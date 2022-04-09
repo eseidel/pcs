@@ -781,6 +781,7 @@ Gather titanium (5s) energy: 5.9
 Build Drill T2 (1s) energy: 0.9
 Gather titanium (5s) energy: 0.9
 Gather iron (5s) energy: 0.9
+Goal reached: 175.0kTi
 Structures:
 Drill T2 : 79
 Solar Panel T1 : 61
