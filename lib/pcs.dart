@@ -94,10 +94,10 @@ class Action {
 }
 
 class Gather extends Action {
-  final Item resource;
+  final List<Item> items;
 
-  Gather({required this.resource, required double time})
-      : super(time: time, name: resource.name);
+  Gather({required this.items, required double time})
+      : super(time: time, name: items.map((item) => item.name).join(', '));
 }
 
 class Build extends Action {
@@ -157,7 +157,7 @@ class PlanBuilder {
       if (action is Build) {
         _buildStructure(action.structure);
       } else if (action is Gather) {
-        _fetchItem(action.resource);
+        _fetchItems(action.items);
       } else {
         throw ArgumentError("Unknown Action type?");
       }
@@ -211,16 +211,17 @@ class PlanBuilder {
       assert(neededEnergy < 0);
       planForEnergy(neededEnergy.abs());
     }
-    for (var item in structure.cost) {
-      planForResource(item);
-    }
+    planForResources(structure.cost);
     _buildStructure(structure);
   }
 
-  void _fetchItem(Item item) =>
-      _actions.add(Gather(resource: item, time: sim.gatherTimeFor(item)));
+  void planForResources(List<Item> items) => _fetchItems(items);
 
-  void planForResource(Item item) => _fetchItem(item);
+  void _fetchItems(List<Item> items) {
+    var time = items.fold(
+        0.0, (double total, Item item) => total + sim.gatherTimeFor(item));
+    _actions.add(Gather(items: items, time: time));
+  }
 
   Plan build() {
     return Plan(_actions);
@@ -406,7 +407,7 @@ World applyAction(Action action, World world) {
   var structures = world.structures;
 
   if (action is Gather) {
-    inventory.adjust(action.resource, 1);
+    inventory += ItemCounts.fromItems(action.items);
   } else if (action is Build) {
     inventory -= ItemCounts.fromItems(action.structure.cost);
     structures = List<Structure>.from(structures)..add(action.structure);

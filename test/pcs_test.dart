@@ -11,7 +11,7 @@ void main() {
 
   test('applyAction', () {
     var afterGather =
-        applyAction(Gather(resource: Item.iron, time: 1), World.empty());
+        applyAction(Gather(items: [Item.iron], time: 1), World.empty());
 
     expect(afterGather.time, 1);
     expect(afterGather.inventory.countOf(Item.iron), 1);
