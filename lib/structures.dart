@@ -508,7 +508,7 @@ final allStructures = <Structure>[
       Item.silicon,
       Item.magnesium,
       Item.aluminium,
-      Item.plant,
+      // Item.plant,
     ],
     progress: Progress(oxygen: ppq(13.0)),
     energy: -7.25,
@@ -570,7 +570,7 @@ final allStructures = <Structure>[
       Item.ice,
       Item.magnesium,
       Item.silicon,
-      Item.plant
+      // Item.plant
     ],
     progress: Progress(oxygen: ppq(1.2)),
     energy: -1.25,
