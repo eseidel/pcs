@@ -40,13 +40,36 @@ Nuclear Reactor T2 time: Infinity energy: 331.5 ratio: 0.00
 ```
 
 # Current speedrun to Blue Sky guess?
-Heater T1 if you have iridium, Drill T1 otherwise.
-Skip VegeTube T1.  VegeTube T2 ASAP once unlocks and have plants.
-Drill T2 once unlocks.
-Upgrade all Heater T1s to T2s once unlocks.
-Drill T3 once unlocks (heat).
-Upgrade all VegeTube T2 to T3 once unlocks and have plants.
-Heater T3s once unlocks (not worth tearing down T2s?)
+* Heater T1 if you have iridium, Drill T1 otherwise.
+* Skip VegeTube T1.  VegeTube T2 ASAP once unlocks and have plants.
+* Drill T2 once unlocks.
+* Upgrade all Heater T1s to T2s once unlocks.
+* Drill T3 once unlocks (heat).
+* Upgrade all VegeTube T2 to T3 once unlocks and have plants.
+* Heater T3s once unlocks (not worth tearing down T2s?)
+
+# Structure analysis
+* Drill T1 tiDelta: 0.2ti unlocksAt: 0.0ti
+  Meat an potatoes, build anytime.
+* Heater T1 tiDelta: 0.3ti unlocksAt: 0.0ti
+  Prefer when iridum is available.
+* Vegetube T1 tiDelta: 0.1ti unlocksAt: 0.0ti
+  Probably never build?
+* Vegetube T2 tiDelta: 1.2ti unlocksAt: 500.0pK (500.0ti)
+  Build whenever plants are avialable?
+* Drill T2 tiDelta: 1.6ti unlocksAt: 1.2uPa (1.2kTi)
+  Build as soon as available?  First unlock?
+* Heater T2 tiDelta: 4.5ti unlocksAt: 1.9ppt (1.9kTi)
+  Build whenever iridium + aluminum are avaialble?
+* Vegetube T3 tiDelta: 13.0ti unlocksAt: 30.0ppt (30.0kTi)
+  Replaces T2s once available.
+* Drill T3 tiDelta: 19.5ti unlocksAt: 21.0nK (21.0kTi)
+* Heater T3 tiDelta: 29.1ti unlocksAt: 80.0ppt (80.0kTi)
+* Drill T4 tiDelta: 484.0ti unlocksAt: 41.0uK (41.0MTi)
+* Grass Spreader tiDelta: 108.2ti unlocksAt: 150.0ppt (150.0kTi)
+* Algae Generator T1 tiDelta: 127.6ti unlocksAt: 2.0uK (2.0MTi)
+* Tree Spreader T2 tiDelta: 2.1kTi unlocksAt: 7.5ppm (7.5GTi)
+* Flower Spreader tiDelta: 7.2ti unlocksAt: 2.5mPa (2.5MTi)
 
 # TODO
 * Add more structures
