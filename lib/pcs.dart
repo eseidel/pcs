@@ -65,6 +65,20 @@ class World {
     double distanceToGoal = goal.biomass!.grams - totalProgress.biomass.grams;
     return distanceToGoal / progressPerSecond.biomass.grams;
   }
+
+  Iterable<Structure> get unlockedStructures {
+    // Cache this?
+    return allStructures
+        .where((structure) => structure.isAvailable(totalProgress));
+  }
+
+  Iterable<Structure> get unlockedEnergyStructures {
+    return unlockedStructures.where((structure) => structure.energy > 0);
+  }
+
+  Iterable<Structure> get unlockedNonEnergyStructures {
+    return unlockedStructures.where((structure) => structure.energy < 0);
+  }
 }
 
 class Action {
@@ -152,7 +166,7 @@ class PlanBuilder {
 
   Iterable<Plan> possibleEnergyStructurePlans(double neededEnergy) {
     assert(neededEnergy > 0);
-    return sim.unlockedEnergyStructures.map((energyStructure) {
+    return sim.world.unlockedEnergyStructures.map((energyStructure) {
       var builder = PlanBuilder(sim);
       builder.availableEnergy = -neededEnergy;
       while (builder.availableEnergy < 0) {
@@ -366,20 +380,6 @@ class Simulation {
     }
   }
 
-  Iterable<Structure> get unlockedStructures {
-    // Cache this?
-    return allStructures
-        .where((structure) => structure.isAvailable(world.totalProgress));
-  }
-
-  Iterable<Structure> get unlockedEnergyStructures {
-    return unlockedStructures.where((structure) => structure.energy > 0);
-  }
-
-  Iterable<Structure> get unlockedNonEnergyStructures {
-    return unlockedStructures.where((structure) => structure.energy < 0);
-  }
-
   Plan planForStructure(Structure structure) {
     var builder = PlanBuilder(this);
     builder.planForStructure(structure);
@@ -392,7 +392,7 @@ class Simulation {
     // Chips and inventory make sense as sub-plans.
     // Structures (and rockets) are the only top-level plans
     // (i.e. plans that move towards a goal).
-    for (var structure in unlockedNonEnergyStructures) {
+    for (var structure in world.unlockedNonEnergyStructures) {
       yield planForStructure(structure);
     }
   }

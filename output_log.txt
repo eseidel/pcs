@@ -111,6 +111,7 @@ Gather iron (5s) energy: 1.4
 Build Drill T1 (1s) energy: 0.9
 Gather titanium (5s) energy: 0.9
 Gather iron (5s) energy: 0.9
+Unlocked: Solar Panel T1 at 1.0kTi
 Build Drill T1 (1s) energy: 0.4
 Gather iron (5s) energy: 0.4
 Gather cobalt (5s) energy: 0.4
@@ -121,6 +122,7 @@ Gather titanium (5s) energy: 6.9
 Gather iron (5s) energy: 6.9
 Build Drill T1 (1s) energy: 6.4
 Gather titanium (5s) energy: 6.4
+Unlocked: Drill T2 at 1.2uPa (1.2kTi)
 Gather iron (5s) energy: 6.4
 Build Drill T1 (1s) energy: 5.9
 Gather iron (5s) energy: 5.9
@@ -272,6 +274,7 @@ Build Drill T2 (1s) energy: 0.4
 Gather iron (5s) energy: 0.4
 Gather cobalt (5s) energy: 0.4
 Gather cobalt (5s) energy: 0.4
+Unlocked: Vegetube T2 at 500.0pK (500.0ti)
 Gather silicon (5s) energy: 0.4
 1004s : 12.9kTi o2: 0.0ppq heat: 511.8pK pressure: 12.4uPa biomass: 0.0g
 Build Solar Panel T1 (1s) energy: 6.9
@@ -305,6 +308,7 @@ Gather silicon (5s) energy: 4.9
 Build Solar Panel T1 (1s) energy: 11.4
 Gather iron (5s) energy: 11.4
 Gather titanium (5s) energy: 11.4
+Unlocked: Solar Panel T2 at 17.5kTi
 Gather titanium (5s) energy: 11.4
 1131s : 17.7kTi o2: 0.0ppq heat: 762.3pK pressure: 16.9uPa biomass: 0.0g
 Build Drill T2 (1s) energy: 6.4
@@ -506,6 +510,7 @@ Gather titanium (5s) energy: 8.4
 Gather titanium (5s) energy: 8.4
 1893s : 63.3kTi o2: 0.0ppq heat: 3.3nK pressure: 60.0uPa biomass: 0.0g
 Build Drill T2 (1s) energy: 3.4
+Unlocked: Nuclear Reactor T1 at 60.0uPa (60.0kTi)
 Gather iron (5s) energy: 3.4
 Gather cobalt (5s) energy: 3.4
 Gather cobalt (5s) energy: 3.4
@@ -782,6 +787,13 @@ Build Drill T2 (1s) energy: 0.9
 Gather titanium (5s) energy: 0.9
 Gather iron (5s) energy: 0.9
 Goal reached: 175.0kTi
+Unlock Order:
+1. Solar Panel T1 at 1.0kTi
+2. Drill T2 at 1.2uPa (1.2kTi)
+3. Vegetube T2 at 500.0pK (500.0ti)
+4. Solar Panel T2 at 17.5kTi
+5. Nuclear Reactor T1 at 60.0uPa (60.0kTi)
+Structure counts:
 Structures:
 Drill T2 : 79
 Solar Panel T1 : 61

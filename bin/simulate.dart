@@ -31,6 +31,10 @@ Iterable<Structure> unlockableStructuresBeforeGoal(Goal goal) sync* {
   }
 }
 
+Set<String> unlockedStructureNames(World world) {
+  return Set.from(world.unlockedStructures.map((structure) => structure.name));
+}
+
 void main(List<String> arguments) {
   var stage = stageByName("Blue Sky");
   var stageGoal = Goal(ti: stage.startsAt);
@@ -44,6 +48,7 @@ void main(List<String> arguments) {
   var world = World.empty();
   var actor = Sprinter();
   var actionLog = <Action>[];
+  var unlockOrder = <Structure>[];
   var previousTime = world.time;
   var lastLogTime = world.time;
   var logFrequency = 60;
@@ -57,6 +62,8 @@ void main(List<String> arguments) {
   // });
 
   // var goals = possibleSubGoals + [stageGoal];
+  var lastUnlockedNames = unlockedStructureNames(world);
+
   var goals = [stageGoal];
   for (var goal in goals) {
     while (!goal.wasReached(world.totalProgress)) {
@@ -73,11 +80,32 @@ void main(List<String> arguments) {
             "${world.time.toStringAsFixed(0)}s : ${world.totalProgress}");
         lastLogTime = world.time;
       }
+      if (world.unlockedStructures.length > lastUnlockedNames.length) {
+        var currentUnlockedNames = unlockedStructureNames(world);
+        var unlockedNamesDelta =
+            currentUnlockedNames.difference(lastUnlockedNames);
+        for (var name in unlockedNamesDelta) {
+          var structure = strutureWithName(name);
+          output
+              .writeln("Unlocked: ${structure.name} at ${structure.unlocksAt}");
+          unlockOrder.add(structure);
+        }
+        lastUnlockedNames = currentUnlockedNames;
+      }
     }
+
     output.writeln("Goal reached: $goal");
   }
 
+  output.writeln("Unlock Order:");
+  var number = 1;
+  for (var structure in unlockOrder) {
+    output.writeln("${number++}. ${structure.name} at ${structure.unlocksAt}");
+  }
+
+  output.writeln("Structure counts:");
   output.writeln(structureCountsString(world));
+
   output.writeln("${world.time.toStringAsFixed(0)}s : ${world.totalProgress}");
   output.writeln(
       "Reached ${stage.name} in ${world.time.toStringAsFixed(0)}s with ${actionLog.length} actions.");
