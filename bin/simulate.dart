@@ -32,7 +32,8 @@ Iterable<Structure> unlockableStructuresBeforeGoal(Goal goal) sync* {
 }
 
 Set<String> unlockedStructureNames(World world) {
-  return Set.from(world.unlockedStructures.map((structure) => structure.name));
+  return Set.from(
+      world.unlocks.unlockedStructures.map((structure) => structure.name));
 }
 
 void main(List<String> arguments) {
@@ -75,12 +76,13 @@ void main(List<String> arguments) {
 
       assert(previousTime < world.time);
 
+      // FIXME: Move this into a logger class.
       if (world.time > lastLogTime + logFrequency) {
         output.writeln(
             "${world.time.toStringAsFixed(0)}s : ${world.totalProgress}");
         lastLogTime = world.time;
       }
-      if (world.unlockedStructures.length > lastUnlockedNames.length) {
+      if (world.unlocks.unlockedStructures.length > lastUnlockedNames.length) {
         var currentUnlockedNames = unlockedStructureNames(world);
         var unlockedNamesDelta =
             currentUnlockedNames.difference(lastUnlockedNames);

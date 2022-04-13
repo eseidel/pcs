@@ -20,7 +20,7 @@ void main() {
     totalProgress: Progress.allUnlocks(),
     structures: [],
   );
-  var sim = Simulation(world, Goal.zero());
+  var sim = PlanContext(world, Goal.zero());
   var plans = sim.possibleNonEnergyStructurePlans.toList();
 
   // For each possible plan, print the the Ti/(s*s)?

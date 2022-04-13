@@ -8,9 +8,10 @@ void main() {
     totalProgress: Progress.allUnlocks(),
     structures: [],
   );
-  var sim = Simulation(world, Goal.zero());
-  var builder = PlanBuilder(sim);
-  var plans = builder.possibleEnergyStructurePlans(1).toList();
+  var costEstimates = TimeCostEstimates(world.unlocks);
+  var plans = TimeCostEstimates.possibleEnergyStructurePlans(costEstimates,
+          neededEnergy: 1)
+      .toList();
 
   double energyPerActionSecond(Plan plan) =>
       plan.energyDelta / plan.executionTime;

@@ -1,5 +1,24 @@
 import 'structures.dart';
 
+class Unlocks {
+  final Progress progress;
+
+  Unlocks.forProgress(this.progress);
+
+  Iterable<Structure> get unlockedStructures {
+    // Cache this?
+    return allStructures.where((structure) => structure.isAvailable(progress));
+  }
+
+  Iterable<Structure> get unlockedEnergyStructures {
+    return unlockedStructures.where((structure) => structure.energy > 0);
+  }
+
+  Iterable<Structure> get unlockedNonEnergyStructures {
+    return unlockedStructures.where((structure) => structure.energy < 0);
+  }
+}
+
 class World {
   final double time;
   final Progress totalProgress;
@@ -66,19 +85,7 @@ class World {
     return distanceToGoal / progressPerSecond.biomass.grams;
   }
 
-  Iterable<Structure> get unlockedStructures {
-    // Cache this?
-    return allStructures
-        .where((structure) => structure.isAvailable(totalProgress));
-  }
-
-  Iterable<Structure> get unlockedEnergyStructures {
-    return unlockedStructures.where((structure) => structure.energy > 0);
-  }
-
-  Iterable<Structure> get unlockedNonEnergyStructures {
-    return unlockedStructures.where((structure) => structure.energy < 0);
-  }
+  Unlocks get unlocks => Unlocks.forProgress(totalProgress);
 }
 
 class Action {
@@ -106,7 +113,7 @@ class Build extends Action {
 }
 
 abstract class Actor {
-  Action chooseAction(Simulation sim);
+  Action chooseAction(PlanContext context);
 }
 
 // Need a way to evaluate value in terms of destructions.
@@ -139,201 +146,27 @@ class Plan {
   // Total Resource change?
 }
 
-// Ignore inventory planning for now?
-// Build up and cache subplans and then replay with energy/item availability?
-class PlanBuilder {
-  final List<Action> _actions;
-  final Simulation sim;
-  // Should this just a be `World future`?
-  // Or computed from _actions based on sim.world.availableEnergy?
-  double availableEnergy;
+// Prices are expressed in time per unit.
+// Prices are computed based on averges, and may not exactly match
+// prices at execution time.  e.g. if we already have available energy
+// or resources in inventory those maybe "free", or travel time overhead
+// (to a different regon) may be averaged out across multiple resources
+// depending on boot speed or inventory size.
+// Should keep cost estimates for structures too?
+class TimeCostEstimates {
+  // Should this be some sort of "unlocks state"?
+  final Unlocks unlocks;
+  late double timeCostForEnergy;
 
-  PlanBuilder(this.sim)
-      : _actions = [],
-        availableEnergy = sim.world.availableEnergy;
-
-  void addSubPlan(Plan plan) {
-    for (var action in plan.actions) {
-      if (action is Build) {
-        _buildStructure(action.structure);
-      } else if (action is Gather) {
-        _fetchItems(action.items);
-      } else {
-        throw ArgumentError("Unknown Action type?");
-      }
-    }
+  TimeCostEstimates(this.unlocks) {
+    var plan = bestAvailableEnergyPlan(this);
+    timeCostForEnergy = plan.executionTime / plan.energyDelta;
   }
 
-  Iterable<Plan> possibleEnergyStructurePlans(double neededEnergy) {
-    assert(neededEnergy > 0);
-    return sim.world.unlockedEnergyStructures.map((energyStructure) {
-      var builder = PlanBuilder(sim);
-      builder.availableEnergy = -neededEnergy;
-      while (builder.availableEnergy < 0) {
-        builder.planForStructure(energyStructure);
-      }
-      return builder.build();
-    });
-  }
-
-  // Negative energyDelta's require more, positive don't.
-  void planForEnergy(double neededEnergy) {
-    // Generate plans for all available energy structures.
-    // Pick the plan with the highest energy per time spent ratio.
-
-    // FIXME: Don't recompute every time?
-    var possiblePlans = possibleEnergyStructurePlans(neededEnergy);
-
-    Plan? bestEnergyPlan;
-    double bestEnergyPerExecutionSeconds = 0;
-    for (var plan in possiblePlans) {
-      var energyPerExecutionSeconds = plan.energyDelta / plan.executionTime;
-      if (energyPerExecutionSeconds > bestEnergyPerExecutionSeconds) {
-        bestEnergyPlan = plan;
-        bestEnergyPerExecutionSeconds = energyPerExecutionSeconds;
-      }
-    }
-    if (bestEnergyPlan == null) {
-      throw StateError("No best energy plan found");
-    }
-    addSubPlan(bestEnergyPlan);
-  }
-
-  void _buildStructure(Structure structure) {
-    availableEnergy += structure.energy;
-    _actions.add(Build(structure));
-  }
-
-  void planForStructure(Structure structure) {
-    if (structure.energy < 0 && availableEnergy < structure.energy.abs()) {
-      // structure energy is negative
-      var neededEnergy = availableEnergy + structure.energy;
-      assert(neededEnergy < 0);
-      planForEnergy(neededEnergy.abs());
-    }
-    planForResources(structure.cost);
-    _buildStructure(structure);
-  }
-
-  void planForResources(List<Item> items) => _fetchItems(items);
-
-  void _fetchItems(List<Item> items) {
-    var time = items.fold(
-        0.0, (double total, Item item) => total + sim.gatherTimeFor(item));
-    _actions.add(Gather(items: items, time: time));
-  }
-
-  Plan build() {
-    return Plan(_actions);
-  }
-}
-
-class PlanIterator {
-  Plan plan;
-  int currentActionIndex;
-
-  PlanIterator(this.plan) : currentActionIndex = -1;
-
-  bool moveNextAction() {
-    currentActionIndex += 1;
-    return currentActionIndex < plan.actions.length;
-  }
-
-  Action get currentAction => plan.actions[currentActionIndex];
-}
-
-class Sprinter extends Actor {
-  PlanIterator? existingPlan;
-
-  double timeToGoalWithPlan(Simulation sim, Plan plan) {
-    var newStructures = List<Structure>.from(sim.world.structures);
-    for (var action in plan.actions) {
-      if (action is Build) {
-        newStructures.add(action.structure);
-      }
-    }
-    // FIXME: Share code with applyAction?
-    var timeDelta = plan.executionTime;
-    var futureTime = sim.world.time + timeDelta;
-    var futureProgress = sim.world.totalProgress +
-        sim.world.progressPerSecond * timeDelta.toDouble();
-    var newWorld = sim.world.copyWith(
-        structures: newStructures,
-        totalProgress: futureProgress,
-        time: futureTime);
-    // var newProgressPerSecond = newWorld.progressPerSecond;
-    return newWorld.timeToGoal(sim.goal);
-    // var tiPerSecond = newProgressPerSecond.terraformationIndex -
-    //     currentProgressPerSecond.terraformationIndex;
-    // return tiPerSecond / action.time;
-  }
-
-  // The best plan is the one which reduces our time to goal
-  // by the most, per second spent executing the plan.
-  Plan findBestPlan(Simulation sim) {
-    // Calculate the time distance from goal at current pace.
-    double timeToGoal = sim.world.timeToGoal(sim.goal);
-    // FIXME: When timeToGoal is infinity the logic below breaks.
-    // We should probably just pick the fastest to complete (not best
-    // improvement) to get away from infinity as soon as possible?
-    if (timeToGoal.isInfinite) {
-      timeToGoal = double.maxFinite;
-    }
-
-    Plan? bestPlan;
-    double bestTimeToGoalDeltaPerSecond = 0;
-    // Generate plans for all available structures.
-    // Pick the plan with the highest EV.
-    for (var plan in sim.possibleNonEnergyStructurePlans) {
-      var newTimeToGoal = timeToGoalWithPlan(sim, plan);
-      var executionTime = plan.executionTime;
-      var timeToGoalDeltaPerSecond =
-          (newTimeToGoal - timeToGoal) / executionTime;
-      if (timeToGoalDeltaPerSecond <= bestTimeToGoalDeltaPerSecond) {
-        bestPlan = plan;
-        bestTimeToGoalDeltaPerSecond = timeToGoalDeltaPerSecond;
-      }
-    }
-    if (bestPlan == null) {
-      throw StateError("No best plan found");
-    }
-    return bestPlan;
-  }
-
-  @override
-  Action chooseAction(Simulation sim) {
-    if (existingPlan != null && existingPlan!.moveNextAction()) {
-      return existingPlan!.currentAction;
-    } else {
-      existingPlan = null;
-    }
-
-    var bestPlan = findBestPlan(sim);
-    existingPlan = PlanIterator(bestPlan);
-    existingPlan!.moveNextAction();
-    return existingPlan!.currentAction;
-  }
-}
-
-bool canAfford(Structure structure, double worldEnergy, ItemCounts inventory) {
-  if (structure.energy < 0 && worldEnergy < structure.energy.abs()) {
-    return false;
-  }
-  return ItemCounts.fromItems(structure.cost) <= inventory;
-}
-
-// How is this diferent from PlanBuilder?
-class Simulation {
-  final World world;
-  final Goal goal;
-
-  Simulation(this.world, this.goal);
-
-  // FIXME: not all items can be gathered?
-  // These could have time relative to position?
-  // Supposedly resources do not respawn?  If so the more each is
-  // gathered, the longer it should take to get?
-  double gatherTimeFor(Item item) {
+  double timeCostForItem(Item item) {
+    // These could have time relative to position?
+    // Supposedly resources do not respawn?  If so the more each is
+    // gathered, the longer it should take to get?
     const double nearby = 5;
     const double medium = 60;
     const double distant = 360;
@@ -381,11 +214,227 @@ class Simulation {
     }
   }
 
-  Plan planForStructure(Structure structure) {
-    var builder = PlanBuilder(this);
-    builder.planForStructure(structure);
-    return builder.build();
+  // This is written to allow different rate structures for different
+  // neededEnergy sizes.  Currently only used as neededEnergy = 1;
+  static Iterable<Plan> possibleEnergyStructurePlans(
+      TimeCostEstimates timeCostEstimates,
+      {double neededEnergy = 1}) {
+    assert(neededEnergy > 0);
+
+    return timeCostEstimates.unlocks.unlockedEnergyStructures
+        .map((energyStructure) {
+      var builder = PlanBuilder(
+          timeCosts: timeCostEstimates, availableEnergy: -neededEnergy);
+      while (builder.availableEnergy < 0) {
+        builder.planForStructure(energyStructure);
+      }
+      return builder.build();
+    });
   }
+
+  // Inputs: TimeCosts + unlockedStructures?
+
+  // Negative energyDelta's require more, positive don't.
+  static Plan bestAvailableEnergyPlan(TimeCostEstimates costEstimates,
+      {double neededEnergy = 1}) {
+    // Generate plans for all available energy structures.
+    // Pick the plan with the highest energy per time spent ratio.
+
+    var possiblePlans =
+        possibleEnergyStructurePlans(costEstimates, neededEnergy: neededEnergy);
+
+    Plan? bestEnergyPlan;
+    double bestEnergyPerExecutionSeconds = 0;
+    for (var plan in possiblePlans) {
+      var energyPerExecutionSeconds = plan.energyDelta / plan.executionTime;
+      if (energyPerExecutionSeconds > bestEnergyPerExecutionSeconds) {
+        bestEnergyPlan = plan;
+        bestEnergyPerExecutionSeconds = energyPerExecutionSeconds;
+      }
+    }
+    if (bestEnergyPlan == null) {
+      throw StateError("No best energy plan found");
+    }
+    return bestEnergyPlan;
+  }
+
+  double timeCostForStructure(Structure structure) {
+    var timeCost = 0.0;
+    if (structure.energy < 0) {
+      timeCost += timeCostForEnergy * structure.energy.abs();
+    }
+    for (var item in structure.cost) {
+      timeCost + timeCostForItem(item);
+    }
+    return timeCost;
+  }
+}
+
+// Plan builder is used both at planning time and execution time.
+// At planning time it operates only from TimeCostEstimates
+// were as at execution time, it needs to take into account
+// available resources?
+// During TimeCostEstimates PlanBuilder is simply called with a controlled
+// environment to simulate nothing being available, where as during
+// execution time PlanBuilder is called with real availabilities.
+class PlanBuilder {
+  // FIXME: This should only be for planning, not for execution?
+
+  final TimeCostEstimates timeCosts;
+  final List<Action> _actions;
+  double availableEnergy;
+
+  PlanBuilder({required this.timeCosts, required this.availableEnergy})
+      : _actions = [];
+
+  void addSubPlan(Plan plan) {
+    for (var action in plan.actions) {
+      if (action is Build) {
+        _buildStructure(action.structure);
+      } else if (action is Gather) {
+        _fetchItems(action.items);
+      } else {
+        throw ArgumentError("Unknown Action type?");
+      }
+    }
+  }
+
+  void planForEnergy(double neededEnergy) {
+    var plan = TimeCostEstimates.bestAvailableEnergyPlan(timeCosts,
+        neededEnergy: neededEnergy);
+    addSubPlan(plan);
+  }
+
+  void planForStructure(Structure structure) {
+    if (structure.energy < 0 && availableEnergy < structure.energy.abs()) {
+      // structure energy is negative
+      var neededEnergy = availableEnergy + structure.energy;
+      assert(neededEnergy < 0);
+      planForEnergy(neededEnergy.abs());
+    }
+    planForResources(structure.cost);
+    _buildStructure(structure);
+  }
+
+  void _buildStructure(Structure structure) {
+    availableEnergy += structure.energy;
+    _actions.add(Build(structure));
+  }
+
+  void planForResources(List<Item> items) {
+    _fetchItems(items);
+  }
+
+  void _fetchItems(List<Item> items) {
+    var time = items.fold(0.0,
+        (double total, Item item) => total + timeCosts.timeCostForItem(item));
+    _actions.add(Gather(items: items, time: time));
+  }
+
+  Plan build() {
+    return Plan(_actions);
+  }
+}
+
+class PlanIterator {
+  Plan plan;
+  int currentActionIndex;
+
+  PlanIterator(this.plan) : currentActionIndex = -1;
+
+  bool moveNextAction() {
+    currentActionIndex += 1;
+    return currentActionIndex < plan.actions.length;
+  }
+
+  Action get currentAction => plan.actions[currentActionIndex];
+}
+
+class Sprinter extends Actor {
+  PlanIterator? existingPlan;
+
+  double timeToGoalWithPlan(PlanContext sim, Plan plan) {
+    var newStructures = List<Structure>.from(sim.world.structures);
+    for (var action in plan.actions) {
+      if (action is Build) {
+        newStructures.add(action.structure);
+      }
+    }
+    // FIXME: Share code with applyAction?
+    var timeDelta = plan.executionTime;
+    var futureTime = sim.world.time + timeDelta;
+    var futureProgress = sim.world.totalProgress +
+        sim.world.progressPerSecond * timeDelta.toDouble();
+    var newWorld = sim.world.copyWith(
+        structures: newStructures,
+        totalProgress: futureProgress,
+        time: futureTime);
+    // var newProgressPerSecond = newWorld.progressPerSecond;
+    return newWorld.timeToGoal(sim.goal);
+    // var tiPerSecond = newProgressPerSecond.terraformationIndex -
+    //     currentProgressPerSecond.terraformationIndex;
+    // return tiPerSecond / action.time;
+  }
+
+  // The best plan is the one which reduces our time to goal
+  // by the most, per second spent executing the plan.
+  Plan findBestPlan(PlanContext sim) {
+    // Calculate the time distance from goal at current pace.
+    double timeToGoal = sim.world.timeToGoal(sim.goal);
+    // FIXME: When timeToGoal is infinity the logic below breaks.
+    // We should probably just pick the fastest to complete (not best
+    // improvement) to get away from infinity as soon as possible?
+    if (timeToGoal.isInfinite) {
+      timeToGoal = double.maxFinite;
+    }
+
+    Plan? bestPlan;
+    double bestTimeToGoalDeltaPerSecond = 0;
+    // Generate plans for all available structures.
+    // Pick the plan with the highest EV.
+    for (var plan in sim.possibleNonEnergyStructurePlans) {
+      var newTimeToGoal = timeToGoalWithPlan(sim, plan);
+      var executionTime = plan.executionTime;
+      var timeToGoalDeltaPerSecond =
+          (newTimeToGoal - timeToGoal) / executionTime;
+      if (timeToGoalDeltaPerSecond <= bestTimeToGoalDeltaPerSecond) {
+        bestPlan = plan;
+        bestTimeToGoalDeltaPerSecond = timeToGoalDeltaPerSecond;
+      }
+    }
+    if (bestPlan == null) {
+      throw StateError("No best plan found");
+    }
+    return bestPlan;
+  }
+
+  @override
+  Action chooseAction(PlanContext sim) {
+    if (existingPlan != null && existingPlan!.moveNextAction()) {
+      return existingPlan!.currentAction;
+    } else {
+      existingPlan = null;
+    }
+
+    var bestPlan = findBestPlan(sim);
+    existingPlan = PlanIterator(bestPlan);
+    existingPlan!.moveNextAction();
+    return existingPlan!.currentAction;
+  }
+}
+
+bool canAfford(Structure structure, double worldEnergy, ItemCounts inventory) {
+  if (structure.energy < 0 && worldEnergy < structure.energy.abs()) {
+    return false;
+  }
+  return ItemCounts.fromItems(structure.cost) <= inventory;
+}
+
+class PlanContext {
+  final World world;
+  final Goal goal;
+
+  PlanContext(this.world, this.goal);
 
   Iterable<Plan> get possibleNonEnergyStructurePlans sync* {
     // Gather plans only make sense as sub-plans.
@@ -393,8 +442,12 @@ class Simulation {
     // Chips and inventory make sense as sub-plans.
     // Structures (and rockets) are the only top-level plans
     // (i.e. plans that move towards a goal).
-    for (var structure in world.unlockedNonEnergyStructures) {
-      yield planForStructure(structure);
+    for (var structure in world.unlocks.unlockedNonEnergyStructures) {
+      var timeCosts = TimeCostEstimates(world.unlocks);
+      var builder = PlanBuilder(
+          timeCosts: timeCosts, availableEnergy: world.availableEnergy);
+      builder.planForStructure(structure);
+      yield builder.build();
     }
   }
 }
@@ -429,6 +482,6 @@ class ActionResult {
 }
 
 ActionResult planOneAction(World world, Actor actor, Goal goal) {
-  var action = actor.chooseAction(Simulation(world, goal));
+  var action = actor.chooseAction(PlanContext(world, goal));
   return ActionResult(action, applyAction(action, world));
 }

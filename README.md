@@ -83,3 +83,12 @@ Nuclear Reactor T2 time: Infinity energy: 331.5 ratio: 0.00
 * Simulate "growing" in plant generators.
 * Require construction/destruction chips.
 * Require indoor space for indoor structures.
+
+
+Planning should be done based on expected costs, rather than actual costs.
+Execution should be done with actual costs.
+e.g. Planning should use "average cost of 1 aluminium" instead of planning
+a gather for aluminium and guessing that.
+Similarly energy planning should be done based on "costs per unit energy"
+rather than including avaiable energy (which biases towards building things
+which cost less than avaiable energy but may be less efficient overall).
