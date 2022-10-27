@@ -30,7 +30,7 @@ void main() {
     var buildTurbine = Build(turbine);
     var plan = Plan([buildTurbine, buildTurbine]);
     expect(buildTurbine.time, greaterThan(0));
-    expect(plan.executionTime, buildTurbine.time * 2);
+    expect(plan.totalActionTime, buildTurbine.time * 2);
   });
 
   test('unit types toString', () {

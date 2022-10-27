@@ -366,7 +366,7 @@ class Sprinter extends Actor {
       }
     }
     // FIXME: Share code with applyAction?
-    var timeDelta = plan.executionTime;
+    var timeDelta = plan.totalActionTime;
     var futureTime = sim.world.time + timeDelta;
     var futureProgress = sim.world.totalProgress +
         sim.world.progressPerSecond * timeDelta.toDouble();
@@ -399,7 +399,7 @@ class Sprinter extends Actor {
     // Pick the plan with the highest EV.
     for (var plan in sim.possibleNonEnergyStructurePlans) {
       var newTimeToGoal = timeToGoalWithPlan(sim, plan);
-      var executionTime = plan.executionTime;
+      var executionTime = plan.totalActionTime;
       var timeToGoalDeltaPerSecond =
           (newTimeToGoal - timeToGoal) / executionTime;
       if (timeToGoalDeltaPerSecond <= bestTimeToGoalDeltaPerSecond) {
