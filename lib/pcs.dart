@@ -414,14 +414,14 @@ class Sprinter extends Actor {
   }
 
   @override
-  Action chooseAction(PlanContext sim) {
+  Action chooseAction(PlanContext context) {
     if (existingPlan != null && existingPlan!.moveNextAction()) {
       return existingPlan!.currentAction;
     } else {
       existingPlan = null;
     }
 
-    var bestPlan = findBestPlan(sim);
+    var bestPlan = findBestPlan(context);
     existingPlan = PlanIterator(bestPlan);
     existingPlan!.moveNextAction();
     return existingPlan!.currentAction;
