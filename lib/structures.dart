@@ -148,11 +148,13 @@ class Ti {
   static const double megaMultiplier = 1000000;
   static const double gigaMultiplier = 1000000000;
   static const double teraMultiplier = 1000000000000;
+  static const double petaMultiplier = 1000000000000000;
 
   const Ti.kilo(double kiloTi) : value = kiloTi * kiloMultiplier;
   const Ti.mega(double megaTi) : value = megaTi * megaMultiplier;
   const Ti.giga(double gigaTi) : value = gigaTi * gigaMultiplier;
   const Ti.tera(double teraTi) : value = teraTi * teraMultiplier;
+  const Ti.peta(double petaTi) : value = petaTi * petaMultiplier;
 
   Ti operator +(Ti other) => Ti(value + other.value);
   Ti operator -(Ti other) => Ti(value - other.value);
@@ -182,7 +184,7 @@ class Ti {
   }
 }
 
-Ti kTi(double value) => Ti(value * 1000);
+Ti kTi(double value) => Ti.kilo(value);
 
 class O2 {
   final double ppq; // Parts per quadrillion? e-15?
@@ -742,19 +744,21 @@ class Stage {
   const Stage(this.name, this.startsAt);
 }
 
-// FIXME: Check these numbers.
-// https://planet-crafter.fandom.com/wiki/Category:Terraformation
+// https://planet-crafter.fandom.com/wiki/Terraformation_stages
 final stages = const <Stage>[
   Stage("Barren", Ti(0)),
   Stage("Blue Sky", Ti.kilo(175)),
-  Stage("Clouds", Ti.mega(1)),
-  // Stage("Rain", Ti(0)), // ???
-  // Stage("Liquid Water", Ti(0)), // ???
+  Stage("Clouds", Ti.kilo(350)),
+  Stage("Rain", Ti.kilo(875)),
+  Stage("Liquid Water", Ti.mega(3)),
   Stage("Lakes", Ti.mega(50)),
   Stage("Moss", Ti.mega(200)),
-  // Stage("Flora", Ti(0)), // ???
-  Stage("Trees", Ti.giga(3)),
-  Stage("Insects", Ti.tera(1)),
+  Stage("Flora", Ti.mega(700)),
+  Stage("Trees", Ti.giga(2)),
+  Stage("Insects", Ti.giga(8)),
+  Stage("Breathable Atmosphere", Ti.giga(100)),
+  // Stage("Fish", Ti.tera(5)),
+  // Stage("Amphibians", Ti.peta(30)),
 ];
 
 Stage stageByName(String name) {
