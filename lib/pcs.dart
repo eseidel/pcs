@@ -125,12 +125,17 @@ abstract class Actor {
 // Once we build a plan for a structure, don't we just execute it?
 // Do we re-plan any time we reach an intermediate goal/unlock?
 
+// This is slightly confused because we use this both for generating
+// the plan as well as execution thereof.  During planning
+// we should use things like TimeCostEstimates and only
+// have one non-energy structure in a given plan.
+// But during execution, we don't really care whats in a plan.
 class Plan {
   final List<Action> actions;
 
   Plan(this.actions);
 
-  double get executionTime =>
+  double get totalActionTime =>
       actions.fold(0, (total, action) => total + action.time);
 
   double get energyDelta => actions.fold(
@@ -160,7 +165,7 @@ class TimeCostEstimates {
 
   TimeCostEstimates(this.unlocks) {
     var plan = bestAvailableEnergyPlan(this);
-    timeCostForEnergy = plan.executionTime / plan.energyDelta;
+    timeCostForEnergy = plan.totalActionTime / plan.energyDelta;
   }
 
   double timeCostForItem(Item item) {
@@ -246,7 +251,7 @@ class TimeCostEstimates {
     Plan? bestEnergyPlan;
     double bestEnergyPerExecutionSeconds = 0;
     for (var plan in possiblePlans) {
-      var energyPerExecutionSeconds = plan.energyDelta / plan.executionTime;
+      var energyPerExecutionSeconds = plan.energyDelta / plan.totalActionTime;
       if (energyPerExecutionSeconds > bestEnergyPerExecutionSeconds) {
         bestEnergyPlan = plan;
         bestEnergyPerExecutionSeconds = energyPerExecutionSeconds;

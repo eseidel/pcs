@@ -25,7 +25,7 @@ void main() {
 
   // For each possible plan, print the the Ti/(s*s)?
   double progressPerActionSecond(Plan plan) =>
-      plan.tiDelta.value / plan.executionTime;
+      plan.tiDelta.value / plan.totalActionTime;
 
   plans.sort((a, b) =>
       -progressPerActionSecond(a).compareTo(progressPerActionSecond(b)));
@@ -40,7 +40,7 @@ void main() {
     var buffer = StringBuffer();
     // Done one per line for easy commenting out/reordering.
     buffer.write(structure.name);
-    buffer.write(" time: ${plan.executionTime}");
+    buffer.write(" time: ${plan.totalActionTime}");
     buffer.write(" tiDelta: ${plan.tiDelta}");
     buffer.write(
         " tiDelta/time: ${progressPerActionSecond(plan).toStringAsFixed(4)}");

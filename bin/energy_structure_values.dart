@@ -14,13 +14,13 @@ void main() {
       .toList();
 
   double energyPerActionSecond(Plan plan) =>
-      plan.energyDelta / plan.executionTime;
+      plan.energyDelta / plan.totalActionTime;
 
   plans.sort(
       (a, b) => -energyPerActionSecond(a).compareTo(energyPerActionSecond(b)));
 
   for (var plan in plans) {
     print(
-        "${plan.actions.last.name} time: ${plan.executionTime} energy: ${plan.energyDelta} ratio: ${energyPerActionSecond(plan).toStringAsFixed(2)}");
+        "${plan.actions.last.name} time: ${plan.totalActionTime} energy: ${plan.energyDelta} ratio: ${energyPerActionSecond(plan).toStringAsFixed(2)}");
   }
 }
