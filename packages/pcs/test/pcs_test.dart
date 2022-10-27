@@ -35,25 +35,24 @@ void main() {
 
   test('unit types toString', () {
     expect(Ti(1).toString(), "1.0ti");
-    expect(kTi(1).toString(), "1.0kTi");
     expect(Ti.kilo(1).toString(), "1.0kTi");
     expect(Ti.mega(1).toString(), "1.0MTi");
     expect(Ti.giga(1).toString(), "1.0GTi");
     expect(Ti.tera(1).toString(), "1.0TTi");
 
-    expect(ppq(1).toString(), "1.0ppq");
-    expect(ppt(1).toString(), "1.0ppt");
-    expect(ppb(1).toString(), "1.0ppb");
-    expect(ppm(1).toString(), "1.0ppm");
+    expect(O2.ppq(1).toString(), "1.0ppq");
+    expect(O2.ppt(1).toString(), "1.0ppt");
+    expect(O2.ppb(1).toString(), "1.0ppb");
+    expect(O2.ppm(1).toString(), "1.0ppm");
 
-    expect(pK(1).toString(), "1.0pK");
-    expect(nK(1).toString(), "1.0nK");
-    expect(uK(1).toString(), "1.0uK");
+    expect(Heat.pK(1).toString(), "1.0pK");
+    expect(Heat.nK(1).toString(), "1.0nK");
+    expect(Heat.uK(1).toString(), "1.0uK");
 
-    expect(nPa(1).toString(), "1.0nPa");
-    expect(uPa(1).toString(), "1.0uPa");
-    expect(mPa(1).toString(), "1.0mPa");
+    expect(Pressure.nPa(1).toString(), "1.0nPa");
+    expect(Pressure.uPa(1).toString(), "1.0uPa");
+    expect(Pressure.mPa(1).toString(), "1.0mPa");
 
-    expect(g(1).toString(), "1.0g");
+    expect(Biomass.g(1).toString(), "1.0g");
   });
 }
