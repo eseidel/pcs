@@ -3,5 +3,4 @@ repository: https://github.com/eseidel/pcs
 packages:
   - packages/*
 ide:
-  intellij:
-    enabled: false
+  intellij: false
