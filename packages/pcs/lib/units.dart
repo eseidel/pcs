@@ -19,12 +19,24 @@ class Progress {
 
   Ti get ti => pressure.toTi() + oxygen.toTi() + heat.toTi() + biomass.toTi();
 
+  bool get isZero =>
+      pressure.isZero && oxygen.isZero && heat.isZero && biomass.isZero;
+
   Progress operator +(Progress other) {
     return Progress(
       pressure: pressure + other.pressure,
       oxygen: oxygen + other.oxygen,
       heat: heat + other.heat,
       biomass: biomass + other.biomass,
+    );
+  }
+
+  Progress operator -(Progress other) {
+    return Progress(
+      pressure: pressure - other.pressure,
+      oxygen: oxygen - other.oxygen,
+      heat: heat - other.heat,
+      biomass: biomass - other.biomass,
     );
   }
 
@@ -62,6 +74,7 @@ class Ti {
   final double value;
   const Ti(this.value);
   const Ti.zero() : value = 0;
+  bool isZero() => value == 0;
 
   static const double kiloMultiplier = 1000;
   static const double megaMultiplier = 1000000;
@@ -111,6 +124,7 @@ class O2 {
   const O2.ppm(double ppm) : ppq = ppm * 1000000000; // e-6
 
   const O2.zero() : ppq = 0;
+  bool get isZero => ppq == 0;
   const O2.max() : ppq = double.maxFinite;
 
   O2 operator +(O2 other) => O2.ppq(ppq + other.ppq);
@@ -149,6 +163,7 @@ class Heat {
   const Heat.uK(double uK) : pK = uK * 1000000; // e-6
 
   const Heat.zero() : pK = 0;
+  bool get isZero => pK == 0;
   const Heat.max() : pK = double.maxFinite;
 
   Heat operator +(Heat other) => Heat.pK(pK + other.pK);
@@ -183,6 +198,8 @@ class Pressure {
   const Pressure.mPa(double mPa) : nPa = mPa * 1000000;
 
   const Pressure.zero() : nPa = 0;
+  bool get isZero => nPa == 0;
+
   const Pressure.max() : nPa = double.maxFinite;
   Pressure operator +(Pressure other) => Pressure.nPa(nPa + other.nPa);
   Pressure operator -(Pressure other) => Pressure.nPa(nPa - other.nPa);
@@ -213,6 +230,8 @@ class Biomass {
   final double grams;
   const Biomass.g(this.grams); // grams
   const Biomass.zero() : grams = 0;
+  bool get isZero => grams == 0;
+
   const Biomass.max() : grams = double.maxFinite;
   Biomass operator +(Biomass other) => Biomass.g(grams + other.grams);
   Biomass operator -(Biomass other) => Biomass.g(grams - other.grams);

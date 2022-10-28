@@ -1,6 +1,48 @@
 import 'package:pcs/pcs.dart';
 import 'package:pcs/structures.dart';
 
+World worldAddingStructure(World world, Structure structure) {
+  final newWorld = world.copyWith(
+    structures: [...world.structures, structure],
+  );
+  return newWorld;
+}
+
+class Change {
+  final Structure structure;
+  final World oldWorld;
+  final World newWorld;
+  final Progress progressPerSecondDelta;
+  const Change({
+    required this.oldWorld,
+    required this.newWorld,
+    required this.structure,
+    required this.progressPerSecondDelta,
+  });
+}
+
+List<Change> possibleChanges(World world) {
+  final changes = <Change>[];
+  // FIXME: This should be unlocked buildable structures instead.
+  for (var item in Items.all) {
+    if (item.progress.isZero && item.type != ItemType.rocket) {
+      continue;
+    }
+    final newWorld = worldAddingStructure(world, item);
+    final progressPerSecondDelta =
+        newWorld.calculateProgressPerSecond(ignoreEnergy: true) -
+            world.calculateProgressPerSecond(ignoreEnergy: true);
+    final change = Change(
+      oldWorld: world,
+      newWorld: newWorld,
+      structure: item,
+      progressPerSecondDelta: progressPerSecondDelta,
+    );
+    changes.add(change);
+  }
+  return changes;
+}
+
 void main() {
   // based on hardcoded config
   var world = World(
@@ -42,4 +84,15 @@ void main() {
   print("Total: $total");
 
   // suggest next best building to make from available buildings.
+  var changes = possibleChanges(world);
+  changes.sort((a, b) => b.progressPerSecondDelta.ti.value
+      .compareTo(a.progressPerSecondDelta.ti.value)); // descending
+
+  for (var change in changes) {
+    print(
+        "${change.structure.name} ${change.progressPerSecondDelta} ${change.progressPerSecondDelta.ti}");
+  }
+
+  // Suggest the top 2 for each category?
+  // Walk through all available structures and suggest one to build?
 }

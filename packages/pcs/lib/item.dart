@@ -85,7 +85,7 @@ enum ItemType {
   basemisc(true),
   craftingstation(true),
   drills(true),
-  industrial(true),
+  industrial(false),
   foodgrower(true),
   power(true),
   gasextractor(true),
@@ -120,6 +120,8 @@ enum ItemType {
 // Structure might be a subclass at some point?
 typedef Structure = Item;
 
+// Split this into "ItemType" and "Recipe"?
+// Items need to be instantiated in the world, as some have state.
 class Item {
   final String key;
   final Goal unlocksAt;
