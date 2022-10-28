@@ -2300,7 +2300,6 @@ class Items {
     location: Location.outside,
   );
 
-
   static const all = [
     agilityboots1,
     agilityboots2,

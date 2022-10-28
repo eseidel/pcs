@@ -132,7 +132,6 @@ void main() {
   }
   buffer.unindent();
 
-  buffer.writeln();
   buffer.writeln('  static const all = [');
   for (var item in items) {
     buffer.writeln('    ${item['key']},');
