@@ -23,7 +23,7 @@ String structureCountsString(World world) {
 }
 
 Iterable<Structure> unlockableStructuresBeforeGoal(Goal goal) sync* {
-  for (var structure in allStructures) {
+  for (var structure in Items.structures) {
     var unlockAsTi = structure.unlocksAt.toTi();
     if (unlockAsTi.value != 0 && unlockAsTi < goal.toTi()) {
       yield structure;

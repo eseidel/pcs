@@ -7,7 +7,8 @@ class Unlocks {
 
   Iterable<Structure> get unlockedStructures {
     // Cache this?
-    return allStructures.where((structure) => structure.isAvailable(progress));
+    return Items.structures
+        .where((structure) => structure.isAvailable(progress));
   }
 
   Iterable<Structure> get unlockedEnergyStructures {
@@ -177,46 +178,19 @@ class TimeCostEstimates {
     const double distant = 360;
     // This is a hack around currently assuming all "items" are gathered.
     const double impossible = double.infinity;
-    switch (item) {
-      case Item.aluminium:
-        return medium;
-      case Item.cobalt:
-        return nearby;
-      case Item.water:
-      case Item.ice:
-        return nearby;
-      case Item.iridium:
-        return medium;
-      case Item.iron:
-        return nearby;
-      case Item.magnesium:
-        return nearby;
-      case Item.seedLirma:
-      case Item.plant:
-        return distant;
-      case Item.silicon:
-        return nearby;
-      case Item.superAlloy:
-        return distant;
-      case Item.titanium:
-        return nearby;
-      case Item.osmium:
-        return distant; // Gated until later?
-      case Item.zeolite:
-        return impossible; // Nearby once late?
-      case Item.uranium:
-      case Item.uraniumRod:
-      case Item.iridumRod:
-      case Item.pulsarQuartz:
-      case Item.eggplant:
-      case Item.fertilizer:
-      case Item.fertilizerT2:
-      case Item.bacteriaSample:
-      case Item.treeBark:
-      case Item.bioplasticNugget:
-      case Item.explosivePowder:
-        return impossible;
-    }
+    return {
+          Items.aluminium: medium,
+          Items.cobalt: nearby,
+          Items.water: nearby,
+          Items.ice: nearby,
+          Items.iridium: medium,
+          Items.iron: nearby,
+          Items.magnesium: nearby,
+          Items.silicon: nearby,
+          Items.titanium: nearby,
+          Items.osmium: distant, // Gated until later?
+        }[item] ??
+        impossible;
   }
 
   // This is written to allow different rate structures for different

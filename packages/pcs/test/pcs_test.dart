@@ -6,15 +6,15 @@ import 'package:test/test.dart';
 void main() {
   test('canBuild', () {
     var structure = strutureWithName("Wind Turbine");
-    expect(canAfford(structure, 0, ItemCounts.fromItems([Item.iron])), isTrue);
+    expect(canAfford(structure, 0, ItemCounts.fromItems([Items.iron])), isTrue);
   });
 
   test('applyAction', () {
     var afterGather =
-        applyAction(Gather(items: [Item.iron], time: 1), World.empty());
+        applyAction(Gather(items: [Items.iron], time: 1), World.empty());
 
     expect(afterGather.time, 1);
-    expect(afterGather.inventory.countOf(Item.iron), 1);
+    expect(afterGather.inventory.countOf(Items.iron), 1);
 
     var turbine = strutureWithName("Wind Turbine");
     var afterBuild = applyAction(Build(turbine), afterGather);
@@ -22,7 +22,7 @@ void main() {
     expect(afterBuild.time, 2);
     expect(afterBuild.structures.first, turbine);
     expect(afterBuild.availableEnergy, turbine.energy);
-    expect(afterBuild.inventory.countOf(Item.iron), 0);
+    expect(afterBuild.inventory.countOf(Items.iron), 0);
   });
 
   test('Plan.executionTime', () {
