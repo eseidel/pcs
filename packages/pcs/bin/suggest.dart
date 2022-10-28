@@ -89,8 +89,7 @@ void main() {
       .compareTo(a.progressPerSecondDelta.ti.value)); // descending
 
   for (var change in changes) {
-    print(
-        "${change.structure.name} ${change.progressPerSecondDelta} ${change.progressPerSecondDelta.ti}");
+    print("${change.structure.name} ${change.progressPerSecondDelta}");
   }
 
   // Suggest the top 2 for each category?

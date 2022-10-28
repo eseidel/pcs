@@ -62,10 +62,18 @@ class Progress {
   String toString() {
     var buffer = StringBuffer();
     buffer.write("$ti");
-    buffer.write(" o2: $oxygen");
-    buffer.write(" heat: $heat");
-    buffer.write(" pressure: $pressure");
-    buffer.write(" biomass: $biomass");
+    if (!pressure.isZero) {
+      buffer.write(" pressure: $pressure");
+    }
+    if (!heat.isZero) {
+      buffer.write(" heat: $heat");
+    }
+    if (!oxygen.isZero) {
+      buffer.write(" oxygen: $oxygen");
+    }
+    if (!biomass.isZero) {
+      buffer.write(" biomass: $biomass");
+    }
     return buffer.toString();
   }
 }
