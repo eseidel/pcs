@@ -109,14 +109,19 @@ void main() {
       buffer.writeln('  ),');
     }
 
-    buffer.writeln('  cost: [');
-    for (int i = 1; i <= 9; i++) {
-      var dependency = item['dependency_$i'];
-      if (dependency.isNotEmpty) {
-        buffer.writeln('    Items.$dependency,');
+    if (item['dependency_1'].isNotEmpty) {
+      buffer.writeln('  cost: [');
+      for (var i = 1; i <= 9; i++) {
+        var key = item['dependency_$i'];
+        if (key.isEmpty) {
+          break;
+        }
+        buffer.writeln('    Items.$key,');
       }
+      buffer.writeln('  ],');
+    } else {
+      buffer.writeln('  cost: [],');
     }
-    buffer.writeln('  ],');
 
     // FIXME: This data is missing from the csv.
     buffer.writeln('  unlocksAt: Goal.zero(),');

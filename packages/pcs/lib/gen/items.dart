@@ -55,8 +55,7 @@ class Items {
     name: 'Algae',
     type: ItemType.bio,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -108,8 +107,7 @@ class Items {
     name: 'Aluminium',
     type: ItemType.ore,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -238,8 +236,7 @@ class Items {
     name: 'Beans',
     type: ItemType.food,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -373,8 +370,7 @@ class Items {
     name: 'Cobalt',
     type: ItemType.ore,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -641,8 +637,7 @@ class Items {
     name: 'Eggplant',
     type: ItemType.food,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -697,8 +692,7 @@ class Items {
     name: 'Fabric',
     type: ItemType.industrial,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -991,8 +985,7 @@ class Items {
     name: 'Ice',
     type: ItemType.ore,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1002,8 +995,7 @@ class Items {
     name: 'Iridium',
     type: ItemType.ore,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1033,8 +1025,7 @@ class Items {
     name: 'Iron',
     type: ItemType.ore,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1123,8 +1114,7 @@ class Items {
     name: 'Magnesium',
     type: ItemType.ore,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1134,8 +1124,7 @@ class Items {
     name: 'Methane Cartridge',
     type: ItemType.bio,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1245,8 +1234,7 @@ class Items {
     name: 'Mushroom',
     type: ItemType.food,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1350,8 +1338,7 @@ class Items {
     name: 'Osmium',
     type: ItemType.ore,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1685,8 +1672,7 @@ class Items {
     name: 'Golden Seed',
     type: ItemType.seed,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1696,8 +1682,7 @@ class Items {
     name: 'Seed Lirma',
     type: ItemType.seed,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1707,8 +1692,7 @@ class Items {
     name: 'Seed Nulna',
     type: ItemType.seed,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1718,8 +1702,7 @@ class Items {
     name: 'Seed Orema',
     type: ItemType.seed,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1729,8 +1712,7 @@ class Items {
     name: 'Seed Pestera',
     type: ItemType.seed,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1740,8 +1722,7 @@ class Items {
     name: 'Seed Shanga',
     type: ItemType.seed,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1751,8 +1732,7 @@ class Items {
     name: 'Seed Tuska',
     type: ItemType.seed,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1762,8 +1742,7 @@ class Items {
     name: 'Seed Volnus',
     type: ItemType.seed,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1801,8 +1780,7 @@ class Items {
     name: 'Silicon',
     type: ItemType.ore,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1872,8 +1850,7 @@ class Items {
     name: 'Space Food',
     type: ItemType.consumable,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1883,8 +1860,7 @@ class Items {
     name: 'Squash',
     type: ItemType.food,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1932,8 +1908,7 @@ class Items {
     name: 'Sulfur',
     type: ItemType.ore,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1973,8 +1948,7 @@ class Items {
     name: 'Titanium',
     type: ItemType.ore,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1984,8 +1958,7 @@ class Items {
     name: 'Tree Bark',
     type: ItemType.treeseed,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -2065,8 +2038,7 @@ class Items {
     name: 'Tree Seed Iterra',
     type: ItemType.treeseed,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -2179,8 +2151,7 @@ class Items {
     name: 'Uranium',
     type: ItemType.ore,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -2324,8 +2295,7 @@ class Items {
     name: 'Zeolite',
     type: ItemType.ore,
     energy: 0.0,
-    cost: [
-    ],
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
