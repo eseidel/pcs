@@ -74,6 +74,8 @@ enum Location {
 enum ItemType {
   equipment(false),
   bio(false),
+  larva(false),
+  butterfly(false),
   biomassspreader(true),
   ore(false),
   lamps(true),

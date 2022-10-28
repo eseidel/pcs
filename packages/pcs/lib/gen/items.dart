@@ -965,7 +965,7 @@ class Items {
     type: ItemType.heaters,
     energy: -51.5,
     progress: Progress(
-      heat: Heat.pK(538.0),
+      heat: Heat.pK(538),
       pressure: Pressure.nPa(35.5),
     ),
     cost: [
@@ -976,6 +976,16 @@ class Items {
       Items.iridiumrod,
       Items.explosivepowder,
     ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const honey = Item(
+    key: 'honey',
+    name: 'Honey',
+    type: ItemType.food,
+    energy: 0.0,
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1085,6 +1095,284 @@ class Items {
       Items.cobalt,
       Items.iron,
     ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvaabstreus = Item(
+    key: 'larvaabstreus',
+    name: 'Butterfly Abstreus Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [
+      Items.larvacommon,
+      Items.mutagen,
+      Items.fertilizer,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvaaemel = Item(
+    key: 'larvaaemel',
+    name: 'Butterfly Aemel Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [
+      Items.larvarare,
+      Items.mutagen,
+      Items.fertilizer,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvaalben = Item(
+    key: 'larvaalben',
+    name: 'Butterfly Alben Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvaazurae = Item(
+    key: 'larvaazurae',
+    name: 'Butterfly Azurae Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [
+      Items.larvacommon,
+      Items.mutagen,
+      Items.fertilizer,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvabee = Item(
+    key: 'larvabee',
+    name: 'Bee Larva',
+    type: ItemType.larva,
+    energy: 0.0,
+    cost: [],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvachevrone = Item(
+    key: 'larvachevrone',
+    name: 'Butterfly Chevrone Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [
+      Items.larvarare,
+      Items.mutagen,
+      Items.fertilizer,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvacommon = Item(
+    key: 'larvacommon',
+    name: 'Common Larva',
+    type: ItemType.larva,
+    energy: 0.0,
+    cost: [],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvaempalio = Item(
+    key: 'larvaempalio',
+    name: 'Butterfly Empalio Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [
+      Items.larvacommon,
+      Items.mutagen,
+      Items.fertilizer,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvafensea = Item(
+    key: 'larvafensea',
+    name: 'Butterfly Fensea Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [
+      Items.larvacommon,
+      Items.mutagen,
+      Items.fertilizer,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvafiorente = Item(
+    key: 'larvafiorente',
+    name: 'Butterfly Fiorente Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvafutura = Item(
+    key: 'larvafutura',
+    name: 'Butterfly Futura Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvagalaxe = Item(
+    key: 'larvagalaxe',
+    name: 'Butterfly Galaxe Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [
+      Items.larvacommon,
+      Items.mutagen,
+      Items.fertilizer,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvagolden = Item(
+    key: 'larvagolden',
+    name: 'Butterfly Golden Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvaleani = Item(
+    key: 'larvaleani',
+    name: 'Butterfly Leani Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [
+      Items.larvacommon,
+      Items.mutagen,
+      Items.fertilizer,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvaliux = Item(
+    key: 'larvaliux',
+    name: 'Butterfly Liux Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [
+      Items.larvarare,
+      Items.mutagen,
+      Items.fertilizer,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvalmeo = Item(
+    key: 'larvalmeo',
+    name: 'Butterfly Imeo Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [
+      Items.larvarare,
+      Items.mutagen2,
+      Items.fertilizer,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvalorpen = Item(
+    key: 'larvalorpen',
+    name: 'Butterfly Lorpen Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvanere = Item(
+    key: 'larvanere',
+    name: 'Butterfly Nere Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvapenga = Item(
+    key: 'larvapenga',
+    name: 'Butterfly Penga Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [
+      Items.larvarare,
+      Items.mutagen,
+      Items.fertilizer,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvarare = Item(
+    key: 'larvarare',
+    name: 'Rare Larva',
+    type: ItemType.larva,
+    energy: 0.0,
+    cost: [],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvaserena = Item(
+    key: 'larvaserena',
+    name: 'Butterfly Serena Larva',
+    type: ItemType.butterfly,
+    energy: 0.0,
+    cost: [
+      Items.larvarare,
+      Items.mutagen2,
+      Items.fertilizer,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvasilk = Item(
+    key: 'larvasilk',
+    name: 'Silk Worm Larva',
+    type: ItemType.larva,
+    energy: 0.0,
+    cost: [],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const larvauncommon = Item(
+    key: 'larvauncommon',
+    name: 'Uncommon Larva',
+    type: ItemType.larva,
+    energy: 0.0,
+    cost: [],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1253,6 +1541,20 @@ class Items {
     location: Location.outside,
   );
 
+  static const mutagen2 = Item(
+    key: 'mutagen2',
+    name: 'Mutagen T2',
+    type: ItemType.bio,
+    energy: 0.0,
+    cost: [
+      Items.mutagen,
+      Items.larvacommon,
+      Items.honey,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
   static const nuclearreactor1 = Item(
     key: 'nuclearreactor1',
     name: 'Nuclear Reactor T1',
@@ -1339,6 +1641,26 @@ class Items {
     type: ItemType.ore,
     energy: 0.0,
     cost: [],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const osmiumrod = Item(
+    key: 'osmiumrod',
+    name: 'Osmium Rod',
+    type: ItemType.industrial,
+    energy: 0.0,
+    cost: [
+      Items.osmium,
+      Items.osmium,
+      Items.osmium,
+      Items.osmium,
+      Items.osmium,
+      Items.osmium,
+      Items.osmium,
+      Items.osmium,
+      Items.osmium,
+    ],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -1465,41 +1787,6 @@ class Items {
     location: Location.outside,
   );
 
-  static const rocketasteroid = Item(
-    key: 'rocketasteroid',
-    name: 'Asteroids Attraction Rocket',
-    type: ItemType.rocket,
-    energy: 0.0,
-    cost: [
-      Items.rocketengine,
-      Items.superalloy,
-      Items.superalloy,
-      Items.superalloy,
-      Items.cobalt,
-      Items.cobalt,
-      Items.cobalt,
-    ],
-    unlocksAt: Goal.zero(),
-    location: Location.outside,
-  );
-
-  static const rocketbiomass = Item(
-    key: 'rocketbiomass',
-    name: 'Biomass Rocket',
-    type: ItemType.rocket,
-    energy: 0.0,
-    cost: [
-      Items.rocketengine,
-      Items.superalloy,
-      Items.superalloy,
-      Items.fertilizer,
-      Items.seedlirma,
-      Items.treebark,
-    ],
-    unlocksAt: Goal.zero(),
-    location: Location.outside,
-  );
-
   static const rocketengine = Item(
     key: 'rocketengine',
     name: 'Rocket Engine',
@@ -1547,25 +1834,75 @@ class Items {
     location: Location.outside,
   );
 
-  static const rocketmagneticfield = Item(
-    key: 'rocketmagneticfield',
-    name: 'Magnetic Field Protection Rocket',
+  static const rocketgps3 = Item(
+    key: 'rocketgps3',
+    name: 'GPS Satellite T3',
+    type: ItemType.rocket,
+    energy: 0.0,
+    cost: [
+      Items.rocketengine,
+      Items.microchipcompass,
+      Items.microchipcompass,
+      Items.osmium,
+      Items.superalloyrod,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const rocketheat = Item(
+    key: 'rocketheat',
+    name: 'Asteroids Attraction Rocket',
     type: ItemType.rocket,
     energy: 0.0,
     cost: [
       Items.rocketengine,
       Items.superalloy,
       Items.superalloy,
-      Items.silicon,
-      Items.silicon,
-      Items.silicon,
+      Items.superalloy,
+      Items.cobalt,
+      Items.cobalt,
+      Items.cobalt,
     ],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
 
-  static const rocketseedspreader = Item(
-    key: 'rocketseedspreader',
+  static const rocketinsects = Item(
+    key: 'rocketinsects',
+    name: 'Insect Spreader Rocket',
+    type: ItemType.rocket,
+    energy: 0.0,
+    cost: [
+      Items.rocketengine,
+      Items.osmiumrod,
+      Items.mutagen2,
+      Items.larvabee,
+      Items.larvabee,
+      Items.larvabee,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const rocketmapinfo = Item(
+    key: 'rocketmapinfo',
+    name: 'Map Information Rocket',
+    type: ItemType.rocket,
+    energy: 0.0,
+    cost: [
+      Items.rocketengine,
+      Items.microchipcompass,
+      Items.superalloyrod,
+      Items.osmium,
+      Items.osmium,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const rocketoxygen = Item(
+    key: 'rocketoxygen',
     name: 'Seed Spreader Rocket',
     type: ItemType.rocket,
     energy: 0.0,
@@ -1576,6 +1913,40 @@ class Items {
       Items.bacteria,
       Items.mutagen,
       Items.treebark,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const rocketplants = Item(
+    key: 'rocketplants',
+    name: 'Plants Rocket',
+    type: ItemType.rocket,
+    energy: 0.0,
+    cost: [
+      Items.rocketengine,
+      Items.superalloy,
+      Items.superalloy,
+      Items.fertilizer,
+      Items.seedlirma,
+      Items.treebark,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const rocketpressure = Item(
+    key: 'rocketpressure',
+    name: 'Magnetic Field Protection Rocket',
+    type: ItemType.rocket,
+    energy: 0.0,
+    cost: [
+      Items.rocketengine,
+      Items.superalloy,
+      Items.superalloy,
+      Items.silicon,
+      Items.silicon,
+      Items.silicon,
     ],
     unlocksAt: Goal.zero(),
     location: Location.outside,
@@ -1930,6 +2301,26 @@ class Items {
     location: Location.outside,
   );
 
+  static const superalloyrod = Item(
+    key: 'superalloyrod',
+    name: 'Super Alloy Rod',
+    type: ItemType.industrial,
+    energy: 0.0,
+    cost: [
+      Items.superalloy,
+      Items.superalloy,
+      Items.superalloy,
+      Items.superalloy,
+      Items.aluminium,
+      Items.superalloy,
+      Items.superalloy,
+      Items.superalloy,
+      Items.superalloy,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
   static const table = Item(
     key: 'table',
     name: 'Table',
@@ -1956,7 +2347,7 @@ class Items {
   static const treebark = Item(
     key: 'treebark',
     name: 'Tree Bark',
-    type: ItemType.treeseed,
+    type: ItemType.bio,
     energy: 0.0,
     cost: [],
     unlocksAt: Goal.zero(),
@@ -2362,6 +2753,7 @@ class Items {
     heater2,
     heater3,
     heater4,
+    honey,
     ice,
     iridium,
     iridiumrod,
@@ -2370,6 +2762,29 @@ class Items {
     jetpack2,
     jetpack3,
     ladderindoor,
+    larvaabstreus,
+    larvaaemel,
+    larvaalben,
+    larvaazurae,
+    larvabee,
+    larvachevrone,
+    larvacommon,
+    larvaempalio,
+    larvafensea,
+    larvafiorente,
+    larvafutura,
+    larvagalaxe,
+    larvagolden,
+    larvaleani,
+    larvaliux,
+    larvalmeo,
+    larvalorpen,
+    larvanere,
+    larvapenga,
+    larvarare,
+    larvaserena,
+    larvasilk,
+    larvauncommon,
     launchplatform,
     magnesium,
     methane,
@@ -2382,11 +2797,13 @@ class Items {
     microchiptorch,
     mushroom,
     mutagen,
+    mutagen2,
     nuclearreactor1,
     nuclearreactor2,
     oreextractor1,
     oreextractor2,
     osmium,
+    osmiumrod,
     outsidelamp,
     oxygen,
     oxygentank1,
@@ -2395,13 +2812,16 @@ class Items {
     oxygentank4,
     pulsarquartz,
     recycling,
-    rocketasteroid,
-    rocketbiomass,
     rocketengine,
     rocketgps1,
     rocketgps2,
-    rocketmagneticfield,
-    rocketseedspreader,
+    rocketgps3,
+    rocketheat,
+    rocketinsects,
+    rocketmapinfo,
+    rocketoxygen,
+    rocketplants,
+    rocketpressure,
     screenblueprints,
     screenenergy,
     screenmap,
@@ -2430,6 +2850,7 @@ class Items {
     storagelocker,
     sulfur,
     superalloy,
+    superalloyrod,
     table,
     titanium,
     treebark,
@@ -2506,6 +2927,7 @@ class Items {
     nuclearreactor2,
     oreextractor1,
     oreextractor2,
+    osmiumrod,
     outsidelamp,
     recycling,
     rocketengine,
@@ -2525,6 +2947,7 @@ class Items {
     storagecrate,
     storagelocker,
     superalloy,
+    superalloyrod,
     table,
     treespreader1,
     treespreader2,

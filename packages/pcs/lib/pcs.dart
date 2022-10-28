@@ -38,13 +38,44 @@ class World {
     required this.inventory,
   });
 
-  Progress get progressPerSecond {
-    if (availableEnergy < 0) {
+  Map<Item, int> get structureCounts {
+    var counts = <Item, int>{};
+    for (var structure in structures) {
+      counts[structure] = (counts[structure] ?? 0) + 1;
+    }
+    return counts;
+  }
+
+  Progress get rocketMultipliers {
+    var counts = structureCounts;
+
+    double multiplier(Item key) {
+      var count = counts[key] ?? 0;
+      return count == 0 ? 1 : count * 10;
+    }
+
+    return Progress(
+      biomass: Biomass.g(multiplier(Items.rocketplants)),
+      pressure: Pressure.nPa(multiplier(Items.rocketpressure)),
+      heat: Heat.pK(multiplier(Items.rocketheat)),
+      oxygen: O2.ppq(multiplier(Items.rocketoxygen)),
+    );
+  }
+
+  Progress calculateProgressPerSecond(
+      {bool ignoreEnergy = false, bool ignoreRockets = false}) {
+    if (!ignoreEnergy && availableEnergy < 0) {
       return Progress();
     }
-    return structures.fold(Progress(),
+    var progress = structures.fold(Progress(),
         (Progress total, Structure structure) => total + structure.progress);
+    if (ignoreRockets) {
+      return progress;
+    }
+    return progress * rocketMultipliers;
   }
+
+  Progress get progressPerSecond => calculateProgressPerSecond();
 
   // FIXME: Make this const
   World.empty()
@@ -343,7 +374,7 @@ class Sprinter extends Actor {
     var timeDelta = plan.totalActionTime;
     var futureTime = sim.world.time + timeDelta;
     var futureProgress = sim.world.totalProgress +
-        sim.world.progressPerSecond * timeDelta.toDouble();
+        sim.world.progressPerSecond.scaleBy(timeDelta);
     var newWorld = sim.world.copyWith(
         structures: newStructures,
         totalProgress: futureProgress,
@@ -433,7 +464,7 @@ class PlanContext {
 
 World applyAction(Action action, World world) {
   var totalProgress =
-      world.totalProgress + world.progressPerSecond * action.time.toDouble();
+      world.totalProgress + world.progressPerSecond.scaleBy(action.time);
   var time = world.time + action.time;
   var inventory = world.inventory;
   var structures = world.structures;

@@ -28,12 +28,21 @@ class Progress {
     );
   }
 
-  Progress operator *(double timeDelta) {
+  Progress scaleBy(double timeDelta) {
     return Progress(
       pressure: pressure.scaleBy(timeDelta),
       oxygen: oxygen.scaleBy(timeDelta),
       heat: heat.scaleBy(timeDelta),
       biomass: biomass.scaleBy(timeDelta),
+    );
+  }
+
+  Progress operator *(Progress other) {
+    return Progress(
+      pressure: pressure * other.pressure,
+      oxygen: oxygen * other.oxygen,
+      heat: heat * other.heat,
+      biomass: biomass * other.biomass,
     );
   }
 
