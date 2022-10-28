@@ -91,20 +91,24 @@ void main() {
     buffer.writeln('  type: ItemType.${item['type']},');
     var energy = item['power'].isEmpty ? '0.0' : item['power'];
     buffer.writeln('  energy: $energy,');
-    buffer.writeln('  progress: Progress(');
-    if (item['oxygen'].isNotEmpty) {
-      buffer.writeln('    oxygen: O2.ppq(${item['oxygen']}),');
+    if (['oxygen', 'biomass', 'heat', 'pressure']
+        .any((key) => item[key].isNotEmpty)) {
+      buffer.writeln('  progress: Progress(');
+      if (item['oxygen'].isNotEmpty) {
+        buffer.writeln('    oxygen: O2.ppq(${item['oxygen']}),');
+      }
+      if (item['biomass'].isNotEmpty) {
+        buffer.writeln('    biomass: Biomass.g(${item['biomass']}),');
+      }
+      if (item['heat'].isNotEmpty) {
+        buffer.writeln('    heat: Heat.pK(${item['heat']}),');
+      }
+      if (item['pressure'].isNotEmpty) {
+        buffer.writeln('    pressure: Pressure.nPa(${item['pressure']}),');
+      }
+      buffer.writeln('  ),');
     }
-    if (item['biomass'].isNotEmpty) {
-      buffer.writeln('    biomass: Biomass.g(${item['biomass']}),');
-    }
-    if (item['heat'].isNotEmpty) {
-      buffer.writeln('    heat: Heat.pK(${item['heat']}),');
-    }
-    if (item['pressure'].isNotEmpty) {
-      buffer.writeln('    pressure: Pressure.nPa(${item['pressure']}),');
-    }
-    buffer.writeln('  ),');
+
     buffer.writeln('  cost: [');
     for (int i = 1; i <= 9; i++) {
       var dependency = item['dependency_$i'];

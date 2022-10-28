@@ -9,8 +9,6 @@ class Items {
     name: 'Agility Boots T1',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.aluminium,
       Items.aluminium,
@@ -26,8 +24,6 @@ class Items {
     name: 'Agility Boots T2',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.agilityboots1,
       Items.superalloy,
@@ -44,8 +40,6 @@ class Items {
     name: 'Agility Boots T3',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.agilityboots2,
       Items.superalloy,
@@ -61,8 +55,6 @@ class Items {
     name: 'Algae',
     type: ItemType.bio,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -116,8 +108,6 @@ class Items {
     name: 'Aluminium',
     type: ItemType.ore,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -129,8 +119,6 @@ class Items {
     name: 'Area Lamp',
     type: ItemType.lamps,
     energy: -1.2,
-    progress: Progress(
-    ),
     cost: [
       Items.magnesium,
       Items.cobalt,
@@ -144,8 +132,6 @@ class Items {
     name: 'Backpack T1',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.iron,
@@ -159,8 +145,6 @@ class Items {
     name: 'Backpack T2',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.backpack1,
       Items.iron,
@@ -176,8 +160,6 @@ class Items {
     name: 'Backpack T3',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.backpack2,
       Items.aluminium,
@@ -194,8 +176,6 @@ class Items {
     name: 'Backpack T4',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.backpack3,
       Items.superalloy,
@@ -212,8 +192,6 @@ class Items {
     name: 'Backpack T5',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.backpack4,
       Items.superalloy,
@@ -230,8 +208,6 @@ class Items {
     name: 'Bacteria Sample',
     type: ItemType.bio,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.algae,
       Items.algae,
@@ -249,8 +225,6 @@ class Items {
     name: 'Beacon',
     type: ItemType.lamps,
     energy: -1.2,
-    progress: Progress(
-    ),
     cost: [
       Items.magnesium,
       Items.cobalt,
@@ -264,8 +238,6 @@ class Items {
     name: 'Beans',
     type: ItemType.food,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -277,8 +249,6 @@ class Items {
     name: 'Bed',
     type: ItemType.furniture,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.fabric,
@@ -294,8 +264,6 @@ class Items {
     name: 'Double Bed',
     type: ItemType.furniture,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.fabric,
@@ -359,8 +327,6 @@ class Items {
     name: 'Biolab',
     type: ItemType.base,
     energy: -40,
-    progress: Progress(
-    ),
     cost: [
       Items.osmium,
       Items.osmium,
@@ -378,8 +344,6 @@ class Items {
     name: 'Bioplastic Nugget',
     type: ItemType.bio,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.mushroom,
       Items.mushroom,
@@ -395,8 +359,6 @@ class Items {
     name: 'Chair',
     type: ItemType.furniture,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.fabric,
@@ -411,8 +373,6 @@ class Items {
     name: 'Cobalt',
     type: ItemType.ore,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -424,8 +384,6 @@ class Items {
     name: 'Communication Antenna',
     type: ItemType.basemisc,
     energy: -15,
-    progress: Progress(
-    ),
     cost: [
       Items.silicon,
       Items.titanium,
@@ -441,8 +399,6 @@ class Items {
     name: 'Big Living Compartment',
     type: ItemType.base,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.iron,
@@ -462,8 +418,6 @@ class Items {
     name: 'Living Compartment Corner',
     type: ItemType.base,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.titanium,
@@ -478,8 +432,6 @@ class Items {
     name: 'Living Compartment Door',
     type: ItemType.base,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.silicon,
@@ -494,8 +446,6 @@ class Items {
     name: 'Living Compartment Glass',
     type: ItemType.base,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.titanium,
       Items.cobalt,
@@ -509,8 +459,6 @@ class Items {
     name: 'Living Compartment',
     type: ItemType.base,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.iron,
@@ -525,8 +473,6 @@ class Items {
     name: 'Living Compartment Window',
     type: ItemType.base,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.cobalt,
@@ -540,8 +486,6 @@ class Items {
     name: 'Craft Station T2',
     type: ItemType.craftingstation,
     energy: -0.5,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.silicon,
@@ -555,8 +499,6 @@ class Items {
     name: 'Advanced Craft Station',
     type: ItemType.craftingstation,
     energy: -12.5,
-    progress: Progress(
-    ),
     cost: [
       Items.aluminium,
       Items.aluminium,
@@ -577,8 +519,6 @@ class Items {
     name: 'Desktop',
     type: ItemType.furniture,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.iron,
@@ -592,8 +532,6 @@ class Items {
     name: 'Display Case',
     type: ItemType.furniture,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.cobalt,
       Items.cobalt,
@@ -609,8 +547,6 @@ class Items {
     name: 'DNA Manipulator',
     type: ItemType.basemisc,
     energy: -117.5,
-    progress: Progress(
-    ),
     cost: [
       Items.superalloy,
       Items.bioplastic,
@@ -705,8 +641,6 @@ class Items {
     name: 'Eggplant',
     type: ItemType.food,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -718,8 +652,6 @@ class Items {
     name: 'Exoskeleton T1',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.titanium,
       Items.silicon,
@@ -734,8 +666,6 @@ class Items {
     name: 'Exoskeleton T2',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.exoskeleton1,
       Items.titanium,
@@ -753,8 +683,6 @@ class Items {
     name: 'Explosive Powder',
     type: ItemType.bio,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.sulfur,
       Items.sulfur,
@@ -769,8 +697,6 @@ class Items {
     name: 'Fabric',
     type: ItemType.industrial,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -782,8 +708,6 @@ class Items {
     name: 'Fertilizer',
     type: ItemType.bio,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.algae,
       Items.algae,
@@ -801,8 +725,6 @@ class Items {
     name: 'Fertilizer T2',
     type: ItemType.bio,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.fertilizer,
       Items.algae,
@@ -819,8 +741,6 @@ class Items {
     name: 'Flower Pot',
     type: ItemType.furniture,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.magnesium,
       Items.cobalt,
@@ -877,8 +797,6 @@ class Items {
     name: 'Food Grower T1',
     type: ItemType.foodgrower,
     energy: -15,
-    progress: Progress(
-    ),
     cost: [
       Items.aluminium,
       Items.iron,
@@ -893,8 +811,6 @@ class Items {
     name: 'Food Grower T2',
     type: ItemType.foodgrower,
     energy: -29.5,
-    progress: Progress(
-    ),
     cost: [
       Items.water,
       Items.fertilizer,
@@ -909,8 +825,6 @@ class Items {
     name: 'Foundation',
     type: ItemType.base,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
     ],
@@ -923,8 +837,6 @@ class Items {
     name: 'Fusion Energy Cell',
     type: ItemType.industrial,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.pulsarquartz,
       Items.pulsarquartz,
@@ -942,8 +854,6 @@ class Items {
     name: 'Nuclear Fusion Generator',
     type: ItemType.power,
     energy: 1835.5,
-    progress: Progress(
-    ),
     cost: [
       Items.pulsarquartz,
       Items.pulsarquartz,
@@ -1081,8 +991,6 @@ class Items {
     name: 'Ice',
     type: ItemType.ore,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1094,8 +1002,6 @@ class Items {
     name: 'Iridium',
     type: ItemType.ore,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1107,8 +1013,6 @@ class Items {
     name: 'Iridium Rod',
     type: ItemType.industrial,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iridium,
       Items.iridium,
@@ -1129,8 +1033,6 @@ class Items {
     name: 'Iron',
     type: ItemType.ore,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1142,8 +1044,6 @@ class Items {
     name: 'Jetpack T1',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.rocketengine,
       Items.rocketengine,
@@ -1158,8 +1058,6 @@ class Items {
     name: 'Jetpack T2',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.jetpack1,
       Items.superalloy,
@@ -1176,8 +1074,6 @@ class Items {
     name: 'Jetpack T3',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.jetpack2,
       Items.superalloy,
@@ -1194,8 +1090,6 @@ class Items {
     name: 'Indoor Ladder',
     type: ItemType.base,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.cobalt,
       Items.iron,
@@ -1209,8 +1103,6 @@ class Items {
     name: 'Launch Platform',
     type: ItemType.base,
     energy: -55,
-    progress: Progress(
-    ),
     cost: [
       Items.superalloy,
       Items.superalloy,
@@ -1231,8 +1123,6 @@ class Items {
     name: 'Magnesium',
     type: ItemType.ore,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1244,8 +1134,6 @@ class Items {
     name: 'Methane Cartridge',
     type: ItemType.bio,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1257,8 +1145,6 @@ class Items {
     name: 'Microchip - Compass',
     type: ItemType.microchip,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.silicon,
       Items.magnesium,
@@ -1274,8 +1160,6 @@ class Items {
     name: 'Microchip - Construction',
     type: ItemType.microchip,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.silicon,
       Items.silicon,
@@ -1291,8 +1175,6 @@ class Items {
     name: 'Microchip - Deconstruction',
     type: ItemType.microchip,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.silicon,
       Items.magnesium,
@@ -1306,8 +1188,6 @@ class Items {
     name: 'Microchip - Mining Speed T1',
     type: ItemType.microchip,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.magnesium,
       Items.silicon,
@@ -1322,8 +1202,6 @@ class Items {
     name: 'Microchip - Mining Speed T2',
     type: ItemType.microchip,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.microchipmining1,
       Items.silicon,
@@ -1338,8 +1216,6 @@ class Items {
     name: 'Microchip - Mining Speed T3',
     type: ItemType.microchip,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.microchipmining2,
       Items.silicon,
@@ -1355,8 +1231,6 @@ class Items {
     name: 'Microchip - Torch',
     type: ItemType.microchip,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.silicon,
       Items.magnesium,
@@ -1371,8 +1245,6 @@ class Items {
     name: 'Mushroom',
     type: ItemType.food,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1384,8 +1256,6 @@ class Items {
     name: 'Mutagen',
     type: ItemType.bio,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.bacteria,
       Items.methane,
@@ -1400,8 +1270,6 @@ class Items {
     name: 'Nuclear Reactor T1',
     type: ItemType.power,
     energy: 86.5,
-    progress: Progress(
-    ),
     cost: [
       Items.superalloy,
       Items.superalloy,
@@ -1419,8 +1287,6 @@ class Items {
     name: 'Nuclear Reactor T2',
     type: ItemType.power,
     energy: 331.5,
-    progress: Progress(
-    ),
     cost: [
       Items.water,
       Items.water,
@@ -1484,8 +1350,6 @@ class Items {
     name: 'Osmium',
     type: ItemType.ore,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1497,8 +1361,6 @@ class Items {
     name: 'Outside Lamp',
     type: ItemType.lamps,
     energy: -0.3,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.magnesium,
@@ -1512,8 +1374,6 @@ class Items {
     name: 'Oxygen Capsule',
     type: ItemType.consumable,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.cobalt,
       Items.cobalt,
@@ -1527,8 +1387,6 @@ class Items {
     name: 'Oxygen Tank T1',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.cobalt,
       Items.cobalt,
@@ -1544,8 +1402,6 @@ class Items {
     name: 'Oxygen Tank T2',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.oxygentank1,
       Items.silicon,
@@ -1563,8 +1419,6 @@ class Items {
     name: 'Oxygen Tank T3',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.oxygentank2,
       Items.iron,
@@ -1582,8 +1436,6 @@ class Items {
     name: 'Oxygen Tank T4',
     type: ItemType.equipment,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.oxygentank3,
       Items.superalloy,
@@ -1600,8 +1452,6 @@ class Items {
     name: 'Pulsar Quartz',
     type: ItemType.bio,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.zeolite,
       Items.osmium,
@@ -1617,8 +1467,6 @@ class Items {
     name: 'Recycling Machine',
     type: ItemType.basemisc,
     energy: -12.5,
-    progress: Progress(
-    ),
     cost: [
       Items.superalloy,
       Items.superalloy,
@@ -1635,8 +1483,6 @@ class Items {
     name: 'Asteroids Attraction Rocket',
     type: ItemType.rocket,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.rocketengine,
       Items.superalloy,
@@ -1655,8 +1501,6 @@ class Items {
     name: 'Biomass Rocket',
     type: ItemType.rocket,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.rocketengine,
       Items.superalloy,
@@ -1674,8 +1518,6 @@ class Items {
     name: 'Rocket Engine',
     type: ItemType.industrial,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.superalloy,
       Items.uranium,
@@ -1691,8 +1533,6 @@ class Items {
     name: 'GPS Satellite T1',
     type: ItemType.rocket,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.rocketengine,
       Items.microchipcompass,
@@ -1708,8 +1548,6 @@ class Items {
     name: 'GPS Satellite T2',
     type: ItemType.rocket,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.rocketengine,
       Items.microchipcompass,
@@ -1727,8 +1565,6 @@ class Items {
     name: 'Magnetic Field Protection Rocket',
     type: ItemType.rocket,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.rocketengine,
       Items.superalloy,
@@ -1746,8 +1582,6 @@ class Items {
     name: 'Seed Spreader Rocket',
     type: ItemType.rocket,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.rocketengine,
       Items.superalloy,
@@ -1765,8 +1599,6 @@ class Items {
     name: 'Screen - Blueprints',
     type: ItemType.screen,
     energy: -0.2,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.silicon,
@@ -1780,8 +1612,6 @@ class Items {
     name: 'Screen - Energy Levels',
     type: ItemType.screen,
     energy: -0.4,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.silicon,
@@ -1796,8 +1626,6 @@ class Items {
     name: 'Screen - Mapping',
     type: ItemType.screen,
     energy: -1.4,
-    progress: Progress(
-    ),
     cost: [
       Items.microchipcompass,
       Items.iron,
@@ -1812,8 +1640,6 @@ class Items {
     name: 'Screen - Progress',
     type: ItemType.screen,
     energy: -1.3,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.silicon,
@@ -1829,8 +1655,6 @@ class Items {
     name: 'Screen - Terraformation',
     type: ItemType.screen,
     energy: -0.4,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.cobalt,
@@ -1845,8 +1669,6 @@ class Items {
     name: 'Screen - Transmissions',
     type: ItemType.screen,
     energy: -0.4,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.silicon,
@@ -1863,8 +1685,6 @@ class Items {
     name: 'Golden Seed',
     type: ItemType.seed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1876,8 +1696,6 @@ class Items {
     name: 'Seed Lirma',
     type: ItemType.seed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1889,8 +1707,6 @@ class Items {
     name: 'Seed Nulna',
     type: ItemType.seed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1902,8 +1718,6 @@ class Items {
     name: 'Seed Orema',
     type: ItemType.seed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1915,8 +1729,6 @@ class Items {
     name: 'Seed Pestera',
     type: ItemType.seed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1928,8 +1740,6 @@ class Items {
     name: 'Seed Shanga',
     type: ItemType.seed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1941,8 +1751,6 @@ class Items {
     name: 'Seed Tuska',
     type: ItemType.seed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1954,8 +1762,6 @@ class Items {
     name: 'Seed Volnus',
     type: ItemType.seed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -1967,8 +1773,6 @@ class Items {
     name: 'Shredder Machine',
     type: ItemType.basemisc,
     energy: -6,
-    progress: Progress(
-    ),
     cost: [
       Items.superalloy,
       Items.superalloy,
@@ -1985,8 +1789,6 @@ class Items {
     name: 'Sign',
     type: ItemType.screen,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.magnesium,
     ],
@@ -1999,8 +1801,6 @@ class Items {
     name: 'Silicon',
     type: ItemType.ore,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -2012,8 +1812,6 @@ class Items {
     name: 'Sofa',
     type: ItemType.furniture,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.fabric,
@@ -2028,8 +1826,6 @@ class Items {
     name: 'Sofa Angle',
     type: ItemType.furniture,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.fabric,
@@ -2044,8 +1840,6 @@ class Items {
     name: 'Solar Panel T1',
     type: ItemType.power,
     energy: 6.5,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.cobalt,
@@ -2061,8 +1855,6 @@ class Items {
     name: 'Solar Panel T2',
     type: ItemType.power,
     energy: 19.5,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.cobalt,
@@ -2080,8 +1872,6 @@ class Items {
     name: 'Space Food',
     type: ItemType.consumable,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -2093,8 +1883,6 @@ class Items {
     name: 'Squash',
     type: ItemType.food,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -2106,8 +1894,6 @@ class Items {
     name: 'Outside Stairs',
     type: ItemType.base,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
     ],
@@ -2120,8 +1906,6 @@ class Items {
     name: 'Storage Crate',
     type: ItemType.furniture,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
     ],
@@ -2134,8 +1918,6 @@ class Items {
     name: 'Locker Storage',
     type: ItemType.furniture,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.iron,
@@ -2150,8 +1932,6 @@ class Items {
     name: 'Sulfur',
     type: ItemType.ore,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -2163,8 +1943,6 @@ class Items {
     name: 'Super Alloy',
     type: ItemType.industrial,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.cobalt,
       Items.iron,
@@ -2182,8 +1960,6 @@ class Items {
     name: 'Table',
     type: ItemType.furniture,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.titanium,
@@ -2197,8 +1973,6 @@ class Items {
     name: 'Titanium',
     type: ItemType.ore,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -2210,8 +1984,6 @@ class Items {
     name: 'Tree Bark',
     type: ItemType.treeseed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -2223,8 +1995,6 @@ class Items {
     name: 'Tree Seed Aemora',
     type: ItemType.treeseed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.treebark,
       Items.mutagen,
@@ -2239,8 +2009,6 @@ class Items {
     name: 'Tree Seed Aleatus',
     type: ItemType.treeseed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.treebark,
       Items.mutagen,
@@ -2255,8 +2023,6 @@ class Items {
     name: 'Tree Seed Cernea',
     type: ItemType.treeseed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.treebark,
       Items.mutagen,
@@ -2271,8 +2037,6 @@ class Items {
     name: 'Tree Seed Elegea',
     type: ItemType.treeseed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.treebark,
       Items.mutagen,
@@ -2287,8 +2051,6 @@ class Items {
     name: 'Tree Seed Humelora',
     type: ItemType.treeseed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.treebark,
       Items.mutagen,
@@ -2303,8 +2065,6 @@ class Items {
     name: 'Tree Seed Iterra',
     type: ItemType.treeseed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -2316,8 +2076,6 @@ class Items {
     name: 'Tree Seed Linifolia',
     type: ItemType.treeseed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.treebark,
       Items.mutagen,
@@ -2332,8 +2090,6 @@ class Items {
     name: 'Tree Seed Pleom',
     type: ItemType.treeseed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.treebark,
       Items.mutagen,
@@ -2348,8 +2104,6 @@ class Items {
     name: 'Tree Seed Soleus',
     type: ItemType.treeseed,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.treebark,
       Items.mutagen,
@@ -2425,8 +2179,6 @@ class Items {
     name: 'Uranium',
     type: ItemType.ore,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
@@ -2438,8 +2190,6 @@ class Items {
     name: 'Uranium Rod',
     type: ItemType.industrial,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.uranium,
       Items.uranium,
@@ -2515,8 +2265,6 @@ class Items {
     name: 'Water Bottle',
     type: ItemType.consumable,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
       Items.ice,
     ],
@@ -2529,8 +2277,6 @@ class Items {
     name: 'Atmospheric Water Collector',
     type: ItemType.watercollector,
     energy: -11,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
       Items.silicon,
@@ -2548,8 +2294,6 @@ class Items {
     name: 'Lake Water Collector',
     type: ItemType.watercollector,
     energy: -19,
-    progress: Progress(
-    ),
     cost: [
       Items.bioplastic,
       Items.bioplastic,
@@ -2568,8 +2312,6 @@ class Items {
     name: 'Wind Turbine',
     type: ItemType.power,
     energy: 1.2,
-    progress: Progress(
-    ),
     cost: [
       Items.iron,
     ],
@@ -2582,8 +2324,6 @@ class Items {
     name: 'Zeolite',
     type: ItemType.ore,
     energy: 0.0,
-    progress: Progress(
-    ),
     cost: [
     ],
     unlocksAt: Goal.zero(),
