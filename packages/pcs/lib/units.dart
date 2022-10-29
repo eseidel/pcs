@@ -94,7 +94,7 @@ class Ti {
   final double value;
   const Ti(this.value);
   const Ti.zero() : value = 0;
-  bool isZero() => value == 0;
+  bool get isZero => value == 0;
 
   static const double kiloMultiplier = 1000;
   static const double megaMultiplier = 1000000;

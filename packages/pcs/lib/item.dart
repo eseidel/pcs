@@ -3,27 +3,72 @@
 
 import 'units.dart';
 
-// This is really an enum?
+// In rust this would be an enum with differnt members for each variant.
+// I don't think that's possible in Dart.
 class Goal {
   final Ti? ti;
-  final O2? oxygen;
-  final Heat? heat;
   final Pressure? pressure;
+  final Heat? heat;
+  final O2? oxygen;
   final Mass? plants;
   final Mass? insects;
   final Mass? biomass;
 
-  const Goal(
-      {this.ti,
-      this.oxygen,
-      this.heat,
-      this.pressure,
-      this.plants,
-      this.insects,
-      this.biomass});
-  //  {
-  //   assert([ti, oxygen, heat, pressure].where((e) e == null).length == 3);
-  // }
+  const Goal.ti(Ti this.ti)
+      : oxygen = null,
+        heat = null,
+        pressure = null,
+        plants = null,
+        insects = null,
+        biomass = null;
+
+  const Goal.biomass(Mass this.biomass)
+      : ti = null,
+        oxygen = null,
+        heat = null,
+        pressure = null,
+        plants = null,
+        insects = null;
+
+  const Goal.pressure(Pressure this.pressure)
+      : ti = null,
+        oxygen = null,
+        heat = null,
+        plants = null,
+        insects = null,
+        biomass = null;
+
+  const Goal.heat(Heat this.heat)
+      : ti = null,
+        oxygen = null,
+        pressure = null,
+        plants = null,
+        insects = null,
+        biomass = null;
+
+  const Goal.oxygen(O2 this.oxygen)
+      : ti = null,
+        heat = null,
+        pressure = null,
+        plants = null,
+        insects = null,
+        biomass = null;
+
+  const Goal.plants(Mass this.plants)
+      : ti = null,
+        oxygen = null,
+        heat = null,
+        pressure = null,
+        insects = null,
+        biomass = null;
+
+  const Goal.insects(Mass this.insects)
+      : ti = null,
+        oxygen = null,
+        heat = null,
+        pressure = null,
+        plants = null,
+        biomass = null;
 
   const Goal.zero()
       : ti = const Ti(0),
@@ -33,6 +78,8 @@ class Goal {
         plants = null,
         insects = null,
         biomass = null;
+
+  bool get isZero => ti?.isZero ?? false;
 
   bool wasReached(Progress totalProgress) {
     if (ti != null) {

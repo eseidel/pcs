@@ -38,7 +38,7 @@ Set<String> unlockedStructureNames(World world) {
 
 void main(List<String> arguments) {
   var stage = stageByName("Blue Sky");
-  var stageGoal = Goal(ti: stage.startsAt);
+  var stageGoal = Goal.ti(stage.startsAt);
 
   var outputPath = 'output_log.txt';
   var outputFile = File(outputPath);

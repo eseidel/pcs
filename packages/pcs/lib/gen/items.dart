@@ -76,9 +76,7 @@ class Items {
       Items.magnesium,
       Items.superalloy,
     ],
-    unlocksAt: Goal(
-      heat: Heat.pK(2000000),
-    ),
+    unlocksAt: Goal.heat(Heat.pK(2000000)),
     location: Location.outside,
   );
 
@@ -100,9 +98,7 @@ class Items {
       Items.superalloy,
       Items.superalloy,
     ],
-    unlocksAt: Goal(
-      biomass: Mass.g(25000),
-    ),
+    unlocksAt: Goal.biomass(Mass.g(25000)),
     location: Location.outside,
   );
 
@@ -153,9 +149,7 @@ class Items {
       Items.silicon,
       Items.titanium,
     ],
-    unlocksAt: Goal(
-      ti: Ti(300),
-    ),
+    unlocksAt: Goal.ti(Ti(300)),
     location: Location.outside,
   );
 
@@ -171,9 +165,7 @@ class Items {
       Items.titanium,
       Items.silicon,
     ],
-    unlocksAt: Goal(
-      ti: Ti(2500),
-    ),
+    unlocksAt: Goal.ti(Ti(2500)),
     location: Location.outside,
   );
 
@@ -205,9 +197,7 @@ class Items {
       Items.superalloy,
       Items.titanium,
     ],
-    unlocksAt: Goal(
-      ti: Ti(5000000),
-    ),
+    unlocksAt: Goal.ti(Ti(5000000)),
     location: Location.outside,
   );
 
@@ -237,9 +227,7 @@ class Items {
       Items.magnesium,
       Items.cobalt,
     ],
-    unlocksAt: Goal(
-      heat: Heat.pK(5000),
-    ),
+    unlocksAt: Goal.heat(Heat.pK(5000)),
     location: Location.outside,
   );
 
@@ -282,9 +270,7 @@ class Items {
       Items.fabric,
       Items.fabric,
     ],
-    unlocksAt: Goal(
-      ti: Ti(25000),
-    ),
+    unlocksAt: Goal.ti(Ti(25000)),
     location: Location.outside,
   );
 
@@ -303,9 +289,7 @@ class Items {
       Items.fertilizer,
       Items.bioplastic,
     ],
-    unlocksAt: Goal(
-      plants: Mass.g(80000000),
-    ),
+    unlocksAt: Goal.plants(Mass.g(80000000)),
     location: Location.outside,
   );
 
@@ -324,9 +308,7 @@ class Items {
       Items.fertilizer2,
       Items.bioplastic,
     ],
-    unlocksAt: Goal(
-      insects: Mass.g(225000000),
-    ),
+    unlocksAt: Goal.insects(Mass.g(225000000)),
     location: Location.outside,
   );
 
@@ -339,9 +321,7 @@ class Items {
       Items.honey,
       Items.beans,
     ],
-    unlocksAt: Goal(
-      insects: Mass.g(15000),
-    ),
+    unlocksAt: Goal.insects(Mass.g(15000)),
     location: Location.outside,
   );
 
@@ -364,9 +344,7 @@ class Items {
       Items.superalloy,
       Items.superalloy,
     ],
-    unlocksAt: Goal(
-      heat: Heat.pK(100000),
-    ),
+    unlocksAt: Goal.heat(Heat.pK(100000)),
     location: Location.outside,
   );
 
@@ -388,9 +366,7 @@ class Items {
       Items.superalloy,
       Items.superalloy,
     ],
-    unlocksAt: Goal(
-      heat: Heat.pK(12000000),
-    ),
+    unlocksAt: Goal.heat(Heat.pK(12000000)),
     location: Location.outside,
   );
 
@@ -407,9 +383,7 @@ class Items {
       Items.superalloy,
       Items.superalloy,
     ],
-    unlocksAt: Goal(
-      biomass: Mass.g(865),
-    ),
+    unlocksAt: Goal.biomass(Mass.g(865)),
     location: Location.outside,
   );
 
@@ -437,9 +411,7 @@ class Items {
       Items.iron,
       Items.fabric,
     ],
-    unlocksAt: Goal(
-      insects: Mass.g(2500000),
-    ),
+    unlocksAt: Goal.insects(Mass.g(2500000)),
     location: Location.outside,
   );
 
@@ -459,9 +431,7 @@ class Items {
       Items.superalloy,
       Items.superalloy,
     ],
-    unlocksAt: Goal(
-      plants: Mass.g(140000000),
-    ),
+    unlocksAt: Goal.plants(Mass.g(140000000)),
     location: Location.outside,
   );
 
@@ -536,9 +506,7 @@ class Items {
       Items.iron,
       Items.aluminium,
     ],
-    unlocksAt: Goal(
-      pressure: Pressure.nPa(4000),
-    ),
+    unlocksAt: Goal.pressure(Pressure.nPa(4000)),
     location: Location.outside,
   );
 
@@ -598,9 +566,7 @@ class Items {
       Items.titanium,
       Items.cobalt,
     ],
-    unlocksAt: Goal(
-      pressure: Pressure.nPa(4000),
-    ),
+    unlocksAt: Goal.pressure(Pressure.nPa(4000)),
     location: Location.outside,
   );
 
@@ -627,9 +593,7 @@ class Items {
       Items.iron,
       Items.cobalt,
     ],
-    unlocksAt: Goal(
-      pressure: Pressure.nPa(250),
-    ),
+    unlocksAt: Goal.pressure(Pressure.nPa(250)),
     location: Location.outside,
   );
 
@@ -662,9 +626,7 @@ class Items {
       Items.silicon,
       Items.silicon,
     ],
-    unlocksAt: Goal(
-      ti: Ti(175000),
-    ),
+    unlocksAt: Goal.ti(Ti(175000)),
     location: Location.outside,
   );
 
@@ -707,9 +669,7 @@ class Items {
       Items.explosivepowder,
       Items.pulsarquartz,
     ],
-    unlocksAt: Goal(
-      ti: Ti(700000000),
-    ),
+    unlocksAt: Goal.ti(Ti(700000000)),
     location: Location.outside,
   );
 
@@ -743,9 +703,7 @@ class Items {
       Items.titanium,
       Items.titanium,
     ],
-    unlocksAt: Goal(
-      pressure: Pressure.nPa(1200),
-    ),
+    unlocksAt: Goal.pressure(Pressure.nPa(1200)),
     location: Location.outside,
   );
 
@@ -766,9 +724,7 @@ class Items {
       Items.aluminium,
       Items.aluminium,
     ],
-    unlocksAt: Goal(
-      heat: Heat.pK(21000),
-    ),
+    unlocksAt: Goal.heat(Heat.pK(21000)),
     location: Location.outside,
   );
 
@@ -792,9 +748,7 @@ class Items {
       Items.osmium,
       Items.osmium,
     ],
-    unlocksAt: Goal(
-      heat: Heat.pK(41000000),
-    ),
+    unlocksAt: Goal.heat(Heat.pK(41000000)),
     location: Location.outside,
   );
 
@@ -853,9 +807,7 @@ class Items {
       Items.magnesium,
       Items.aluminium,
     ],
-    unlocksAt: Goal(
-      heat: Heat.pK(10000),
-    ),
+    unlocksAt: Goal.heat(Heat.pK(10000)),
     location: Location.outside,
   );
 
@@ -879,9 +831,7 @@ class Items {
     type: ItemType.industrial,
     energy: 0.0,
     cost: [],
-    unlocksAt: Goal(
-      insects: Mass.g(950000),
-    ),
+    unlocksAt: Goal.insects(Mass.g(950000)),
     location: Location.outside,
   );
 
@@ -940,9 +890,7 @@ class Items {
       Items.cobalt,
       Items.fertilizer,
     ],
-    unlocksAt: Goal(
-      ti: Ti(420000),
-    ),
+    unlocksAt: Goal.ti(Ti(420000)),
     location: Location.outside,
   );
 
@@ -963,9 +911,7 @@ class Items {
       Items.magnesium,
       Items.fertilizer,
     ],
-    unlocksAt: Goal(
-      pressure: Pressure.nPa(2500000),
-    ),
+    unlocksAt: Goal.pressure(Pressure.nPa(2500000)),
     location: Location.outside,
   );
 
@@ -986,9 +932,7 @@ class Items {
       Items.fertilizer,
       Items.fertilizer,
     ],
-    unlocksAt: Goal(
-      biomass: Mass.g(500000),
-    ),
+    unlocksAt: Goal.biomass(Mass.g(500000)),
     location: Location.outside,
   );
 
@@ -1002,9 +946,7 @@ class Items {
       Items.iron,
       Items.water,
     ],
-    unlocksAt: Goal(
-      oxygen: O2.ppq(12000),
-    ),
+    unlocksAt: Goal.oxygen(O2.ppq(12000)),
     location: Location.outside,
   );
 
@@ -1018,9 +960,7 @@ class Items {
       Items.fertilizer,
       Items.superalloy,
     ],
-    unlocksAt: Goal(
-      biomass: Mass.g(35000000),
-    ),
+    unlocksAt: Goal.biomass(Mass.g(35000000)),
     location: Location.outside,
   );
 
@@ -1049,9 +989,7 @@ class Items {
       Items.osmium,
       Items.superalloy,
     ],
-    unlocksAt: Goal(
-      ti: Ti(360000000000),
-    ),
+    unlocksAt: Goal.ti(Ti(360000000000)),
     location: Location.outside,
   );
 
@@ -1071,9 +1009,7 @@ class Items {
       Items.superalloy,
       Items.superalloy,
     ],
-    unlocksAt: Goal(
-      heat: Heat.pK(750000000),
-    ),
+    unlocksAt: Goal.heat(Heat.pK(750000000)),
     location: Location.outside,
   );
 
@@ -1093,9 +1029,7 @@ class Items {
       Items.zeolite,
       Items.iridiumrod,
     ],
-    unlocksAt: Goal(
-      pressure: Pressure.nPa(100000000),
-    ),
+    unlocksAt: Goal.pressure(Pressure.nPa(100000000)),
     location: Location.outside,
   );
 
@@ -1115,9 +1049,7 @@ class Items {
       Items.aluminium,
       Items.seedlirma,
     ],
-    unlocksAt: Goal(
-      oxygen: O2.ppq(150000),
-    ),
+    unlocksAt: Goal.oxygen(O2.ppq(150000)),
     location: Location.outside,
   );
 
@@ -1154,9 +1086,7 @@ class Items {
       Items.iron,
       Items.aluminium,
     ],
-    unlocksAt: Goal(
-      oxygen: O2.ppq(1850),
-    ),
+    unlocksAt: Goal.oxygen(O2.ppq(1850)),
     location: Location.outside,
   );
 
@@ -1196,9 +1126,7 @@ class Items {
       Items.iridiumrod,
       Items.explosivepowder,
     ],
-    unlocksAt: Goal(
-      oxygen: O2.ppq(63000000),
-    ),
+    unlocksAt: Goal.oxygen(O2.ppq(63000000)),
     location: Location.outside,
   );
 
@@ -1257,9 +1185,7 @@ class Items {
       Items.superalloy,
       Items.oxygen,
     ],
-    unlocksAt: Goal(
-      ti: Ti(5000000000),
-    ),
+    unlocksAt: Goal.ti(Ti(5000000000)),
     location: Location.outside,
   );
 
@@ -1358,9 +1284,7 @@ class Items {
       Items.cobalt,
       Items.iron,
     ],
-    unlocksAt: Goal(
-      oxygen: O2.ppq(1000),
-    ),
+    unlocksAt: Goal.oxygen(O2.ppq(1000)),
     location: Location.outside,
   );
 
@@ -1658,9 +1582,7 @@ class Items {
       Items.iron,
       Items.iron,
     ],
-    unlocksAt: Goal(
-      ti: Ti(345000),
-    ),
+    unlocksAt: Goal.ti(Ti(345000)),
     location: Location.outside,
   );
 
@@ -1845,9 +1767,7 @@ class Items {
       Items.water,
       Items.uraniumrod,
     ],
-    unlocksAt: Goal(
-      pressure: Pressure.nPa(60000),
-    ),
+    unlocksAt: Goal.pressure(Pressure.nPa(60000)),
     location: Location.outside,
   );
 
@@ -1866,9 +1786,7 @@ class Items {
       Items.uraniumrod,
       Items.explosivepowder,
     ],
-    unlocksAt: Goal(
-      pressure: Pressure.nPa(1500000),
-    ),
+    unlocksAt: Goal.pressure(Pressure.nPa(1500000)),
     location: Location.outside,
   );
 
@@ -1889,9 +1807,7 @@ class Items {
       Items.aluminium,
       Items.titanium,
     ],
-    unlocksAt: Goal(
-      pressure: Pressure.nPa(155000),
-    ),
+    unlocksAt: Goal.pressure(Pressure.nPa(155000)),
     location: Location.outside,
   );
 
@@ -1914,9 +1830,7 @@ class Items {
       Items.iridiumrod,
       Items.iridiumrod,
     ],
-    unlocksAt: Goal(
-      pressure: Pressure.nPa(364500000),
-    ),
+    unlocksAt: Goal.pressure(Pressure.nPa(364500000)),
     location: Location.outside,
   );
 
@@ -1967,9 +1881,7 @@ class Items {
       Items.fertilizer2,
       Items.superalloy,
     ],
-    unlocksAt: Goal(
-      insects: Mass.g(1500000),
-    ),
+    unlocksAt: Goal.insects(Mass.g(1500000)),
     location: Location.outside,
   );
 
@@ -2027,9 +1939,7 @@ class Items {
       Items.magnesium,
       Items.magnesium,
     ],
-    unlocksAt: Goal(
-      pressure: Pressure.nPa(70),
-    ),
+    unlocksAt: Goal.pressure(Pressure.nPa(70)),
     location: Location.outside,
   );
 
@@ -2046,9 +1956,7 @@ class Items {
       Items.magnesium,
       Items.aluminium,
     ],
-    unlocksAt: Goal(
-      oxygen: O2.ppq(5000),
-    ),
+    unlocksAt: Goal.oxygen(O2.ppq(5000)),
     location: Location.outside,
   );
 
@@ -2079,9 +1987,7 @@ class Items {
       Items.uranium,
       Items.iridium,
     ],
-    unlocksAt: Goal(
-      ti: Ti(175000000000),
-    ),
+    unlocksAt: Goal.ti(Ti(175000000000)),
     location: Location.outside,
   );
 
@@ -2228,9 +2134,7 @@ class Items {
       Items.mutagen,
       Items.treebark,
     ],
-    unlocksAt: Goal(
-      ti: Ti(650000000),
-    ),
+    unlocksAt: Goal.ti(Ti(650000000)),
     location: Location.outside,
   );
 
@@ -2247,9 +2151,7 @@ class Items {
       Items.seedlirma,
       Items.treebark,
     ],
-    unlocksAt: Goal(
-      biomass: Mass.g(175000),
-    ),
+    unlocksAt: Goal.biomass(Mass.g(175000)),
     location: Location.outside,
   );
 
@@ -2280,9 +2182,7 @@ class Items {
       Items.silicon,
       Items.aluminium,
     ],
-    unlocksAt: Goal(
-      ti: Ti(200000000),
-    ),
+    unlocksAt: Goal.ti(Ti(200000000)),
     location: Location.outside,
   );
 
@@ -2338,9 +2238,7 @@ class Items {
       Items.silicon,
       Items.cobalt,
     ],
-    unlocksAt: Goal(
-      heat: Heat.pK(2000),
-    ),
+    unlocksAt: Goal.heat(Heat.pK(2000)),
     location: Location.outside,
   );
 
@@ -2354,9 +2252,7 @@ class Items {
       Items.osmium,
       Items.silicon,
     ],
-    unlocksAt: Goal(
-      ti: Ti(550000000),
-    ),
+    unlocksAt: Goal.ti(Ti(550000000)),
     location: Location.outside,
   );
 
@@ -2386,9 +2282,7 @@ class Items {
       Items.magnesium,
       Items.magnesium,
     ],
-    unlocksAt: Goal(
-      pressure: Pressure.nPa(4000),
-    ),
+    unlocksAt: Goal.pressure(Pressure.nPa(4000)),
     location: Location.outside,
   );
 
@@ -2496,9 +2390,7 @@ class Items {
     cost: [
       Items.magnesium,
     ],
-    unlocksAt: Goal(
-      heat: Heat.pK(500000),
-    ),
+    unlocksAt: Goal.heat(Heat.pK(500000)),
     location: Location.outside,
   );
 
@@ -2525,9 +2417,7 @@ class Items {
       Items.water,
       Items.oxygen,
     ],
-    unlocksAt: Goal(
-      insects: Mass.g(800000),
-    ),
+    unlocksAt: Goal.insects(Mass.g(800000)),
     location: Location.outside,
   );
 
@@ -2570,9 +2460,7 @@ class Items {
       Items.silicon,
       Items.silicon,
     ],
-    unlocksAt: Goal(
-      ti: Ti(1000),
-    ),
+    unlocksAt: Goal.ti(Ti(1000)),
     location: Location.outside,
   );
 
@@ -2589,9 +2477,7 @@ class Items {
       Items.magnesium,
       Items.aluminium,
     ],
-    unlocksAt: Goal(
-      ti: Ti(1750),
-    ),
+    unlocksAt: Goal.ti(Ti(1750)),
     location: Location.outside,
   );
 
@@ -2649,9 +2535,7 @@ class Items {
       Items.iron,
       Items.iron,
     ],
-    unlocksAt: Goal(
-      ti: Ti(50000),
-    ),
+    unlocksAt: Goal.ti(Ti(50000)),
     location: Location.outside,
   );
 
@@ -2698,9 +2582,7 @@ class Items {
       Items.superalloy,
       Items.superalloy,
     ],
-    unlocksAt: Goal(
-      ti: Ti(750000000),
-    ),
+    unlocksAt: Goal.ti(Ti(750000000)),
     location: Location.outside,
   );
 
@@ -2730,9 +2612,7 @@ class Items {
       Items.pulsarquartz,
       Items.pulsarquartz,
     ],
-    unlocksAt: Goal(
-      ti: Ti(25000000000),
-    ),
+    unlocksAt: Goal.ti(Ti(25000000000)),
     location: Location.outside,
   );
 
@@ -2766,9 +2646,7 @@ class Items {
       Items.mutagen,
       Items.seedvolnus,
     ],
-    unlocksAt: Goal(
-      insects: Mass.g(1100000),
-    ),
+    unlocksAt: Goal.insects(Mass.g(1100000)),
     location: Location.outside,
   );
 
@@ -2796,9 +2674,7 @@ class Items {
       Items.mutagen,
       Items.seednulna,
     ],
-    unlocksAt: Goal(
-      insects: Mass.g(500),
-    ),
+    unlocksAt: Goal.insects(Mass.g(500)),
     location: Location.outside,
   );
 
@@ -2812,9 +2688,7 @@ class Items {
       Items.mutagen,
       Items.seedtuska,
     ],
-    unlocksAt: Goal(
-      insects: Mass.g(100000),
-    ),
+    unlocksAt: Goal.insects(Mass.g(100000)),
     location: Location.outside,
   );
 
@@ -2828,9 +2702,7 @@ class Items {
       Items.mutagen,
       Items.seedorema,
     ],
-    unlocksAt: Goal(
-      insects: Mass.g(500000),
-    ),
+    unlocksAt: Goal.insects(Mass.g(500000)),
     location: Location.outside,
   );
 
@@ -2902,9 +2774,7 @@ class Items {
       Items.treebark,
       Items.bioplastic,
     ],
-    unlocksAt: Goal(
-      biomass: Mass.g(45000000),
-    ),
+    unlocksAt: Goal.biomass(Mass.g(45000000)),
     location: Location.outside,
   );
 
@@ -2924,9 +2794,7 @@ class Items {
       Items.fertilizer2,
       Items.zeolite,
     ],
-    unlocksAt: Goal(
-      oxygen: O2.ppq(7500000000),
-    ),
+    unlocksAt: Goal.oxygen(O2.ppq(7500000000)),
     location: Location.outside,
   );
 
@@ -2947,9 +2815,7 @@ class Items {
       Items.fertilizer2,
       Items.zeolite,
     ],
-    unlocksAt: Goal(
-      ti: Ti(49500000000),
-    ),
+    unlocksAt: Goal.ti(Ti(49500000000)),
     location: Location.outside,
   );
 
@@ -3015,9 +2881,7 @@ class Items {
       Items.magnesium,
       Items.silicon,
     ],
-    unlocksAt: Goal(
-      heat: Heat.pK(500),
-    ),
+    unlocksAt: Goal.heat(Heat.pK(500)),
     location: Location.outside,
   );
 
@@ -3036,9 +2900,7 @@ class Items {
       Items.magnesium,
       Items.aluminium,
     ],
-    unlocksAt: Goal(
-      oxygen: O2.ppq(80000),
-    ),
+    unlocksAt: Goal.oxygen(O2.ppq(80000)),
     location: Location.outside,
   );
 
@@ -3067,9 +2929,7 @@ class Items {
       Items.aluminium,
       Items.superalloy,
     ],
-    unlocksAt: Goal(
-      ti: Ti(875000),
-    ),
+    unlocksAt: Goal.ti(Ti(875000)),
     location: Location.outside,
   );
 
@@ -3087,9 +2947,7 @@ class Items {
       Items.aluminium,
       Items.superalloy,
     ],
-    unlocksAt: Goal(
-      ti: Ti(50000000),
-    ),
+    unlocksAt: Goal.ti(Ti(50000000)),
     location: Location.outside,
   );
 
@@ -3099,9 +2957,7 @@ class Items {
     type: ItemType.equipment,
     energy: 0.0,
     cost: [],
-    unlocksAt: Goal(
-      ti: Ti(3000000000),
-    ),
+    unlocksAt: Goal.ti(Ti(3000000000)),
     location: Location.outside,
   );
 
