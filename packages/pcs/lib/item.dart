@@ -219,6 +219,7 @@ typedef Structure = Item;
 class Item {
   final String key;
   final Goal unlocksAt;
+  final int? microchipNumber;
   final List<Item> cost;
   final double energy;
   final Progress progress;
@@ -227,7 +228,10 @@ class Item {
   final Location location;
   final ItemType type;
 
-  bool isAvailable(Progress progress) {
+  bool isAvailable(Progress progress, int microchipCount) {
+    if (microchipNumber != null) {
+      return microchipCount >= microchipNumber!;
+    }
     return unlocksAt.wasReached(progress);
   }
 
@@ -241,5 +245,11 @@ class Item {
     this.progress = const Progress(),
     this.description = "",
     required this.location,
+    this.microchipNumber,
   });
+
+  @override
+  String toString() {
+    return name;
+  }
 }

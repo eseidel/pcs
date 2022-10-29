@@ -2,13 +2,14 @@ import 'structures.dart';
 
 class Unlocks {
   final Progress progress;
+  final int microchipCount;
 
-  Unlocks.forProgress(this.progress);
+  Unlocks(this.progress, this.microchipCount);
 
   Iterable<Structure> get unlockedStructures {
     // Cache this?
     return Items.structures
-        .where((structure) => structure.isAvailable(progress));
+        .where((structure) => structure.isAvailable(progress, microchipCount));
   }
 
   Iterable<Structure> get unlockedEnergyStructures {
@@ -23,6 +24,7 @@ class Unlocks {
 class World {
   final double time;
   final Progress totalProgress;
+  final int microchipCount;
 
   final List<Structure> structures;
   final ItemCounts inventory;
@@ -31,11 +33,12 @@ class World {
     return structures.fold(0, (total, structure) => total + structure.energy);
   }
 
-  const World({
+  const World._({
     required this.time,
     required this.totalProgress,
     required this.structures,
     required this.inventory,
+    required this.microchipCount,
   });
 
   Map<Item, int> get structureCounts {
@@ -82,19 +85,22 @@ class World {
       : time = 0,
         totalProgress = const Progress(),
         structures = const <Structure>[],
-        inventory = ItemCounts();
+        inventory = ItemCounts(),
+        microchipCount = 0;
 
   World copyWith({
     double? time,
     Progress? totalProgress,
     List<Structure>? structures,
     ItemCounts? inventory,
+    int? microchipCount,
   }) {
-    return World(
+    return World._(
       time: time ?? this.time,
       totalProgress: totalProgress ?? this.totalProgress,
       structures: structures ?? this.structures,
       inventory: inventory ?? this.inventory,
+      microchipCount: microchipCount ?? this.microchipCount,
     );
   }
 
@@ -118,7 +124,7 @@ class World {
     return distanceToGoal / progressPerSecond.plants.grams;
   }
 
-  Unlocks get unlocks => Unlocks.forProgress(totalProgress);
+  Unlocks get unlocks => Unlocks(totalProgress, microchipCount);
 }
 
 class Action {

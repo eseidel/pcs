@@ -2,12 +2,7 @@ import 'package:pcs/pcs.dart';
 import 'package:pcs/structures.dart';
 
 void main() {
-  var world = World(
-    inventory: ItemCounts(),
-    time: 0,
-    totalProgress: Progress.allUnlocks(),
-    structures: [],
-  );
+  var world = World.empty().copyWith(totalProgress: Progress.allUnlocks());
   var costEstimates = TimeCostEstimates(world.unlocks);
   var plans = TimeCostEstimates.possibleEnergyStructurePlans(costEstimates,
           neededEnergy: 1)

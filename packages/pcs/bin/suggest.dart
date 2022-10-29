@@ -43,37 +43,39 @@ List<Change> possibleChanges(World world) {
   return changes;
 }
 
+List<Item> listFromMapCounts(Map<Item, int> map) {
+  final list = <Item>[];
+  for (var entry in map.entries) {
+    for (var i = 0; i < entry.value; i++) {
+      list.add(entry.key);
+    }
+  }
+  return list;
+}
+
 void main() {
   // based on hardcoded config
-  var world = World(
-    time: 0, // ignored
-    inventory: ItemCounts(), // ignored.
-    // Want a constructor to take a Ti and divide between factors?
-    totalProgress: Progress(
-      pressure: Pressure.nPa(0),
-      heat: Heat.nK(0),
-      plants: Mass.g(0),
-    ),
-    structures: [
-      Items.biodome1,
-      Items.biodome2,
-      for (var i = 0; i < 13; i++) Items.heater4,
-      for (var i = 0; i < 15; i++) Items.drill4,
-      Items.grassspreader,
-      for (var i = 0; i < 3; i++) Items.flowerspreader1,
-      for (var i = 0; i < 3; i++) Items.flowerspreader2,
-      Items.algaegenerator1,
-      for (var i = 0; i < 6; i++) Items.algaegenerator2,
-      for (var i = 0; i < 4; i++) Items.treespreader1,
-      for (var i = 0; i < 3; i++) Items.treespreader2,
-      for (var i = 0; i < 5; i++) Items.treespreader3,
-      for (var i = 0; i < 5; i++) Items.oreextractor2,
-      Items.gasextractor,
-      for (var i = 0; i < 10; i++) Items.rocketoxygen, // 02
-      for (var i = 0; i < 12; i++) Items.rocketheat, // heat
-      for (var i = 0; i < 5; i++) Items.rocketpressure, // pressure
-      for (var i = 0; i < 22; i++) Items.rocketplants, // biomass (plants)
-    ],
+  var world = World.empty().copyWith(
+    structures: listFromMapCounts({
+      Items.biodome1: 1,
+      Items.biodome2: 1,
+      Items.heater4: 13,
+      Items.drill4: 15,
+      Items.grassspreader: 1,
+      Items.flowerspreader1: 3,
+      Items.flowerspreader2: 3,
+      Items.algaegenerator1: 1,
+      Items.algaegenerator2: 6,
+      Items.treespreader1: 4,
+      Items.treespreader2: 3,
+      Items.treespreader3: 5,
+      Items.oreextractor2: 5,
+      Items.gasextractor: 1,
+      Items.rocketoxygen: 10,
+      Items.rocketheat: 12,
+      Items.rocketpressure: 5,
+      Items.rocketplants: 22,
+    }),
   );
 
   // print base production and total production

@@ -156,6 +156,10 @@ void main() {
       buffer.writeln('  unlocksAt: Goal.zero(),');
     }
 
+    if (item['blueprint_microchip'].isNotEmpty) {
+      buffer.writeln('  microchipNumber: ${item['blueprint_microchip']},');
+    }
+
     // FIXME: Location placement data is missing from the csv.
     buffer.writeln('  location: Location.outside,');
 

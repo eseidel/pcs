@@ -16,6 +16,7 @@ class Items {
       Items.fabric,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 2,
     location: Location.outside,
   );
 
@@ -32,6 +33,7 @@ class Items {
       Items.fabric,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 5,
     location: Location.outside,
   );
 
@@ -47,6 +49,7 @@ class Items {
       Items.explosivepowder,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 15,
     location: Location.outside,
   );
 
@@ -122,6 +125,7 @@ class Items {
       Items.cobalt,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 11,
     location: Location.outside,
   );
 
@@ -448,7 +452,7 @@ class Items {
       Items.zeolite,
       Items.bioplastic,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal.plants(Mass.g(3250)),
     location: Location.outside,
   );
 
@@ -467,7 +471,7 @@ class Items {
       Items.fabric,
       Items.fabric,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal.insects(Mass.g(925000000)),
     location: Location.outside,
   );
 
@@ -526,6 +530,7 @@ class Items {
       Items.superalloy,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 17,
     location: Location.outside,
   );
 
@@ -540,6 +545,7 @@ class Items {
       Items.cobalt,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 6,
     location: Location.outside,
   );
 
@@ -655,6 +661,7 @@ class Items {
       Items.superalloy,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 18,
     location: Location.outside,
   );
 
@@ -766,7 +773,7 @@ class Items {
       Items.superalloyrod,
       Items.osmiumrod,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal.biomass(Mass.g(29000000000)),
     location: Location.outside,
   );
 
@@ -844,6 +851,7 @@ class Items {
       Items.silicon,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 19,
     location: Location.outside,
   );
 
@@ -1150,7 +1158,7 @@ class Items {
       Items.superalloyrod,
       Items.superalloyrod,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal.biomass(Mass.g(8300000000)),
     location: Location.outside,
   );
 
@@ -1256,6 +1264,7 @@ class Items {
       Items.aluminium,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 13,
     location: Location.outside,
   );
 
@@ -1618,6 +1627,7 @@ class Items {
       Items.aluminium,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 4,
     location: Location.outside,
   );
 
@@ -1660,6 +1670,7 @@ class Items {
       Items.aluminium,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 1,
     location: Location.outside,
   );
 
@@ -1674,6 +1685,7 @@ class Items {
       Items.superalloy,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 2,
     location: Location.outside,
   );
 
@@ -1689,6 +1701,7 @@ class Items {
       Items.superalloy,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 8,
     location: Location.outside,
   );
 
@@ -1699,6 +1712,7 @@ class Items {
     energy: 0.0,
     cost: [],
     unlocksAt: Goal.zero(),
+    microchipNumber: 14,
     location: Location.outside,
   );
 
@@ -2004,6 +2018,7 @@ class Items {
       Items.microchipdeconstruction,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 7,
     location: Location.outside,
   );
 
@@ -2034,6 +2049,7 @@ class Items {
       Items.superalloy,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 9,
     location: Location.outside,
   );
 
@@ -2051,6 +2067,7 @@ class Items {
       Items.superalloy,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 16,
     location: Location.outside,
   );
 
@@ -2224,6 +2241,7 @@ class Items {
       Items.silicon,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 10,
     location: Location.outside,
   );
 
@@ -2379,6 +2397,7 @@ class Items {
       Items.explosivepowder,
     ],
     unlocksAt: Goal.zero(),
+    microchipNumber: 12,
     location: Location.outside,
   );
 

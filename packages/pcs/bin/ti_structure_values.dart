@@ -14,12 +14,7 @@ extension CompareGoal on Goal {
 }
 
 void main() {
-  var world = World(
-    inventory: ItemCounts(),
-    time: 0,
-    totalProgress: Progress.allUnlocks(),
-    structures: [],
-  );
+  var world = World.empty().copyWith(totalProgress: Progress.allUnlocks());
   var sim = PlanContext(world, Goal.zero());
   var plans = sim.possibleNonEnergyStructurePlans.toList();
 
