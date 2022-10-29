@@ -53,6 +53,6 @@ void main() {
     expect(Pressure.uPa(1).toString(), "1.0uPa");
     expect(Pressure.mPa(1).toString(), "1.0mPa");
 
-    expect(Biomass.g(1).toString(), "1.0g");
+    expect(Mass.g(1).toString(), "1.0g");
   });
 }

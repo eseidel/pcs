@@ -55,7 +55,7 @@ class World {
     }
 
     return Progress(
-      biomass: Biomass.g(multiplier(Items.rocketplants)),
+      plants: Mass.g(multiplier(Items.rocketplants)),
       pressure: Pressure.nPa(multiplier(Items.rocketpressure)),
       heat: Heat.pK(multiplier(Items.rocketheat)),
       oxygen: O2.ppq(multiplier(Items.rocketoxygen)),
@@ -113,8 +113,9 @@ class World {
       double distanceToGoal = goal.pressure!.nPa - totalProgress.pressure.nPa;
       return distanceToGoal / progressPerSecond.pressure.nPa;
     }
-    double distanceToGoal = goal.biomass!.grams - totalProgress.biomass.grams;
-    return distanceToGoal / progressPerSecond.biomass.grams;
+    double distanceToGoal = goal.plants!.grams - totalProgress.plants.grams;
+    // FIXME: Insects?
+    return distanceToGoal / progressPerSecond.plants.grams;
   }
 
   Unlocks get unlocks => Unlocks.forProgress(totalProgress);

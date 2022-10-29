@@ -2,32 +2,38 @@ class Progress {
   final Pressure pressure;
   final O2 oxygen;
   final Heat heat;
-  final Biomass biomass;
+  final Mass plants;
+  final Mass insects;
 
   // Used by tests which need a progress where everything is unlocked.
   const Progress.allUnlocks()
       : pressure = const Pressure.max(),
         oxygen = const O2.max(),
         heat = const Heat.max(),
-        biomass = const Biomass.max();
+        plants = const Mass.max(),
+        insects = const Mass.max();
 
-  const Progress(
-      {this.pressure = const Pressure.zero(),
-      this.oxygen = const O2.zero(),
-      this.heat = const Heat.zero(),
-      this.biomass = const Biomass.zero()});
+  const Progress({
+    this.pressure = const Pressure.zero(),
+    this.oxygen = const O2.zero(),
+    this.heat = const Heat.zero(),
+    this.plants = const Mass.zero(),
+    this.insects = const Mass.zero(),
+  });
 
-  Ti get ti => pressure.toTi() + oxygen.toTi() + heat.toTi() + biomass.toTi();
+  Ti get ti => pressure.toTi() + oxygen.toTi() + heat.toTi() + plants.toTi();
+  Mass get biomass => plants + insects;
 
   bool get isZero =>
-      pressure.isZero && oxygen.isZero && heat.isZero && biomass.isZero;
+      pressure.isZero && oxygen.isZero && heat.isZero && plants.isZero;
 
   Progress operator +(Progress other) {
     return Progress(
       pressure: pressure + other.pressure,
       oxygen: oxygen + other.oxygen,
       heat: heat + other.heat,
-      biomass: biomass + other.biomass,
+      plants: plants + other.plants,
+      insects: insects + other.insects,
     );
   }
 
@@ -36,7 +42,8 @@ class Progress {
       pressure: pressure - other.pressure,
       oxygen: oxygen - other.oxygen,
       heat: heat - other.heat,
-      biomass: biomass - other.biomass,
+      plants: plants - other.plants,
+      insects: insects - other.insects,
     );
   }
 
@@ -45,7 +52,8 @@ class Progress {
       pressure: pressure.scaleBy(timeDelta),
       oxygen: oxygen.scaleBy(timeDelta),
       heat: heat.scaleBy(timeDelta),
-      biomass: biomass.scaleBy(timeDelta),
+      plants: plants.scaleBy(timeDelta),
+      insects: insects.scaleBy(timeDelta),
     );
   }
 
@@ -54,7 +62,8 @@ class Progress {
       pressure: pressure * other.pressure,
       oxygen: oxygen * other.oxygen,
       heat: heat * other.heat,
-      biomass: biomass * other.biomass,
+      plants: plants * other.plants,
+      insects: insects * other.insects,
     );
   }
 
@@ -71,8 +80,11 @@ class Progress {
     if (!oxygen.isZero) {
       buffer.write(" oxygen: $oxygen");
     }
-    if (!biomass.isZero) {
-      buffer.write(" biomass: $biomass");
+    if (!plants.isZero) {
+      buffer.write(" plants: $plants");
+    }
+    if (!insects.isZero) {
+      buffer.write(" insects: $insects");
     }
     return buffer.toString();
   }
@@ -234,18 +246,18 @@ class Pressure {
   }
 }
 
-class Biomass {
+class Mass {
   final double grams;
-  const Biomass.g(this.grams); // grams
-  const Biomass.zero() : grams = 0;
+  const Mass.g(this.grams); // grams
+  const Mass.zero() : grams = 0;
   bool get isZero => grams == 0;
 
-  const Biomass.max() : grams = double.maxFinite;
-  Biomass operator +(Biomass other) => Biomass.g(grams + other.grams);
-  Biomass operator -(Biomass other) => Biomass.g(grams - other.grams);
-  Biomass scaleBy(double multiplier) => Biomass.g(grams * multiplier);
-  Biomass operator *(Biomass other) => Biomass.g(grams * other.grams);
-  bool operator >=(Biomass other) => grams >= other.grams;
+  const Mass.max() : grams = double.maxFinite;
+  Mass operator +(Mass other) => Mass.g(grams + other.grams);
+  Mass operator -(Mass other) => Mass.g(grams - other.grams);
+  Mass scaleBy(double multiplier) => Mass.g(grams * multiplier);
+  Mass operator *(Mass other) => Mass.g(grams * other.grams);
+  bool operator >=(Mass other) => grams >= other.grams;
   Ti toTi() => Ti(grams);
 
   @override

@@ -63,11 +63,11 @@ class Items {
   static const algaegenerator1 = Item(
     key: 'algaegenerator1',
     name: 'Algae Spreader T1',
-    type: ItemType.biomassspreader,
+    type: ItemType.plantspreader,
     energy: -13,
     progress: Progress(
       oxygen: O2.ppq(127),
-      biomass: Biomass.g(0.6),
+      plants: Mass.g(0.6),
     ),
     cost: [
       Items.bioplastic,
@@ -83,11 +83,11 @@ class Items {
   static const algaegenerator2 = Item(
     key: 'algaegenerator2',
     name: 'Algae Spreader T2',
-    type: ItemType.biomassspreader,
+    type: ItemType.plantspreader,
     energy: -27,
     progress: Progress(
       oxygen: O2.ppq(350),
-      biomass: Biomass.g(17),
+      plants: Mass.g(17),
     ),
     cost: [
       Items.bioplastic,
@@ -304,7 +304,7 @@ class Items {
     energy: -75,
     progress: Progress(
       oxygen: O2.ppq(1450),
-      biomass: Biomass.g(11),
+      plants: Mass.g(11),
     ),
     cost: [
       Items.fertilizer,
@@ -346,6 +346,42 @@ class Items {
       Items.mushroom,
       Items.silicon,
       Items.water,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const butterflyfarm = Item(
+    key: 'butterflyfarm',
+    name: 'Butterfly Farm',
+    type: ItemType.insectspreader,
+    energy: -30,
+    progress: Progress(
+      insects: Mass.g(75),
+    ),
+    cost: [
+      Items.fertilizer2,
+      Items.zeolite,
+      Items.bioplastic,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const butterflyfarm2 = Item(
+    key: 'butterflyfarm2',
+    name: 'Butterfly Farm T2',
+    type: ItemType.insectspreader,
+    energy: -45,
+    progress: Progress(
+      insects: Mass.g(982),
+    ),
+    cost: [
+      Items.fertilizer2,
+      Items.zeolite,
+      Items.bioplastic,
+      Items.fabric,
+      Items.fabric,
     ],
     unlocksAt: Goal.zero(),
     location: Location.outside,
@@ -632,6 +668,24 @@ class Items {
     location: Location.outside,
   );
 
+  static const drill5 = Item(
+    key: 'drill5',
+    name: 'Drill T5',
+    type: ItemType.drills,
+    energy: -375,
+    progress: Progress(
+      heat: Heat.pK(295),
+      pressure: Pressure.nPa(3950),
+    ),
+    cost: [
+      Items.superalloyrod,
+      Items.superalloyrod,
+      Items.osmiumrod,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
   static const eggplant = Item(
     key: 'eggplant',
     name: 'Eggplant',
@@ -747,11 +801,11 @@ class Items {
   static const flowerspreader1 = Item(
     key: 'flowerspreader1',
     name: 'Flower Spreader T1',
-    type: ItemType.biomassspreader,
+    type: ItemType.plantspreader,
     energy: -28.8,
     progress: Progress(
       oxygen: O2.ppq(161),
-      biomass: Biomass.g(7.2),
+      plants: Mass.g(7.2),
     ),
     cost: [
       Items.water,
@@ -768,11 +822,11 @@ class Items {
   static const flowerspreader2 = Item(
     key: 'flowerspreader2',
     name: 'Flower Spreader T2',
-    type: ItemType.biomassspreader,
+    type: ItemType.plantspreader,
     energy: -38.8,
     progress: Progress(
       oxygen: O2.ppq(325),
-      biomass: Biomass.g(33.5),
+      plants: Mass.g(33.5),
     ),
     cost: [
       Items.water,
@@ -886,11 +940,11 @@ class Items {
   static const grassspreader = Item(
     key: 'grassspreader',
     name: 'Grass Spreader',
-    type: ItemType.biomassspreader,
+    type: ItemType.plantspreader,
     energy: -13.8,
     progress: Progress(
       oxygen: O2.ppq(108),
-      biomass: Biomass.g(0.15),
+      plants: Mass.g(0.15),
     ),
     cost: [
       Items.water,
@@ -975,6 +1029,30 @@ class Items {
       Items.iridiumrod,
       Items.iridiumrod,
       Items.explosivepowder,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const heater5 = Item(
+    key: 'heater5',
+    name: 'Heater T5',
+    type: ItemType.heaters,
+    energy: -360.5,
+    progress: Progress(
+      heat: Heat.pK(4530),
+      pressure: Pressure.nPa(280),
+    ),
+    cost: [
+      Items.iridiumrod,
+      Items.iridiumrod,
+      Items.iridiumrod,
+      Items.explosivepowder,
+      Items.explosivepowder,
+      Items.explosivepowder,
+      Items.superalloyrod,
+      Items.superalloyrod,
+      Items.superalloyrod,
     ],
     unlocksAt: Goal.zero(),
     location: Location.outside,
@@ -1660,6 +1738,27 @@ class Items {
       Items.osmium,
       Items.osmium,
       Items.osmium,
+    ],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const outdoorfarm = Item(
+    key: 'outdoorfarm',
+    name: 'Outdoor Farm',
+    type: ItemType.plantspreader,
+    energy: -45.5,
+    progress: Progress(
+      plants: Mass.g(95),
+      insects: Mass.g(8),
+    ),
+    cost: [
+      Items.larvabee,
+      Items.larvabee,
+      Items.water,
+      Items.fertilizer,
+      Items.fertilizer2,
+      Items.superalloy,
     ],
     unlocksAt: Goal.zero(),
     location: Location.outside,
@@ -2479,11 +2578,11 @@ class Items {
   static const treespreader1 = Item(
     key: 'treespreader1',
     name: 'Tree Spreader T1',
-    type: ItemType.biomassspreader,
+    type: ItemType.plantspreader,
     energy: -31,
     progress: Progress(
       oxygen: O2.ppq(920),
-      biomass: Biomass.g(85),
+      plants: Mass.g(85),
     ),
     cost: [
       Items.superalloy,
@@ -2499,11 +2598,11 @@ class Items {
   static const treespreader2 = Item(
     key: 'treespreader2',
     name: 'Tree Spreader T2',
-    type: ItemType.biomassspreader,
+    type: ItemType.plantspreader,
     energy: -71,
     progress: Progress(
       oxygen: O2.ppq(1950),
-      biomass: Biomass.g(149),
+      plants: Mass.g(149),
     ),
     cost: [
       Items.superalloy,
@@ -2519,11 +2618,11 @@ class Items {
   static const treespreader3 = Item(
     key: 'treespreader3',
     name: 'Tree Spreader T3',
-    type: ItemType.biomassspreader,
+    type: ItemType.plantspreader,
     energy: -193,
     progress: Progress(
       oxygen: O2.ppq(12500),
-      biomass: Biomass.g(680),
+      plants: Mass.g(680),
     ),
     cost: [
       Items.superalloy,
@@ -2714,6 +2813,8 @@ class Items {
     biodome2,
     biolab,
     bioplastic,
+    butterflyfarm,
+    butterflyfarm2,
     chair,
     cobalt,
     communicationantenna,
@@ -2732,6 +2833,7 @@ class Items {
     drill2,
     drill3,
     drill4,
+    drill5,
     eggplant,
     exoskeleton1,
     exoskeleton2,
@@ -2753,6 +2855,7 @@ class Items {
     heater2,
     heater3,
     heater4,
+    heater5,
     honey,
     ice,
     iridium,
@@ -2804,6 +2907,7 @@ class Items {
     oreextractor2,
     osmium,
     osmiumrod,
+    outdoorfarm,
     outsidelamp,
     oxygen,
     oxygentank1,
@@ -2888,6 +2992,8 @@ class Items {
     biodome1,
     biodome2,
     biolab,
+    butterflyfarm,
+    butterflyfarm2,
     chair,
     communicationantenna,
     compartmentbig,
@@ -2905,6 +3011,7 @@ class Items {
     drill2,
     drill3,
     drill4,
+    drill5,
     flowerpot,
     flowerspreader1,
     flowerspreader2,
@@ -2918,12 +3025,14 @@ class Items {
     heater2,
     heater3,
     heater4,
+    heater5,
     ladderindoor,
     launchplatform,
     nuclearreactor1,
     nuclearreactor2,
     oreextractor1,
     oreextractor2,
+    outdoorfarm,
     outsidelamp,
     recycling,
     screenblueprints,

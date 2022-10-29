@@ -9,9 +9,18 @@ class Goal {
   final O2? oxygen;
   final Heat? heat;
   final Pressure? pressure;
-  final Biomass? biomass;
+  final Mass? plants;
+  final Mass? insects;
+  final Mass? biomass;
 
-  const Goal({this.ti, this.oxygen, this.heat, this.pressure, this.biomass});
+  const Goal(
+      {this.ti,
+      this.oxygen,
+      this.heat,
+      this.pressure,
+      this.plants,
+      this.insects,
+      this.biomass});
   //  {
   //   assert([ti, oxygen, heat, pressure].where((e) e == null).length == 3);
   // }
@@ -21,6 +30,8 @@ class Goal {
         oxygen = null,
         heat = null,
         pressure = null,
+        plants = null,
+        insects = null,
         biomass = null;
 
   bool wasReached(Progress totalProgress) {
@@ -33,10 +44,21 @@ class Goal {
     } else if (pressure != null) {
       return totalProgress.pressure >= pressure!;
     }
-    return totalProgress.biomass >= biomass!;
+
+    // Is this correct, it's an OR not an AND?
+    if (biomass != null) {
+      return totalProgress.biomass >= biomass!;
+    } else if (plants != null) {
+      return totalProgress.plants >= plants!;
+    } else if (insects != null) {
+      return totalProgress.insects >= insects!;
+    } else {
+      throw StateError('No goal specified');
+    }
   }
 
   Ti toTi() {
+    // FIXME: What should this do for biomass?
     if (ti != null) {
       return ti!;
     } else if (oxygen != null) {
@@ -59,8 +81,15 @@ class Goal {
       return "$heat (${heat!.toTi()})";
     } else if (pressure != null) {
       return "$pressure (${pressure!.toTi()})";
+    } else if (biomass != null) {
+      return "$biomass (${biomass!.toTi()})";
+    } else if (plants != null) {
+      return "$plants (${plants!.toTi()})";
+    } else if (insects != null) {
+      return "$insects (${insects!.toTi()})";
+    } else {
+      return 'Goal.zero()';
     }
-    return "$biomass (${biomass!.toTi()})";
   }
 }
 
@@ -76,7 +105,8 @@ enum ItemType {
   bio(false),
   larva(false),
   butterfly(false),
-  biomassspreader(true),
+  plantspreader(true),
+  insectspreader(true),
   ore(false),
   lamps(true),
   food(false),

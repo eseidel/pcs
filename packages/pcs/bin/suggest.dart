@@ -52,7 +52,7 @@ void main() {
     totalProgress: Progress(
       pressure: Pressure.nPa(0),
       heat: Heat.nK(0),
-      biomass: Biomass.g(0),
+      plants: Mass.g(0),
     ),
     structures: [
       Items.biodome1,

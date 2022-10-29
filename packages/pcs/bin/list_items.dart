@@ -23,7 +23,7 @@ String toCSV(Item item) {
   buffer.write('${item.type.name},');
   buffer.write('${emptyZero(item.energy)},');
   buffer.write('${emptyZero(item.progress.oxygen.ppq)},');
-  buffer.write('${emptyZero(item.progress.biomass.grams)},');
+  buffer.write('${emptyZero(item.progress.plants.grams)},');
   buffer.write('${emptyZero(item.progress.heat.pK)},');
   buffer.write('${emptyZero(item.progress.pressure.nPa)},');
   for (int i = 0; i < 8; i++) {
@@ -34,7 +34,7 @@ String toCSV(Item item) {
 }
 
 void main() {
-// key,name,type,power,oxygen,biomass,heat,pressure,dependency_1,dependency_2,dependency_3,dependency_4,dependency_5,dependency_6,dependency_7,dependency_8,dependency_9
+// key,name,type,power,oxygen,plants,insects,heat,pressure,dependency_1,dependency_2,dependency_3,dependency_4,dependency_5,dependency_6,dependency_7,dependency_8,dependency_9
 
   for (var item in Items.all) {
     print(toCSV(item));
