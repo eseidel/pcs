@@ -76,7 +76,9 @@ class Items {
       Items.magnesium,
       Items.superalloy,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      heat: Heat.pK(2000000),
+    ),
     location: Location.outside,
   );
 
@@ -98,7 +100,9 @@ class Items {
       Items.superalloy,
       Items.superalloy,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      biomass: Mass.g(25000),
+    ),
     location: Location.outside,
   );
 
@@ -149,7 +153,9 @@ class Items {
       Items.silicon,
       Items.titanium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(300),
+    ),
     location: Location.outside,
   );
 
@@ -165,7 +171,9 @@ class Items {
       Items.titanium,
       Items.silicon,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(2500),
+    ),
     location: Location.outside,
   );
 
@@ -197,7 +205,9 @@ class Items {
       Items.superalloy,
       Items.titanium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(5000000),
+    ),
     location: Location.outside,
   );
 
@@ -227,7 +237,9 @@ class Items {
       Items.magnesium,
       Items.cobalt,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      heat: Heat.pK(5000),
+    ),
     location: Location.outside,
   );
 
@@ -270,7 +282,66 @@ class Items {
       Items.fabric,
       Items.fabric,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(25000),
+    ),
+    location: Location.outside,
+  );
+
+  static const beehive = Item(
+    key: 'beehive',
+    name: 'Beehive',
+    type: ItemType.insectspreader,
+    energy: -25,
+    progress: Progress(
+      plants: Mass.g(350),
+      insects: Mass.g(15),
+    ),
+    cost: [
+      Items.larvabee,
+      Items.superalloy,
+      Items.fertilizer,
+      Items.bioplastic,
+    ],
+    unlocksAt: Goal(
+      plants: Mass.g(80000000),
+    ),
+    location: Location.outside,
+  );
+
+  static const beehive2 = Item(
+    key: 'beehive2',
+    name: 'Beehive T2',
+    type: ItemType.insectspreader,
+    energy: -95,
+    progress: Progress(
+      plants: Mass.g(950),
+      insects: Mass.g(390),
+    ),
+    cost: [
+      Items.larvabee,
+      Items.treebark,
+      Items.fertilizer2,
+      Items.bioplastic,
+    ],
+    unlocksAt: Goal(
+      insects: Mass.g(225000000),
+    ),
+    location: Location.outside,
+  );
+
+  static const bigfood = Item(
+    key: 'bigfood',
+    name: 'High Quality Food',
+    type: ItemType.food,
+    energy: 0.0,
+    cost: [
+      Items.honey,
+      Items.beans,
+    ],
+    unlocksAt: Goal(
+      insects: Mass.g(15000),
+    ),
     location: Location.outside,
   );
 
@@ -293,7 +364,9 @@ class Items {
       Items.superalloy,
       Items.superalloy,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      heat: Heat.pK(100000),
+    ),
     location: Location.outside,
   );
 
@@ -315,7 +388,9 @@ class Items {
       Items.superalloy,
       Items.superalloy,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      heat: Heat.pK(12000000),
+    ),
     location: Location.outside,
   );
 
@@ -332,7 +407,9 @@ class Items {
       Items.superalloy,
       Items.superalloy,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      biomass: Mass.g(865),
+    ),
     location: Location.outside,
   );
 
@@ -348,6 +425,43 @@ class Items {
       Items.water,
     ],
     unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const butterflydisplay = Item(
+    key: 'butterflydisplay',
+    name: 'Butterfly Display Box',
+    type: ItemType.base,
+    energy: 0.0,
+    cost: [
+      Items.iron,
+      Items.fabric,
+    ],
+    unlocksAt: Goal(
+      insects: Mass.g(2500000),
+    ),
+    location: Location.outside,
+  );
+
+  static const butterflydome = Item(
+    key: 'butterflydome',
+    name: 'Butterfly Dome',
+    type: ItemType.insectspreader,
+    energy: -139,
+    progress: Progress(
+      insects: Mass.g(20),
+    ),
+    cost: [
+      Items.fertilizer2,
+      Items.fertilizer,
+      Items.treebark,
+      Items.zeolite,
+      Items.superalloy,
+      Items.superalloy,
+    ],
+    unlocksAt: Goal(
+      plants: Mass.g(140000000),
+    ),
     location: Location.outside,
   );
 
@@ -422,7 +536,9 @@ class Items {
       Items.iron,
       Items.aluminium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      pressure: Pressure.nPa(4000),
+    ),
     location: Location.outside,
   );
 
@@ -482,7 +598,9 @@ class Items {
       Items.titanium,
       Items.cobalt,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      pressure: Pressure.nPa(4000),
+    ),
     location: Location.outside,
   );
 
@@ -509,7 +627,9 @@ class Items {
       Items.iron,
       Items.cobalt,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      pressure: Pressure.nPa(250),
+    ),
     location: Location.outside,
   );
 
@@ -542,7 +662,9 @@ class Items {
       Items.silicon,
       Items.silicon,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(175000),
+    ),
     location: Location.outside,
   );
 
@@ -585,7 +707,9 @@ class Items {
       Items.explosivepowder,
       Items.pulsarquartz,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(700000000),
+    ),
     location: Location.outside,
   );
 
@@ -619,7 +743,9 @@ class Items {
       Items.titanium,
       Items.titanium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      pressure: Pressure.nPa(1200),
+    ),
     location: Location.outside,
   );
 
@@ -640,7 +766,9 @@ class Items {
       Items.aluminium,
       Items.aluminium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      heat: Heat.pK(21000),
+    ),
     location: Location.outside,
   );
 
@@ -664,7 +792,9 @@ class Items {
       Items.osmium,
       Items.osmium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      heat: Heat.pK(41000000),
+    ),
     location: Location.outside,
   );
 
@@ -723,7 +853,9 @@ class Items {
       Items.magnesium,
       Items.aluminium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      heat: Heat.pK(10000),
+    ),
     location: Location.outside,
   );
 
@@ -747,6 +879,20 @@ class Items {
     type: ItemType.industrial,
     energy: 0.0,
     cost: [],
+    unlocksAt: Goal(
+      insects: Mass.g(950000),
+    ),
+    location: Location.outside,
+  );
+
+  static const fence = Item(
+    key: 'fence',
+    name: 'Fence',
+    type: ItemType.base,
+    energy: 0.0,
+    cost: [
+      Items.silicon,
+    ],
     unlocksAt: Goal.zero(),
     location: Location.outside,
   );
@@ -794,7 +940,9 @@ class Items {
       Items.cobalt,
       Items.fertilizer,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(420000),
+    ),
     location: Location.outside,
   );
 
@@ -815,7 +963,9 @@ class Items {
       Items.magnesium,
       Items.fertilizer,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      pressure: Pressure.nPa(2500000),
+    ),
     location: Location.outside,
   );
 
@@ -836,7 +986,9 @@ class Items {
       Items.fertilizer,
       Items.fertilizer,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      biomass: Mass.g(500000),
+    ),
     location: Location.outside,
   );
 
@@ -850,7 +1002,9 @@ class Items {
       Items.iron,
       Items.water,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      oxygen: O2.ppq(12000),
+    ),
     location: Location.outside,
   );
 
@@ -864,7 +1018,9 @@ class Items {
       Items.fertilizer,
       Items.superalloy,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      biomass: Mass.g(35000000),
+    ),
     location: Location.outside,
   );
 
@@ -893,7 +1049,9 @@ class Items {
       Items.osmium,
       Items.superalloy,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(360000000000),
+    ),
     location: Location.outside,
   );
 
@@ -913,7 +1071,9 @@ class Items {
       Items.superalloy,
       Items.superalloy,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      heat: Heat.pK(750000000),
+    ),
     location: Location.outside,
   );
 
@@ -933,7 +1093,9 @@ class Items {
       Items.zeolite,
       Items.iridiumrod,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      pressure: Pressure.nPa(100000000),
+    ),
     location: Location.outside,
   );
 
@@ -953,7 +1115,9 @@ class Items {
       Items.aluminium,
       Items.seedlirma,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      oxygen: O2.ppq(150000),
+    ),
     location: Location.outside,
   );
 
@@ -990,7 +1154,9 @@ class Items {
       Items.iron,
       Items.aluminium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      oxygen: O2.ppq(1850),
+    ),
     location: Location.outside,
   );
 
@@ -1030,7 +1196,9 @@ class Items {
       Items.iridiumrod,
       Items.explosivepowder,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      oxygen: O2.ppq(63000000),
+    ),
     location: Location.outside,
   );
 
@@ -1075,6 +1243,23 @@ class Items {
     energy: 0.0,
     cost: [],
     unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const icubator = Item(
+    key: 'icubator',
+    name: 'Incubator',
+    type: ItemType.basemisc,
+    energy: -215,
+    cost: [
+      Items.treebark,
+      Items.fertilizer2,
+      Items.superalloy,
+      Items.oxygen,
+    ],
+    unlocksAt: Goal(
+      ti: Ti(5000000000),
+    ),
     location: Location.outside,
   );
 
@@ -1173,7 +1358,9 @@ class Items {
       Items.cobalt,
       Items.iron,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      oxygen: O2.ppq(1000),
+    ),
     location: Location.outside,
   );
 
@@ -1471,7 +1658,9 @@ class Items {
       Items.iron,
       Items.iron,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(345000),
+    ),
     location: Location.outside,
   );
 
@@ -1581,6 +1770,16 @@ class Items {
     location: Location.outside,
   );
 
+  static const microchipmining4 = Item(
+    key: 'microchipmining4',
+    name: 'Microchip - Mining Speed T4',
+    type: ItemType.microchip,
+    energy: 0.0,
+    cost: [],
+    unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
   static const microchiptorch = Item(
     key: 'microchiptorch',
     name: 'Microchip - Torch',
@@ -1646,7 +1845,9 @@ class Items {
       Items.water,
       Items.uraniumrod,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      pressure: Pressure.nPa(60000),
+    ),
     location: Location.outside,
   );
 
@@ -1665,7 +1866,9 @@ class Items {
       Items.uraniumrod,
       Items.explosivepowder,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      pressure: Pressure.nPa(1500000),
+    ),
     location: Location.outside,
   );
 
@@ -1686,7 +1889,9 @@ class Items {
       Items.aluminium,
       Items.titanium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      pressure: Pressure.nPa(155000),
+    ),
     location: Location.outside,
   );
 
@@ -1709,7 +1914,9 @@ class Items {
       Items.iridiumrod,
       Items.iridiumrod,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      pressure: Pressure.nPa(364500000),
+    ),
     location: Location.outside,
   );
 
@@ -1760,7 +1967,9 @@ class Items {
       Items.fertilizer2,
       Items.superalloy,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      insects: Mass.g(1500000),
+    ),
     location: Location.outside,
   );
 
@@ -1818,7 +2027,9 @@ class Items {
       Items.magnesium,
       Items.magnesium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      pressure: Pressure.nPa(70),
+    ),
     location: Location.outside,
   );
 
@@ -1835,7 +2046,9 @@ class Items {
       Items.magnesium,
       Items.aluminium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      oxygen: O2.ppq(5000),
+    ),
     location: Location.outside,
   );
 
@@ -1866,7 +2079,9 @@ class Items {
       Items.uranium,
       Items.iridium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(175000000000),
+    ),
     location: Location.outside,
   );
 
@@ -2013,7 +2228,9 @@ class Items {
       Items.mutagen,
       Items.treebark,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(650000000),
+    ),
     location: Location.outside,
   );
 
@@ -2030,7 +2247,9 @@ class Items {
       Items.seedlirma,
       Items.treebark,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      biomass: Mass.g(175000),
+    ),
     location: Location.outside,
   );
 
@@ -2048,6 +2267,22 @@ class Items {
       Items.silicon,
     ],
     unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const screenbiomass = Item(
+    key: 'screenbiomass',
+    name: 'Screen - Biomass',
+    type: ItemType.screen,
+    energy: -3.4,
+    cost: [
+      Items.iron,
+      Items.silicon,
+      Items.aluminium,
+    ],
+    unlocksAt: Goal(
+      ti: Ti(200000000),
+    ),
     location: Location.outside,
   );
 
@@ -2103,7 +2338,25 @@ class Items {
       Items.silicon,
       Items.cobalt,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      heat: Heat.pK(2000),
+    ),
+    location: Location.outside,
+  );
+
+  static const screenrockets = Item(
+    key: 'screenrockets',
+    name: 'Screen - Orbital Information',
+    type: ItemType.screen,
+    energy: -35.2,
+    cost: [
+      Items.microchipcompass,
+      Items.osmium,
+      Items.silicon,
+    ],
+    unlocksAt: Goal(
+      ti: Ti(550000000),
+    ),
     location: Location.outside,
   );
 
@@ -2133,7 +2386,9 @@ class Items {
       Items.magnesium,
       Items.magnesium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      pressure: Pressure.nPa(4000),
+    ),
     location: Location.outside,
   );
 
@@ -2241,7 +2496,9 @@ class Items {
     cost: [
       Items.magnesium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      heat: Heat.pK(500000),
+    ),
     location: Location.outside,
   );
 
@@ -2252,6 +2509,25 @@ class Items {
     energy: 0.0,
     cost: [],
     unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const silkgenerator = Item(
+    key: 'silkgenerator',
+    name: 'Slik Generator',
+    type: ItemType.basemisc,
+    energy: -38,
+    cost: [
+      Items.larvasilk,
+      Items.larvasilk,
+      Items.larvasilk,
+      Items.zeolite,
+      Items.water,
+      Items.oxygen,
+    ],
+    unlocksAt: Goal(
+      insects: Mass.g(800000),
+    ),
     location: Location.outside,
   );
 
@@ -2294,7 +2570,9 @@ class Items {
       Items.silicon,
       Items.silicon,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(1000),
+    ),
     location: Location.outside,
   );
 
@@ -2311,7 +2589,9 @@ class Items {
       Items.magnesium,
       Items.aluminium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(1750),
+    ),
     location: Location.outside,
   );
 
@@ -2369,7 +2649,9 @@ class Items {
       Items.iron,
       Items.iron,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(50000),
+    ),
     location: Location.outside,
   );
 
@@ -2416,7 +2698,9 @@ class Items {
       Items.superalloy,
       Items.superalloy,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(750000000),
+    ),
     location: Location.outside,
   );
 
@@ -2430,6 +2714,25 @@ class Items {
       Items.titanium,
     ],
     unlocksAt: Goal.zero(),
+    location: Location.outside,
+  );
+
+  static const teleporter = Item(
+    key: 'teleporter',
+    name: 'Teleporter',
+    type: ItemType.basemisc,
+    energy: -276,
+    cost: [
+      Items.superalloyrod,
+      Items.osmium,
+      Items.zeolite,
+      Items.pulsarquartz,
+      Items.pulsarquartz,
+      Items.pulsarquartz,
+    ],
+    unlocksAt: Goal(
+      ti: Ti(25000000000),
+    ),
     location: Location.outside,
   );
 
@@ -2463,7 +2766,9 @@ class Items {
       Items.mutagen,
       Items.seedvolnus,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      insects: Mass.g(1100000),
+    ),
     location: Location.outside,
   );
 
@@ -2491,7 +2796,9 @@ class Items {
       Items.mutagen,
       Items.seednulna,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      insects: Mass.g(500),
+    ),
     location: Location.outside,
   );
 
@@ -2505,7 +2812,9 @@ class Items {
       Items.mutagen,
       Items.seedtuska,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      insects: Mass.g(100000),
+    ),
     location: Location.outside,
   );
 
@@ -2519,7 +2828,9 @@ class Items {
       Items.mutagen,
       Items.seedorema,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      insects: Mass.g(500000),
+    ),
     location: Location.outside,
   );
 
@@ -2591,7 +2902,9 @@ class Items {
       Items.treebark,
       Items.bioplastic,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      biomass: Mass.g(45000000),
+    ),
     location: Location.outside,
   );
 
@@ -2611,7 +2924,9 @@ class Items {
       Items.fertilizer2,
       Items.zeolite,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      oxygen: O2.ppq(7500000000),
+    ),
     location: Location.outside,
   );
 
@@ -2632,7 +2947,9 @@ class Items {
       Items.fertilizer2,
       Items.zeolite,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(49500000000),
+    ),
     location: Location.outside,
   );
 
@@ -2698,7 +3015,9 @@ class Items {
       Items.magnesium,
       Items.silicon,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      heat: Heat.pK(500),
+    ),
     location: Location.outside,
   );
 
@@ -2717,7 +3036,9 @@ class Items {
       Items.magnesium,
       Items.aluminium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      oxygen: O2.ppq(80000),
+    ),
     location: Location.outside,
   );
 
@@ -2746,7 +3067,9 @@ class Items {
       Items.aluminium,
       Items.superalloy,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(875000),
+    ),
     location: Location.outside,
   );
 
@@ -2764,7 +3087,21 @@ class Items {
       Items.aluminium,
       Items.superalloy,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal(
+      ti: Ti(50000000),
+    ),
+    location: Location.outside,
+  );
+
+  static const waterfilter = Item(
+    key: 'waterfilter',
+    name: 'Water Filter',
+    type: ItemType.equipment,
+    energy: 0.0,
+    cost: [],
+    unlocksAt: Goal(
+      ti: Ti(3000000000),
+    ),
     location: Location.outside,
   );
 
@@ -2809,10 +3146,15 @@ class Items {
     beans,
     bed,
     beddouble,
+    beehive,
+    beehive2,
+    bigfood,
     biodome1,
     biodome2,
     biolab,
     bioplastic,
+    butterflydisplay,
+    butterflydome,
     butterflyfarm,
     butterflyfarm2,
     chair,
@@ -2839,6 +3181,7 @@ class Items {
     exoskeleton2,
     explosivepowder,
     fabric,
+    fence,
     fertilizer,
     fertilizer2,
     flowerpot,
@@ -2858,6 +3201,7 @@ class Items {
     heater5,
     honey,
     ice,
+    icubator,
     iridium,
     iridiumrod,
     iron,
@@ -2897,6 +3241,7 @@ class Items {
     microchipmining1,
     microchipmining2,
     microchipmining3,
+    microchipmining4,
     microchiptorch,
     mushroom,
     mutagen,
@@ -2926,10 +3271,12 @@ class Items {
     rocketoxygen,
     rocketplants,
     rocketpressure,
+    screenbiomass,
     screenblueprints,
     screenenergy,
     screenmap,
     screenprogress,
+    screenrockets,
     screenterraformation,
     screentransmissions,
     seedgolden,
@@ -2943,6 +3290,7 @@ class Items {
     shredder,
     sign,
     silicon,
+    silkgenerator,
     sofa,
     sofaangle,
     solarpanel1,
@@ -2956,6 +3304,7 @@ class Items {
     superalloy,
     superalloyrod,
     table,
+    teleporter,
     titanium,
     treebark,
     treeseedaemora,
@@ -2978,6 +3327,7 @@ class Items {
     water,
     watercollectoratmo,
     watercollectorlake,
+    waterfilter,
     windturbine,
     zeolite,
   ];
@@ -2989,9 +3339,13 @@ class Items {
     beacon,
     bed,
     beddouble,
+    beehive,
+    beehive2,
     biodome1,
     biodome2,
     biolab,
+    butterflydisplay,
+    butterflydome,
     butterflyfarm,
     butterflyfarm2,
     chair,
@@ -3012,6 +3366,7 @@ class Items {
     drill3,
     drill4,
     drill5,
+    fence,
     flowerpot,
     flowerspreader1,
     flowerspreader2,
@@ -3026,6 +3381,7 @@ class Items {
     heater3,
     heater4,
     heater5,
+    icubator,
     ladderindoor,
     launchplatform,
     nuclearreactor1,
@@ -3035,14 +3391,17 @@ class Items {
     outdoorfarm,
     outsidelamp,
     recycling,
+    screenbiomass,
     screenblueprints,
     screenenergy,
     screenmap,
     screenprogress,
+    screenrockets,
     screenterraformation,
     screentransmissions,
     shredder,
     sign,
+    silkgenerator,
     sofa,
     sofaangle,
     solarpanel1,
@@ -3051,6 +3410,7 @@ class Items {
     storagecrate,
     storagelocker,
     table,
+    teleporter,
     treespreader1,
     treespreader2,
     treespreader3,

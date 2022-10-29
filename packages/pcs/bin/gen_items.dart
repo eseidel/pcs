@@ -132,8 +132,44 @@ void main() {
       buffer.writeln('  cost: [],');
     }
 
-    // FIXME: This data is missing from the csv.
-    buffer.writeln('  unlocksAt: Goal.zero(),');
+    if ([
+      'unlock_ti',
+      'unlock_oxygen',
+      'unlock_heat',
+      'unlock_pressure',
+      'unlock_biomass',
+      'unlock_plants',
+      'unlock_insects'
+    ].any((key) => item[key].isNotEmpty)) {
+      buffer.writeln('  unlocksAt: Goal(');
+      if (item['unlock_ti'].isNotEmpty) {
+        buffer.writeln('    ti: Ti(${item['unlock_ti']}),');
+      }
+      if (item['unlock_oxygen'].isNotEmpty) {
+        buffer.writeln('    oxygen: O2.ppq(${item['unlock_oxygen']}),');
+      }
+      if (item['unlock_heat'].isNotEmpty) {
+        buffer.writeln('    heat: Heat.pK(${item['unlock_heat']}),');
+      }
+      if (item['unlock_pressure'].isNotEmpty) {
+        buffer
+            .writeln('    pressure: Pressure.nPa(${item['unlock_pressure']}),');
+      }
+      if (item['unlock_biomass'].isNotEmpty) {
+        buffer.writeln('    biomass: Mass.g(${item['unlock_biomass']}),');
+      }
+      if (item['unlock_plants'].isNotEmpty) {
+        buffer.writeln('    plants: Mass.g(${item['unlock_plants']}),');
+      }
+      if (item['unlock_insects'].isNotEmpty) {
+        buffer.writeln('    insects: Mass.g(${item['unlock_insects']}),');
+      }
+      buffer.writeln('  ),');
+    } else {
+      buffer.writeln('  unlocksAt: Goal.zero(),');
+    }
+
+    // FIXME: Location placement data is missing from the csv.
     buffer.writeln('  location: Location.outside,');
 
     buffer.writeln(');');
