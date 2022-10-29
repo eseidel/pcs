@@ -1764,7 +1764,7 @@ class Items {
       Items.larvacommon,
       Items.honey,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal.insects(Mass.g(50000000)),
     location: Location.outside,
   );
 
@@ -1874,7 +1874,7 @@ class Items {
       Items.osmium,
       Items.osmium,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal.ti(Ti(615000000000)),
     location: Location.outside,
   );
 
@@ -2101,7 +2101,7 @@ class Items {
       Items.cobalt,
       Items.cobalt,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal.ti(Ti(345000)),
     location: Location.outside,
   );
 
@@ -2118,7 +2118,7 @@ class Items {
       Items.larvabee,
       Items.larvabee,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal.biomass(Mass.g(17700000000)),
     location: Location.outside,
   );
 
@@ -2185,7 +2185,7 @@ class Items {
       Items.silicon,
       Items.silicon,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal.ti(Ti(345000)),
     location: Location.outside,
   );
 

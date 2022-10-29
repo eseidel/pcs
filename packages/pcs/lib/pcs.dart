@@ -6,6 +6,11 @@ class Unlocks {
 
   Unlocks(this.progress, this.microchipCount);
 
+  Iterable<Item> get unlockedItems {
+    return Items.all
+        .where((item) => item.isAvailable(progress, microchipCount));
+  }
+
   Iterable<Structure> get unlockedStructures {
     // Cache this?
     return Items.structures

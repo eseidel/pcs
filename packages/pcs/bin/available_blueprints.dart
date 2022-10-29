@@ -3,7 +3,7 @@ import 'package:pcs/structures.dart';
 
 void main() {
   var unlocks = Unlocks(Progress(), 0);
-  for (var item in unlocks.unlockedStructures) {
+  for (var item in unlocks.unlockedItems) {
     print(item);
   }
 }

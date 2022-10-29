@@ -245,6 +245,9 @@ class Item {
     this.progress = const Progress(),
     this.description = "",
     required this.location,
+    // This design is wrong, these unlocks happen in tiers/random:
+    // https://planet-crafter.fandom.com/wiki/Blueprint_microchip
+    // So instead we will need to keep a list of unlocked items.
     this.microchipNumber,
   });
 
