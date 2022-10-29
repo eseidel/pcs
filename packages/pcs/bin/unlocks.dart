@@ -15,8 +15,10 @@ void main() {
     items[type]!.sort(
         (a, b) => a.unlocksAt.toTi().value.compareTo(b.unlocksAt.toTi().value));
     print('== $type ==');
+    var i = 1;
     for (var item in items[type]!) {
-      print('* ${item.unlocksAt} ${item.name}');
+      print('$i. ${item.unlocksAt} ${item.name}');
+      i++;
     }
   }
 }

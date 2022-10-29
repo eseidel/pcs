@@ -890,7 +890,7 @@ class Items {
       Items.cobalt,
       Items.fertilizer,
     ],
-    unlocksAt: Goal.ti(Ti(420000)),
+    unlocksAt: Goal.oxygen(O2.ppq(420000)),
     location: Location.outside,
   );
 
@@ -1105,7 +1105,7 @@ class Items {
       Items.aluminium,
       Items.iridiumrod,
     ],
-    unlocksAt: Goal.zero(),
+    unlocksAt: Goal.oxygen(O2.ppq(80000)),
     location: Location.outside,
   );
 
@@ -2477,7 +2477,7 @@ class Items {
       Items.magnesium,
       Items.aluminium,
     ],
-    unlocksAt: Goal.ti(Ti(1750)),
+    unlocksAt: Goal.ti(Ti(17500)),
     location: Location.outside,
   );
 
@@ -2900,7 +2900,7 @@ class Items {
       Items.magnesium,
       Items.aluminium,
     ],
-    unlocksAt: Goal.oxygen(O2.ppq(80000)),
+    unlocksAt: Goal.oxygen(O2.ppq(30000)),
     location: Location.outside,
   );
 

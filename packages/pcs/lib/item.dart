@@ -140,19 +140,19 @@ class Goal {
     if (ti != null) {
       return ti.toString();
     } else if (oxygen != null) {
-      return "$oxygen (${oxygen!.toTi()})";
+      return "$oxygen (${oxygen!})";
     } else if (heat != null) {
-      return "$heat (${heat!.toTi()})";
+      return "$heat (${heat!})";
     } else if (pressure != null) {
-      return "$pressure (${pressure!.toTi()})";
-    } else if (biomass != null) {
-      return "$biomass (${biomass!.toTi()})";
+      return "$pressure (${pressure!})";
     } else if (plants != null) {
-      return "$plants (${plants!.toTi()})";
+      return "$plants (${plants!})";
     } else if (insects != null) {
-      return "$insects (${insects!.toTi()})";
+      return "$insects (${insects!})";
+    } else if (biomass != null) {
+      return "$biomass (${biomass!})";
     } else {
-      return 'Goal.zero()';
+      throw StateError('No goal specified');
     }
   }
 }
