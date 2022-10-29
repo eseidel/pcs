@@ -260,9 +260,28 @@ class Mass {
   bool operator >=(Mass other) => grams >= other.grams;
   Ti toTi() => Ti(grams);
 
+  static const double kiloMultiplier = 1000;
+  static const double tonneMultipler = 1000000;
+  static const double killoTonneMultiplier = 1000000000;
+  static const double megaTonneMultiplier = 1000000000000;
+
   @override
   String toString() {
-    // FIXME: Automatically scale printed units.
-    return "${grams.toStringAsFixed(1)}g";
+    var value = grams;
+    var suffix = "g";
+    if (value >= megaTonneMultiplier) {
+      value /= megaTonneMultiplier;
+      suffix = 'Mt';
+    } else if (value >= killoTonneMultiplier) {
+      value /= killoTonneMultiplier;
+      suffix = 'kt';
+    } else if (value >= tonneMultipler) {
+      value /= tonneMultipler;
+      suffix = 't';
+    } else if (value >= kiloMultiplier) {
+      value /= kiloMultiplier;
+      suffix = 'kg';
+    }
+    return "${value.toStringAsFixed(1)}$suffix";
   }
 }
