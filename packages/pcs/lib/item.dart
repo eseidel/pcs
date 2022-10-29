@@ -14,6 +14,17 @@ class Goal {
   final Mass? insects;
   final Mass? biomass;
 
+  String get type {
+    if (ti != null) return 'ti';
+    if (pressure != null) return 'pressure';
+    if (heat != null) return 'heat';
+    if (oxygen != null) return 'oxygen';
+    if (plants != null) return 'plants';
+    if (insects != null) return 'insects';
+    if (biomass != null) return 'biomass';
+    throw Exception('Goal has no type');
+  }
+
   const Goal.ti(Ti this.ti)
       : oxygen = null,
         heat = null,
@@ -105,7 +116,6 @@ class Goal {
   }
 
   Ti toTi() {
-    // FIXME: What should this do for biomass?
     if (ti != null) {
       return ti!;
     } else if (oxygen != null) {
@@ -114,8 +124,15 @@ class Goal {
       return heat!.toTi();
     } else if (pressure != null) {
       return pressure!.toTi();
+    } else if (plants != null) {
+      return plants!.toTi();
+    } else if (insects != null) {
+      return insects!.toTi();
+    } else if (biomass != null) {
+      return biomass!.toTi();
+    } else {
+      throw StateError('No goal specified');
     }
-    return biomass!.toTi();
   }
 
   @override
